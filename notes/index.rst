@@ -7,7 +7,7 @@ Contents of class notes for AMath 483/583
 =========================================
 
 See the `Class Webpage
-<http://faculty.washington.edu/rjl/583-spring-2013/index.html>`_
+<http://faculty.washington.edu/rjl/uwamath583s13/index.html>`_
 for information on instructor, TA, office hours, etc.
 
 Skip to... :ref:`technical_topics` ... :ref:`applications`
@@ -50,6 +50,7 @@ Technical Topics
    versioncontrol
    git
    github
+   sphinx
 
 .. _toc_biblio:
 
