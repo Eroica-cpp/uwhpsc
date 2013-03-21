@@ -99,7 +99,16 @@ Of course this assumes that *UWHPSC* has been properly set, see above.
 
 The last two command can be combined as::
 
-        $ hg pull 
+        $ git pull
+ 
+Using git
+-----------
+
+Set user name and email::  
+
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
 
 .. _mygit:
 
