@@ -17,15 +17,17 @@ machine, which will emulate a specific version of Linux that already has
 installed all of the software packages that will be used in this course.
 
 You can find the VM on the `class 
-webpage <http://www.amath.washington.edu/~rjl/uwamath583s13/>`_.
+webpage <http://faculty.washington.edu/rjl/classes/am583s2013/>`_.
 Note that the file is quite
 large (approximately 750 MB compressed), and if possible you should
-download it from on-campus to shorten the download time.
+download it from on-campus to shorten the download time.  The TA's will also
+have the VM on memory sticks for transferring.
+
 
 System requirements
 -------------------
 
-The VM is around 1.9 GB in size, uncompressed, and the virtual disk
+The VM is around 2.1 GB in size, uncompressed, and the virtual disk
 image may expand to up to 8 GB, depending on how much data you store
 in the VM.  Make sure you have enough free space available before
 installing.  You can set how much RAM is available to the VM when
@@ -49,8 +51,8 @@ doing the following:
 #. Enter a name for the VM (put in whatever you like); for *OS Type*,
    select "Linux", and for *Version*, select "Ubuntu".  Click *Next*.
 
-#. Enter the amount of memory to give the VM, in megabytes.  Give it
-   as much as you can spare; 512 MB is the recommended minimum.  Click *Next*.
+#. Enter the amount of memory to give the VM, in megabytes.  
+   512 MB is the recommended minimum.  Click *Next*.
 
 #. Click *Use existing hard disk*, then click the folder icon next to
    the disk list.  In the Virtual Media Manager that appears, click
@@ -64,15 +66,6 @@ doing the following:
    new virtual machine should appear on the left side of the VirtualBox
    window.
 
-Optionally, if you have a reasonably new computer with a multi-core
-processor and want to be able to run parallel programs across multiple
-cores, you can tell VirtualBox to allow the VM to use additional
-cores.  To do this, click the VM on the left side of the VirtualBox
-window, then click *Settings*.  Under *System*, click the *Processor*
-tab, then use the slider to set the number of processors the VM will
-see.  Note that some older multi-core processors do not support the
-necessary extensions for this, and on these machines you will only be
-able to run the VM on a single core.
 
 Starting the VM
 ---------------
@@ -84,15 +77,17 @@ will display a few messages explaining about mouse pointer and
 keyboard capturing, which you should read.
 
 After the VM has finished booting, it will present you with a login
-screen; the login and password are both ``amath583``.  (We would have
+screen; the login and password are both ``uwhpsc``.  (We would have
 liked to set up a VM with no password, but many things in Linux assume
 you have one.)
+
+Note that you will also need this password to quit the VM.
 
 Running programs
 ----------------
 
-You can access the programs on the virtual machine through the main
-menu (the mouse on an *X* symbol in the lower-left corner of the
+You can access the programs on the virtual machine through the Applications
+Menu (the mouse on an *X* symbol in the upper-left corner of the
 screen), or by clicking the quick-launch icons next to the menu
 button.  By default, you will have quick-launch icons for a command
 prompt window (also known as a *terminal window*), a text editor, and
@@ -104,15 +99,94 @@ Fixing networking issues
 
 When a Linux VM is moved to a new computer, it sometimes doesn't
 realize that the previous computer's network adaptor is no longer
-available.  If you find yourself unable to connect to the Internet,
-open a terminal window and type the following command::
+available.  
+
+Also, if you move your computer from one wireless network to another while
+the VM is running, it may lose connection with the internet.  
+
+If this happens, it should be sufficient to shut down the VM (with the 0/1
+button on the top right corner) and then restart it.
+On shutdown, a script is automatically run that does the following, which in
+earlier iterations of the VM had to be done manually...
 
  $ sudo rm /etc/udev/rules.d/70-persistent-net.rules
 
 This will remove the incorrect settings; Linux should then autodetect
-and correctly configure the network interface it boots.  To reboot the
-VM, click the door icon in the bottom-right of the screen,
-then click *Restart*.  If this does not work, contact the TA.
+and correctly configure the network interface it boots.  
+
+Shutting down
+-------------
+
+When you are done using the virtual machine, you can shut it down by
+clicking the 0/1 button on the top-right corner of the VM.
+You will need the password `uwhpsc`.
+
+Cutting and pasting
+-------------------
+
+If you want to cut text from one window in the VM and paste it into another,
+you should be able to highlight the text and then type ctrl-c (or in a
+terminal window, ctrl-shift-C, since ctrl-c is the interrupt signal). To
+paste, type ctrl-v (or ctrl-shift-V in a terminal window).
+
+If you want to be able to cut and paste between a window in the VM and a
+window on your host machine, click on Machine from the main VitualBox menu
+(or `Settings` in the Oracle VM VirtualBox Manager window), then click on
+`General` and then `Advanced`.  Select `Bidirectional` from the `Shared
+Clipboard` menu.
+
+Shared Folders
+--------------
+
+If you create a file on the VM that you want to move to the file system of
+the host machine, or vice versa, you can create a "shared folder" that is
+seen by both.  
+
+First create a folder (i.e. directory) on the host machine, e.g. via::
+
+    $ mkdir ~/uwhpsc_shared
+
+This creates a new subdirectory in your home directory on the host machine. 
+
+In the VirtualBox menu click on `Devices`, then click on
+`Shared Folders`.  Click the + button on the right side and then type in the
+full path to the folder you want to share under `Folder Path`, including the
+folder name, and then the folder name itself under `Folder name`.  
+If you click on `Auto-mount` then this will be mounted every time you start
+the VM.  
+
+Then click `OK` twice.  
+
+Then, in the VM (at the linux prompt), type the following commands::
+
+    sharename=uwhpsc_shared   # or whatever name the folder has
+    sudo mkdir /mnt/$sharename 
+    sudo chmod 777 /mnt/$sharename 
+    sudo mount -t vboxsf -o uid=1000,gid=1000 $sharename /mnt/$sharename 
+
+You may need the password `uwhpsc` for the first `sudo` command.
+
+The folder should now be found in the VM in `/mnt/$sharename`.
+(Note `$sharename` is a variable set in the first command above.)
+
+If auto-mounting doesn't work properly, you may need to repeat the final
+`sudo mount ...` command  each time you start the VM.  
+
+
+Enabling more processors
+------------------------
+
+
+If you have a reasonably new computer with a multi-core
+processor and want to be able to run parallel programs across multiple
+cores, you can tell VirtualBox to allow the VM to use additional
+cores.  To do this, open the VirtualBox
+*Settings*.  Under *System*, click the *Processor*
+tab, then use the slider to set the number of processors the VM will
+see.  Note that some older multi-core processors do not support the
+necessary extensions for this, and on these machines you will only be
+able to run the VM on a single core.
+
 
 Changing guest resolution/VM window size
 ----------------------------------------
@@ -126,7 +200,7 @@ the VM desktop being displayed, which may not be the ideal way to
 work.  Alternately, if you are working on a high-resolution display,
 you may want to *increase* the size of the VM's desktop to take
 advantage of it.  In either case, you can change the VM's display size
-by going to the main menu in the lower-left corner, pointing to
+by going to the Applications menu in the upper-left corner, pointing to
 *Settings*, then clicking *Display*.  Choose a resolution from the
 drop-down list, then click *Apply*.
 
@@ -150,23 +224,6 @@ change the host key in VirtualBox.  In the main VirtualBox window (not
 the VM's window; in fact, the VM doesn't need to be running to do
 this), go to the *File* menu, then click *Settings*.  Under *Input*,
 click the box marked "Host Key", then press the key you want to use.
-
-Shutting down
--------------
-
-When you are done using the virtual machine, you can shut it down by
-clicking the door icon in the bottom-right of the
-screen, then clicking *Shut down*.
-
-About the VM
-------------
-
-The class virtual machine is running XUbuntu 10.10, a variant of Ubuntu
-Linux (`<http://www.ubuntu.com>`_), which itself is an offshoot of
-Debian GNU/Linux (`<http://www.debian.org>`_).  XUbuntu is a
-stripped-down, simplified version of Ubuntu suitable for running on
-smaller systems (or virtual machines); it runs the *xfce4* desktop
-environment.
 
 .. _vm_additions:
 
@@ -210,6 +267,17 @@ If step 3 doesn't work the first time, you might need to:
     #. Double click 'autorun.sh'.
     #. Enter the VM password to install. 
 
+
+
+About the VM
+------------
+
+The class virtual machine is running XUbuntu 10.10, a variant of Ubuntu
+Linux (`<http://www.ubuntu.com>`_), which itself is an offshoot of
+Debian GNU/Linux (`<http://www.debian.org>`_).  XUbuntu is a
+stripped-down, simplified version of Ubuntu suitable for running on
+smaller systems (or virtual machines); it runs the *xfce4* desktop
+environment.
 
 
 Further reading
