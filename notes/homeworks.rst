@@ -6,10 +6,10 @@
 Homework 
 ====================
 
-There will be 6 homeworks during the quarter, (10 points each) with
-tentative due dates
+There will be 6 homeworks during the quarter with
+tentative due dates listed below:
 
- * Homework 1: 4/10
+ * :ref:`homework1`: 4/10
  * Homework 2: 4/17
  * Homework 3: 5/1 
  * Homework 4: 5/8
