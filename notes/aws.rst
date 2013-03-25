@@ -60,12 +60,12 @@ on `AMIs` on the menu to the left.
 
 Change `Viewing:` to `All Images` and `All Platforms` and then *after* it
 has finished loading the database start typing 
-`uwamath583s13` in the search bar.
+`uwhpsc` in the search bar.
 
 Lanching an instance
 ---------------------
 
-Select the `uwamath583s13` image and then
+Select the `uwhpsc` image and then
 click on the `Launch` button on this page to start launching an instance 
 based on this AMI.  This means a virtual machine will be started for you,
 initialized with this disk image (which is a Ubuntu linux distribution with
@@ -195,11 +195,14 @@ they are located (created with the `ln -s` command in linux).
 
 So, for example, if you do the following::
 
-    $ cd /var/www
-    $ sudo ln -s /home/ubuntu ./home
+    $ cd $HOME
+    $ mkdir public      # create a directory for posting things
+    $ chmod 755 public  # make it readable by others
+    $ sudo ln -s $HOME/public /var/www/public
 
-then you can see the contents of your home directory at::
+then you can see the contents of your $HOME/public directory at::
 
-    http://ec2-50-19-75-229.compute-1.amazonaws.com/home  
+    http://ec2-50-19-75-229.compute-1.amazonaws.com/public  
 
-Remember to change the DNS to the right thing for your instance!
+Remember to change the DNS above to the right thing for your own instance!
+

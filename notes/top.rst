@@ -27,24 +27,20 @@ lines, followed by a list of processes and information about them.  An
 example display is shown below, with the process list truncated for
 brevity::
 
-  top - 16:07:52 up  1:45,  2 users,  load average: 0.05, 0.12, 0.09
-  Tasks: 150 total,   2 running, 148 sleeping,   0 stopped,   0 zombie
-  Cpu(s):  3.2%us,  2.3%sy,  0.0%ni, 94.2%id,  0.2%wa,  0.0%hi,  0.2%si,  0.0%st
-  Mem:   1018060k total,   631284k used,   386776k free,    69444k buffers
-  Swap:   498004k total,        0k used,   498004k free,   283880k cached
-  
-    PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
-   2080 grady     20   0  300m  96m  26m S    0  9.7  10:50.53 firefox
-   2757 grady     20   0 71300  36m  11m S    0  3.7   0:16.51 evince
-   1859 grady     20   0 60592  20m  12m S    0  2.1   0:06.93 netbook-launche
-   1858 grady     20   0 54864  18m  10m S    0  1.9   0:00.76 nautilus
-    939 root      20   0 48552  17m 9068 S    4  1.7   3:41.44 Xorg
-   1909 grady     20   0 28836  16m  10m S    0  1.7   0:00.88 eee-control-tra
-   2640 grady     20   0 27812  16m 9540 S    0  1.6   0:08.10 emacs
-   1856 grady     20   0 40312  16m  11m S    0  1.6   0:08.10 gnome-panel
-   1907 grady     20   0 29444  14m 8144 S    0  1.4   0:00.41 python
-   1902 grady     20   0 36924  13m 9980 S    0  1.4   0:09.76 nm-applet
-   2489 grady     20   0 38560  13m 9900 S    3  1.3   0:10.42 gnome-terminal
+    top - 14:45:34 up  6:32,  2 users,  load average: 0.78, 0.61, 0.59
+    Tasks: 110 total,   3 running, 106 sleeping,   0 stopped,   1 zombie
+    Cpu(s): 75.0%us,  0.6%sy,  0.0%ni, 24.4%id,  0.0%wa,  0.0%hi,  0.0%si,
+    0.0%st
+    Mem:    507680k total,   491268k used,    16412k free,    24560k buffers
+    Swap:        0k total,        0k used,        0k free,   316368k cached
+
+      PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+     2342 uwhpsc    20   0  8380 1212  796 R  300  0.2   0:28.55 jacobi2d.exe       
+      842 root      20   0  100m  24m 9780 R    2  5.0 178:27.50 Xorg               
+     1051 uwhpsc    20   0 40236  11m 8904 S    1  2.3   0:01.53 xfce4-terminal     
+        1 root      20   0  3528 1864 1304 S    0  0.4   0:01.12 init               
+        2 root      20   0     0    0    0 S    0  0.0   0:00.00 kthreadd      
+
 
 
 Summary area

@@ -22,7 +22,7 @@ The command name *pwd* stands for "print working directory" and tells you
 the full path to the directory you are currently working in, e.g.::
 
      $ pwd
-     /Users/rjl/uwamath583
+     /Users/rjl/uwhpsc
 
 
 To change directories, use the *cd* command, either relative to the current
@@ -239,7 +239,7 @@ where the last number is the process id.
 
 Another useful command is *top*.  This will fill your window with a page of
 information about the jobs running on your computer that are using the most
-resources currently.  See :ref:`top` for some examples.
+resources currently.  See :ref:`topcommand` for some examples.
 
 .. _kill:
 
@@ -337,7 +337,7 @@ set, e.g.::
     $ printenv
     USER=rjl
     HOME=/Users/rjl
-    PWD=/Users/rjl/uwamath583/sphinx
+    PWD=/Users/rjl/uwhpsc/sphinx
     FC=gfortran
     PYTHONPATH=/Users/rjl/claw4/trunk/python:/Applications/visit1.11.2/src/lib:
     PATH=/opt/local/bin:/opt/local/sbin:/Users/rjl/bin
@@ -357,15 +357,15 @@ The latter form has $HOME instead of HOME because we are actually *using*
 the variable in an echo command rather than just printing its value.  This
 particular variable is useful for things like
 
-    $ cd $HOME/uwamath583
+    $ cd $HOME/uwhpsc
 
-which will go to the uwamath583 subdirectory of your home directory no
+which will go to the uwhpsc subdirectory of your home directory no
 matter where you start.
 
 As part of Homework 1 you are instructed to define a new environment
 variable to make this even easier,  for example by::
 
-    $ export CLASSHG=$HOME/uwamath583
+    $ export UWHPSC=$HOME/uwhpsc
 
 Note there are no spaces around the =.   This defines a new environment
 variable and *exports* it, so that it can be used by other programs you
@@ -374,7 +374,7 @@ necessary).
 
 You can now just do::
 
-    $ cd $CLASSHG
+    $ cd $UWHPSC
 
 to go to this directory.
 
