@@ -27,7 +27,7 @@ reside (assumed to be your home directory below)
 and then *clone* the repository::
 
         $ cd 
-        $ git clone ssh://git@bitbucket.org/rjleveque/uwhpsc.git
+        $ git clone https://rjleveque@bitbucket.org/rjleveque/uwhpsc.git
 
 Note the following:
 
@@ -82,7 +82,7 @@ home directory.  If not, you will have to add a line of the form::
 where the full path is what was returned by the *printenv* statement above.
 
 
-.. _classhg_update:
+.. _uwhpsc_update:
 
 Updating your clone
 -------------------
@@ -101,14 +101,7 @@ The last two command can be combined as::
 
         $ git pull
  
-Using git
------------
 
-Set user name and email::  
-
-
-    git config --global user.name "Your Name"
-    git config --global user.email you@example.com
 
 .. _mygit:
 
@@ -147,23 +140,20 @@ Follow these directions exactly.  Doing so is part of :ref:`homework1`.
 We will clone your repository and check that *testfile.txt* has been created
 and modified as directed below.
 
-.. note:: Homework 1 is subject to change and these instructions may be
+.. warning:: Homework 1 is subject to change and these instructions may be
    modified, so you might want to wait until the quarter starts.
 
-#. On the machine you're working on, go to your home directory ("cd $HOME"
-   on Unix) and create a file named .gitconfig
-   (with a dot at the front) containing::
+#. On the machine you're working on:: 
 
-        [user]
-        name = Your Name 
-        email = <yournetid@uw.edu>
+    $ git config --global user.name "Your Name"
+    $ git config --global user.email you@example.com
 
-   This will be used when you commit changes.  This is a configuration file
-   used by *git*, similar to the :ref:`bashrc` used by bash.
-   If you don't do this, you might get an error message 
+   These will be used when you commit changes.  
+   If you don't do this, you might get a warning message 
    the first time you try to commit.
 
-#. Go to `<http://bitbucket.org/>`_ and click on "Sign up now"
+#. Go to `<http://bitbucket.org/>`_ and click on "Sign up now" if you don't
+   already have an account.
 
 #. Fill in the form, make sure you remember your username and password.
 
@@ -215,7 +205,7 @@ and modified as directed below.
    The directory *.git* is the directory that stores all the information
    about the contents of this directory and a complete history of every file
    and every change ever committed.  You shouldn't touch or modify the files in
-   this directory, they are used by Mercurial.
+   this directory, they are used by *git*.
 
 #. Add a new file to your directory::
 
@@ -297,7 +287,7 @@ and modified as directed below.
    a, b, c, d, e, f representing 10 through 15.  This number is almost
    certainly guaranteed to be unique among all commits you will ever
    do (or anyone has ever done, for that matter).  It is computed based
-   on the state of all the files in this snapshot as an `SHA-1
+   on the state of all the files in this snapshot as a `SHA-1
    Cryptographic hash function <http://en.wikipedia.org/wiki/SHA-1>`_,
    called a SHA-1 Hash for short.
 
@@ -474,7 +464,7 @@ and modified as directed below.
    page for your repository and click on the  "Source" tab at the top.  It
    should display the files in your repository and show *testfile.txt*.
 
-   Now click on the "Changesets" tab at the top.  It should show that you
+   Now click on the "Commits" tab at the top.  It should show that you
    made two commits and display the comments you added with the *-m* flag
    with each commit.
 
@@ -499,10 +489,10 @@ Further reading
 
 Next see :ref:`bitbucket`.
 
-Remember that you can get help with Mercurial commands by typing, e.g.::
+Remember that you can get help with *git* commands by typing, e.g.::
 
         $ git help
-        $ git help diff
+        $ git help diff  # or any other specific command name
 
 Each command has lots of options!
 
