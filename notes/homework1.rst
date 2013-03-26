@@ -44,7 +44,7 @@ some files that we can view to grade.
     documentation linked from there in order to get a sense of how it works.
 
  #. Clone the class repository following the 
-    :ref:`uwhpsc`.
+    :ref:`classgit`.
 
     Make sure you have set the environment variable *UWHPSC*
     since this is used below.
