@@ -30,7 +30,6 @@ Course materials
    vm
    aws
    software_carpentry
-   biblio
 
 .. _technical_topics:
 
