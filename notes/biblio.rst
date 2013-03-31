@@ -5,9 +5,6 @@
 Bibliography and further reading
 =============================================================
 
-.. seealso:: `Links from 2009 seminar
-   <http://kingkong.amath.washington.edu/trac/hpsc09/wiki/links>`_
-
 Many other pages in these notes have links not listed below.  These are some
 references that are partiuclarly useful or are cited often elsewhere.
 
@@ -26,7 +23,6 @@ Books
    in Fortran*, Lulu Press, ...
    `ebook <http://www.lulu.com/product/download/scientific-software-development-in-fortran/6208176>`_  ...
    `paperback <http://www.lulu.com/product/paperback/scientific-software-development-in-fortran/6208175>`_
-   **(A copy is on reserve in the Engineering Library)**
 
 .. [Rauber-Ruenger] T. Rauber and G. Ruenger, 
    *Parallel Programming For Multicore and Cluster Systems*, 
@@ -58,7 +54,6 @@ Books
 
 .. [Goedecker-Hoisie-optimization] S. Goedecker and A. Hoisie, 
    *Performance Optimization of Numerically intensive Codes*, SIAM 2001.
-   **(A copy is on reserve in the Engineering Library)**
 
 .. [Matloff-Salzman-debugging] N. Matloff and P. J. Salzman, *The Art 
    of Debugging with GDB, DDD, and Eclipse*, no starch press, San Francisco,
@@ -73,7 +68,8 @@ Other courses with useful slides or webpages
 ---------------------------------------------
 
 
-.. [software-carpentry] Greg Wilson, `<http://software-carpentry.org/>`_.
+.. [software-carpentry] Greg Wilson, `<http://software-carpentry.org/>`_
+   See :ref:`software_carpentry` for links to some useful sections.
 
 .. [Reynolds-class] Dan Reynolds, SMU `<http://dreynolds.math.smu.edu/Courses/Math6370_Spring11/>`_.
 
@@ -85,9 +81,11 @@ Other courses with useful slides or webpages
 .. [Yelick-UCB] Kathy Yelick, `Berkeley course on parallel computing
    <http://www.cs.berkeley.edu/~yelick/cs267/>`_
 
-.. [Demmel-Simon-UCB] Jim Demmel and Horst Simon, 
-   `Berkeley course on parallel computing <http://www.cs.berkeley.edu/~demmel/cs267_Spr09/>`_
+.. [Demmel-UCB] Jim Demmel, 
+   `Berkeley course on parallel computing <http://www.cs.berkeley.edu/~demmel/cs267_Spr12/>`_
 
+.. [Kloekner-Berger-NYU] Andreas Kloeckner and Marsha Berger,
+   `NYU course <http://wiki.tiker.net/Teaching/HPCFall2012/>`_
 
 .. [Berger-Bindel-NYU] Marsha Berger and David Bindel, 
    `NYU course <http://www.cs.nyu.edu/courses/fall08/G22.2945-001/index.html>`_
@@ -96,7 +94,7 @@ Other courses with useful slides or webpages
 
 .. [NERSC-tutorials] `NERSC tutorials <http://www.nersc.gov/nusers/help/tutorials/>`_
 
-.. [HPC-University] `<http://www.hpcuniv.org/resources/list/>`_
+.. [HPC-University] `<http://www.hpcuniv.org/>`_
 
 .. _biblio_links:
 
@@ -104,58 +102,63 @@ Other Links
 -----------
 
 Software
-^^^^^^^^^^^^^^^^
+-----------------------------------
 
 .. seealso:: :ref:`software_installation` for links to software download pages.
 
-.. [CosmicProject] `links to open source software <http://cosmicproject.org/links.html>`_
+.. [CosmicProject] `links to open source Python software <http://cosmicproject.org/links.html>`_
 
-Virtual machine:
-^^^^^^^^^^^^^^^^
+.. _biblio_vm:
+
+Virtual machine references
+-----------------------------------
 
 .. [VirtualBox] `<http://www.virtualbox.org/>`_
 
 .. [VirtualBox-documentation] `<http://www.virtualbox.org/wiki/Documentation>`_
 
-Sphinx:
-^^^^^^^^^^^^^^^^
+.. _biblio_sphinx:
 
-.. [sphinx] `<http://sphinx.pocoo.org>`_
+Sphinx references
+-----------------------------------
 
-.. [sphinx-documentation] `<http://sphinx.pocoo.org/contents.html>`_
+.. [sphinx] `<http://sphinx-doc.org>`_
 
-.. [sphinx-rst] `<http://sphinx.pocoo.org/rest.html>`_
+.. [sphinx-documentation] `<http://sphinx-doc.org/contents.html>`_
+
+.. [sphinx-rst] `<http://sphinx-doc.org/rest.html>`_
 
 .. [rst-documentation] `<http://docutils.sourceforge.net/rst.html>`_
 
 .. [sphinx-cheatsheet] `<http://matplotlib.sourceforge.net/sampledoc/cheatsheet.html>`_
 
-.. [sphinx-examples] `<http://sphinx.pocoo.org/examples.html>`_
+.. [sphinx-examples] `<http://sphinx-doc.org/examples.html>`_
 
 .. [sphinx-sampledoc] `<http://matplotlib.sourceforge.net/sampledoc/index.html>`_
 
 .. _biblio_python:
 
 Python:
-^^^^^^^^^^^^^^^^
+-----------------------------------
 
 .. [Python-2.5-tutorial] `<http://www.python.org/doc/2.5.2/tut/tut.html>`_
 
-.. [Python-2.6-tutorial] `<http://docs.python.org/tutorial/>`_
+.. [Python-2.7-tutorial] `<http://docs.python.org/tutorial/>`_
 
-.. [Python-3.0-tutorial] `<http://docs.python.org/dev/3.0/tutorial/>`_ 
+.. [Python-3.0-tutorial] `<http://docs.python.org/3.0/tutorial/>`_ 
    (we are *not* using Python 3.0 in this class!)
 
-.. [IPython-documentation] `<http://ipython.scipy.org/doc/stable/html/>`_
+.. [IPython-documentation] `<http://ipython.org/documentation.html>`_
+   (With lots of links to other documentation and tutorials)
 
-.. [IPython-links] `<http://ipython.scipy.org/moin/Documentation>`_
+.. [IPython-notebook] `<http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html>`_
 
-.. [Python-pdb] `Python debugger documentation <http://docs.python.org/library/pdb.html>`_
+.. [Python-pdb] `Python debugger documentation <http://docs.python.org/2/library/pdb.html>`_
 
-.. [IPython-pdb] `Using pdb from IPython <http://ipython.scipy.org/doc/stable/html/interactive/tutorial.html?highlight=pdb>`_
+.. _biblio_numpy:
 
-Numerical Python
-^^^^^^^^^^^^^^^^
+Numerical Python references
+-----------------------------------
 
 .. [NumPy-tutorial] `<http://www.scipy.org/Tentative_NumPy_Tutorial>`_
 
@@ -170,11 +173,12 @@ Numerical Python
 .. [Numerical-Python-links] 
    `<http://wiki.python.org/moin/NumericAndScientific>`_
 
+.. _biblio_unix:
 
-Unix, bash:
-^^^^^^^^^^^^^^^^
+Unix, bash references
+-----------------------------------
 
-.. [Reynolds-unix] `D. Reynolds unix page <http://dreynolds.math.smu.edu/Courses/Math6370_Spring11/unix.html>`_ has good links.
+.. [Reynolds-unix] `Dan Reynolds unix page <http://dreynolds.math.smu.edu/Courses/Math6370_Spring11/unix.html>`_ has good links.
 
 
 .. [Wikipedia-unix-utilities] `<http://en.wikipedia.org/wiki/List_of_Unix_utilities>`_
@@ -183,50 +187,84 @@ Unix, bash:
 
 .. [gnu-bash] `<http://www.gnu.org/software/bash/bash.html>`_
 
-.. [Wikipedia-bash] `<http://en.wikipedia.org/wiki/Bash>`_
+.. [Wikipedia-bash] `<http://en.wikipedia.org/wiki/Bash(Unix_shell)>`_
 
 .. [wikipedia-tar] `<http://en.wikipedia.org/wiki/Tar_%28file_format%29>`_
+   (tar files)
 
-.. _biblio_hg:
+.. _biblio_vcs:
 
-Mercurial and other version control systems:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. [hgbook] `<http://hgbook.red-bean.com/>`_
-
-.. [Bitbucket-hg-intro] `<http://bitbucket.org/help/GettingStartedWithMercurial>`_
-
-.. [hg-faq] `<http://mercurial.selenic.com/wiki/FAQ>`_
-
-.. [hg-hgrc] `<http://www.selenic.com/mercurial/hgrc.5.html>`_
+Version control systems references
+-----------------------------------
 
 .. [wikipedia-revision-control] `<http://en.wikipedia.org/wiki/Revision_control>`_
 
 .. [wikipedia-revision-control-software] `<http://en.wikipedia.org/wiki/List_of_revision_control_software>`_
 
+
+.. _biblio_git:
+
+Git references
+-----------------------------------
+
+.. [git-try] `Online interactive tutorial <http://try.github.com/>`_
+
+.. [git-tutorials] List of 10 tutorials `<http://sixrevisions.com/resources/git-tutorials-beginners/>`_
+
+
+.. [gitref] `<http://gitref.org/index.html>`_
+
+.. [git-book] Git Book `<http://git-scm.com/book/en/Getting-Started-Git-Basics>`_
+
+.. [github-help] Github help page: `<http://help.github.com/>`_
+
+.. [git-parable] `<http://tom.preston-werner.com/2009/05/19/the-git-parable.html>`_
+
+Mercurial references
+-----------------------------------
+
+.. [hgbook] `<http://hgbook.red-bean.com/>`_
+
+.. [hg-faq] `<http://mercurial.selenic.com/wiki/FAQ>`_
+
+.. _biblio_repro:
+
+Reproducibility references
+-----------------------------------
+
+
+.. [sci-code-manifesto]  `Science Code Manifesto <http://sciencecodemanifesto.org/>`_
+
+.. [icerm-workshop] `Links from a recent workshop on the topic
+  <http://icerm.brown.edu/tw12-5-rcem-wiki.php>`_
+
+.. [winter-school]  `A recent Winter School on the topic in Geilo, Norway:
+  <http://www.sintef.no/Projectweb/eVITA/Winter-Schools/2013/>`_
+
+
 .. _biblio_fortran:
 
-Fortran
-^^^^^^^
+Fortran references
+-----------------------------------
 
 Many tutorials and references are available online.  Search for
 "fortran 90 tutorial" or "fortran 95 tutorial" to find many others.
 
-.. [Reynolds-fortran] `D. Reynolds fortran page <http://dreynolds.math.smu.edu/Courses/Math6370_Spring11/fortran.html>`_ has good links.
+.. [Reynolds-fortran] Dan Reynolds fortran page `<http://dreynolds.math.smu.edu/Courses/Math6370_Spring11/fortran.html>`_ 
 
-.. [Shene-fortran] `C.-K. Shene's Fortran 90 tutorial <http://www.cs.mtu.edu/~shene/COURSES/cs201/NOTES/fortran.html>`_
+.. [Shene-fortran] C.-K. Shene's Fortran 90 tutorial `<http://www.cs.mtu.edu/~shene/COURSES/cs201/NOTES/fortran.html>`_
 
 
-.. [Dodson-fortran] `Zane Dodson's Fortran 90 tutorial <http://www.cisl.ucar.edu/tcg/consweb/Fortran90/F90Tutorial/tutorial.html>`_
+.. [Dodson-fortran] Zane Dodson's Fortran 90 tutorial `<http://www.cisl.ucar.edu/tcg/consweb/Fortran90/F90Tutorial/tutorial.html>`_
 
-.. [fortran-tutorials] `Links to a few other tutorials <http://gcc.gnu.org/wiki/Fortran%2095%20tutorials%20available%20online>`_
+.. [fortran-tutorials] Links to a few other tutorials `<http://gcc.gnu.org/wiki/Fortran%2095%20tutorials%20available%20online>`_
 
-.. [advanced-fortran] T. H. Kaiser, `Advanced Fortran 90 <http://www.sdsc.edu/~tkaiser/f90.html>1_
+.. [advanced-fortran] Kaiser, Advanced Fortran 90 `<http://www.sdsc.edu/~tkaiser/f90.html>`_
 
 .. _biblio_make:
 
-Makefiles:
-^^^^^^^^^^^^^^^^
+Makefile references
+-----------------------------------
 
 .. [carpentry-make] `<http://software-carpentry.org/4_0/make/>`_
 
@@ -238,8 +276,8 @@ Makefiles:
 
 .. _biblio_computer_arch:
 
-Computer architecture
-^^^^^^^^^^^^^^^^^^^^^
+Computer architecture references
+-----------------------------------
 
 .. [wikipedia-computer-architecture] `<http://en.wikipedia.org/wiki/Computer_architecture>`_
 
@@ -248,14 +286,14 @@ Computer architecture
 .. [wikipedia-moores-law] `<http://en.wikipedia.org/wiki/Moore%27s_law>`_.
 
 Floating point arithmetic
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 .. [Arnold-disasters] Doug Arnold's descriptions of some disasters due to
    bad numerical computing, 
    `<http://www.ima.umn.edu/~arnold/disasters/>`_
 
 Languages and compilers
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 .. [wikipedia-machine-code] `<http://en.wikipedia.org/wiki/Machine_code>`_
 
@@ -265,8 +303,8 @@ Languages and compilers
 
 .. _biblio_openmp:
 
-OpenMP:
-^^^^^^^^^^^^^^^^
+OpenMP references
+-----------------------------------
 
 .. [openmp-RR]  Section 6.3 and beyond of [Rauber-Ruenger]_
 
@@ -282,14 +320,14 @@ OpenMP:
 
 .. [openmp-fort90-examples] `<http://people.sc.fsu.edu/~burkardt/f_src/open_mp/open_mp.html>`_
 
-MPI:
-^^^^^^^^^^^^^^^^
+MPI references
+-----------------------------------
 
 .. [openmp-RR]  Chapter 5 of [Rauber-Ruenger]_
 
 
 Exa-scale computing
-^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 .. [exascale-doe] `Modeling and Simulation at the Exascale for Energy and the
    Environment, DOE Town Hall Meetings Report <http://www.er.doe.gov/ascr/ProgramDocuments/Docs/TownHall.pdf>`_

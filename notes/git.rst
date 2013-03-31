@@ -186,7 +186,7 @@ and modified as directed below.
 
         $ export MYHPSC=`pwd`
 
-   See the discussion above in section :ref:`classhg` for what this does.  You
+   See the discussion above in section :ref:`classgit` for what this does.  You
    will also probably want to add a line to your *.bashrc* file to define 
    *MYHPSC* similar to the line added for *UWHPSC*.
 
@@ -481,7 +481,6 @@ This is enough for now!
 repository.
 
 Feel free to experiment further with your repository at this point.
-See :ref:`git_more` for some more examples of how hg can be used.
 
 
 Further reading
@@ -496,6 +495,8 @@ Remember that you can get help with *git* commands by typing, e.g.::
 
 Each command has lots of options!
 
+:ref:`biblio_git` contains references to other sources of information and
+tutorials.
 
 
 

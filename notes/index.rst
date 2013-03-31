@@ -29,7 +29,7 @@ Course materials
    software_installation
    vm
    aws
-   resources
+   software_carpentry
    biblio
 
 .. _technical_topics:
@@ -41,16 +41,23 @@ Technical Topics
 .. toctree::
    :maxdepth: 2
 
-   licenses
    shells
    unix
    top
    ssh
    editors
+   reproducibility
    versioncontrol
    git
    github
    sphinx
+   metrics
+   computer_arch
+   memory
+   punchcard
+   arithmetic
+   python_and_fortran
+
 
 .. _toc_biblio:
 
@@ -63,3 +70,4 @@ References
 
 
    biblio
+   software_carpentry

@@ -178,5 +178,5 @@ see `documentation <http://ipython.scipy.org/doc/rel-0.10/html/interactive/shell
 Further reading
 ---------------
 
-[IPython-documentation]_, [IPython-links]_
+See [IPython-documentation]_
 

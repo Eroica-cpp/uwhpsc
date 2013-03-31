@@ -85,3 +85,7 @@ The best way to get a feel for how *git* works is to use it, for example
 by following the instructions in Section :ref:`git`.
 
 
+Further reading
+---------------
+
+See the :ref:`biblio_vcs` section of the bibliography.
