@@ -5,13 +5,26 @@
 Text editors
 =============================================================
 
+Leafpad
+-------
+
+A simple and lightweight editor, installed on the course VM.
+
+To use it, click on the green leaf in the bottom menu, or at the bash
+prompt::
+
+    $ leafpad <filename>
+
+
 gedit
 -----
 
 ``gedit`` is a simple, easy-to-use text editor with support for syntax
 highlighting for a variety of programming languages, including Python
 and Fortran.  It is installed by default on most GNOME-based Linux
-systems, such as Ubuntu, and is included in the :ref:`vm`.
+systems, such as Ubuntu.  It can be installed on the course VM via::
+
+    $ sudo apt-get install gedit
 
 NEdit
 -----
@@ -42,8 +55,9 @@ powerful text editor.  Its interface is extremely different from
 modern editors, and can be difficult to get used to, but ``vi`` can
 offer substantially higher productivity for an experienced user.  It
 is available for all operating systems; see `<http://www.vim.org/>`_
-for downloads and documentation.  A command line version of ``vi`` is
-already installed in the class VM.
+for downloads and documentation.  
+
+A command line version of ``vi`` is already installed in the class VM.
 
 emacs
 -----
@@ -54,6 +68,7 @@ but it is still extremely different from modern editors, and is also
 extremely different from ``vi``.  It offers similar productivity
 benefits to ``vi``.  See `<http://www.gnu.org/software/emacs/>`_ for
 downloads and documentation.  On a Debian or Ubuntu Linux system, such
-as the class VM, you can install it by typing ``sudo apt-get install
-emacs`` at the command line.
+as the class VM, you can install it via::
+
+    $ sudo apt-get install emacs
 

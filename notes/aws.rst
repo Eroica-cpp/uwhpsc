@@ -49,7 +49,7 @@ For general information and guides to getting started:
 * `UW eScience information on AWS <http://escience.washington.edu/get-help-now/get-started-amazon-web-services>`_.
 
 
-Finding the AMath 583 AMI
+Finding the *uwhpsc* AMI
 -------------------------
 
 Once you have an AWS account, sign in to the 
