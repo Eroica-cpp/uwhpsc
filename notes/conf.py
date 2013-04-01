@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'AMath 483/583, Spring 2013'
-copyright = u'2013, Randall J. LeVeque'
+copyright = u'2013, Randall J. LeVeque, CC BY'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
