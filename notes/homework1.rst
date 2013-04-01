@@ -5,7 +5,7 @@
 Homework 1 
 ==========================================
 
-.. warning :: Not yet assigned and may change.  
+.. comment :: Not yet assigned and may change.  
 
 
 Due Wednesday, April 10, 2011, by 11:00pm PDT.
