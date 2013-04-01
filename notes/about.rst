@@ -21,8 +21,7 @@ The goal is to get the student started with a few key concepts and
 techniques and then encourage further reading elsewhere.  
 So it is a collection of brief introductions to various important topics
 with pointers to books, websites, and other references for more details.
-See in particular the sections :ref:`resources` and :ref:`biblio` for useful
-pointers.
+See the :ref:`biblio` for more references and other suggested readings.
 
 There are many pointers to Wikipedia pages sprinkled through the notes and
 in the bibliography, simply because these pages often give a good overview
@@ -30,9 +29,24 @@ of issues without getting into too much detail.  They are not necessarily
 definitive sources of accurate information.  
 
 These notes are mostly written in Sphinx (see :ref:`sphinx`) and the input
-files are available using Mercurial (see :ref:`classhg`).
+files are available using git (see :ref:`classgit`).
 
-The notes are being made freely available but are protected by copyright. 
-As with anything you find on the web, if you quote from this work please
-give appropriate attribution.
+.. _license:
+
+License
+-------
+
+These notes are being made freely available and are released under the 
+`Creative Commons <http://creativecommons.org/>`_ `CC BY license
+<http://creativecommons.org/licenses/by/3.0/>`_.
+This means that you are welcome to use them and quote from them
+as long as you give appropriate attribution.
+
+Of course you should always do this with any material you find on the web or
+elsewhere, provided you are allowed to reuse it at all.  
+
+You should also give some thought to licensing issues whenever you post your
+own work on the web, including computer code.
+Whether or not you want others to be able to make use
+of it for various purposes, make your intentions known.
 

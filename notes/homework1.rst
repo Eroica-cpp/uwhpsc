@@ -5,7 +5,7 @@
 Homework 1 
 ==========================================
 
-.. warning :: Not yet assigned and may change.  
+.. comment :: Not yet assigned and may change.  
 
 
 Due Wednesday, April 10, 2011, by 11:00pm PDT.
@@ -133,7 +133,7 @@ some files that we can view to grade.
     Add and commit the modified `test2.sh` and the output files to your repository.
 
     **Note:** At the end you should have the following files committed
-    to your repository::
+    to your repository:
 
         * $MYHPSC/testfile.txt
         * $MYHPSC/homework1/test1.py
@@ -163,11 +163,11 @@ some files that we can view to grade.
  #. Finally, let us know where your Bitbucket repository is so that we can
     clone it and/or view your source files online in order to grade it.
     If you are registered in the class, you should be able access the
-    `Canvas Survey 1
-    <to_appear>`_.
-    Go to that page and follow instructions to send us this information.
+    `Canvas course webpage <https://canvas.uw.edu/courses/812916>`_.
+    Go to that page and follow instructions under Homework 1
+    to send us this information.
 
-    On this page you will also have to submit the SHA-1 hash of the 
+    You will also have to submit the SHA-1 hash of the 
     commit that you want graded.  This is the 40-digit hexadecimal string
     that shows up when you type::
 

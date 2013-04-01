@@ -52,6 +52,9 @@ For general information and guides to getting started:
 Finding the *uwhpsc* AMI
 -------------------------
 
+.. warning::
+   This AMI is not yet available.
+
 Once you have an AWS account, sign in to the 
 `management console <https://console.aws.amazon.com/ec2/>`_
 and click on the
