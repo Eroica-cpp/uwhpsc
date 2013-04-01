@@ -92,15 +92,28 @@ new notes, sample programs, and homeworks will be added.  In order
 to bring these changes over to your cloned copy, all you need to do is::
 
         $ cd $UWHPSC
-        $ git fetch
+        $ git fetch origin
         $ git merge origin/master
 
 Of course this assumes that *UWHPSC* has been properly set, see above.
 
+The *git fetch* command instructs *git* to fetch any changes from *origin*,
+which points to the remote bitbucket repository that you originally cloned
+from.  In the merge command, `origin/master` refers to the master branch 
+in this repository (which
+is the only branch that exists for this particular repository).
+This merges any changes retrieved into the files in your current working
+directory.
+
 The last two command can be combined as::
+
+        $ git pull origin master
+
+or simply::
 
         $ git pull
  
+since `origin` and `master` are the defaults.
 
 
 .. _mygit:
