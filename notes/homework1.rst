@@ -35,9 +35,14 @@ links they point to.  In particular, the following sections are relevant:
 By doing this homework you create a bitbucket repository containing
 some files that we can view to grade.
 
+See also the `Bitbucket 101 instructions
+<https://confluence.atlassian.com/display/BITBUCKET/Bitbucket+101>`_ that
+for more tips on setting up bitbucket accounts and using git.
+
  #. First, if you have not already completed the survey on your background
     and computing needs, please do so now.  You can find it 
-    `here <https://catalyst.uw.edu/webq/survey/rjl/128895>`_.
+    `here` eventually.
+    Due to technical difficulties with Canvas it is not yet available.
 
  #. Make sure you have access to *git* on the computer you plan to use
     (see :ref:`software_installation`).  Read the section :ref:`git` and the

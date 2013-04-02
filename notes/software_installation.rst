@@ -220,7 +220,7 @@ NumPy                     python-numpy
 SciPy                     python-scipy
 Matplotlib                python-matplotlib
 Python development files  python-dev
-Mercurial                 mercurial
+Git                       git
 Sphinx                    python-sphinx
 gfortran                  gfortran
 OpenMPI libraries         libopenmpi-dev
