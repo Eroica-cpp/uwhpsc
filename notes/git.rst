@@ -153,8 +153,6 @@ Follow these directions exactly.  Doing so is part of :ref:`homework1`.
 We will clone your repository and check that *testfile.txt* has been created
 and modified as directed below.
 
-.. warning:: Homework 1 is subject to change and these instructions may be
-   modified, so you might want to wait until the quarter starts.
 
 #. On the machine you're working on:: 
 
@@ -462,7 +460,7 @@ and modified as directed below.
 
    Now do::
 
-        $ git push
+        $ git push -u origin master
 
    This will prompt for your Bitbucket password and should then print
    something indicating that it has uploaded these two commits to
@@ -472,6 +470,22 @@ and modified as directed below.
    the entire history of your commits is now stored in the repository.  If
    someone else clones the repository, they get the entire commit history
    and could revert to any previous version, for example.
+
+   To push future commits to bitbucket, you should only need to do::
+
+        $ git push
+
+   and by default it will push your master branch (the only branch you
+   have, probably) to `origin`, which is the shorthand name for the 
+   place you originally cloned the repository from.  To see where this
+   actually points to::
+
+        $ git remote -v
+
+   This lists all `remotes`.  
+   By default there is only one, the place you cloned the repository from.
+   (Or none if you had created a new repository using `git init` rather
+   than cloning an existing one.)  
 
 #. Check that the file is in your Bitbucket repository:  Go back to that web
    page for your repository and click on the  "Source" tab at the top.  It
