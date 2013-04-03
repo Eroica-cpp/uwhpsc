@@ -1,0 +1,8 @@
+#!/bin/sh
+#Finish up Script--does some cleanup then shuts down
+
+#prevent network problems
+rm -f /etc/udev/rules.d/70-persistent-net.rules
+
+#shutdown
+shutdown -h now

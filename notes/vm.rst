@@ -267,7 +267,79 @@ If step 3 doesn't work the first time, you might need to:
     #. Double click 'autorun.sh'.
     #. Enter the VM password to install. 
 
+How This Virtual Machine was made
+-----------------------------------
 
+    1. Download Ubuntu 12.04 PC (Intel x86) alternate install ISO from 
+       http://cdimage.ubuntu.com/xubuntu/releases/12.04.2/release/xubuntu-12.04.2-alternate-i386.iso
+
+    2. Create a new virtual box
+
+    3. Set the system as Ubuntu
+
+    4. Use defualt options
+
+    5. After that double click on your new virtual machine...a dropdown
+       box should appear where you can select
+       your ubuntu iso
+
+    6. As you are installing...at the first menu hit F4 and install a 
+       command line system
+
+    7. Let the install proceed following the instructions as given. On most
+       options the default answer will be appropriate.
+       When it comes time to format the hard drive, choose the manual option.
+       Format all the free space and set it as the mount
+       point. From the next list choose root (you dont need a swap space). 
+
+    8. Install the necessary packages
+
+       .. literalinclude:: install.sh
+
+    9. To setup the login screen edit the file Xresources so that the 
+       greeting line says.::
+
+	xlogin*greeting: Login and Password are uwhpsc
+
+    10. Create the file uwhpscvm-shutdown.::
+
+        .. literalinclude:: uwhpscvm-shutdown
+
+    11. Save it at.::
+
+	/usr/local/bin/uwhpscvm-shutdown
+
+    12. Execute the following command command.::
+
+	$ sudo chmod +x /usr/local/bin/uwhpscvm-shutdown
+
+    13. Right click on the upper panel and select add new items and choose
+        to add a new launcher.
+
+    14. Name the new launcher something like shutdown and in the command 
+        blank copy the following line.::
+
+	 gksudo /usr/local/bin/uwhpscvm-shutdown
+
+    15. Go to preferred applications and select Thunar for file managment 
+        and the xfce4 terminal.
+
+    16. Run jockey-gtk and install guest-additions.
+
+    17. Go to Applications then Settings then screensaver and select 
+        "disable screen saver" mode
+
+    18. In the settings menu select the general settings and hit the advanced
+        tab. Here you can set the clipboard and drag
+        and drop to allow Host To Guest.
+
+    19. Shutdown the machine and then go to the main virtualbox screen.
+        Click on the virtualmachine and then hit the settings button.
+
+    20. After, in the system settings click on the processor tab. This may let
+        you allow the virtual machine to use more than one processor (depending
+        on your computer). Choose a setting somewhere in the green section of
+        the Processors slider. 
 
 About the VM
 ------------
