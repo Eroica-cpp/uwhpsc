@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Unix top command &mdash; AMath 483/583, Spring 2013 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="AMath 483/583, Spring 2013 1.0 documentation" href="index.html" />
+    <link rel="next" title="Using ssh to connect to remote computers" href="ssh.html" />
+    <link rel="prev" title="Unix, Linux, and OS X" href="unix.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: #F0D576; text-align: left; padding: 10px 10px 15px 15px">
+<table>
+<tr>
+<td>
+<a href="http://www.amath.washington.edu/"><img src="_static/uwamath.gif" border="0" alt="UW AMath"/></a>
+</td>
+<td>
+<font size=5> High Performance Scientific Computing</font>
+<br>&nbsp;<br>
+<font size=5> AMath 483/583 Class Notes</font>
+<br>&nbsp;<br>
+<font size=5> Spring Quarter, 2013 </font>
+</td>
+</tr>
+</table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ssh.html" title="Using ssh to connect to remote computers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="unix.html" title="Unix, Linux, and OS X"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Unix <tt class="docutils literal"><span class="pre">top</span></tt> command</a><ul>
+<li><a class="reference internal" href="#running-top">Running <tt class="docutils literal"><span class="pre">top</span></tt></a></li>
+<li><a class="reference internal" href="#summary-area">Summary area</a></li>
+<li><a class="reference internal" href="#task-area">Task area</a></li>
+<li><a class="reference internal" href="#interactive-commands">Interactive commands</a></li>
+<li><a class="reference internal" href="#further-reading">Further reading</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="unix.html"
+                        title="previous chapter">Unix, Linux, and OS X</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ssh.html"
+                        title="next chapter">Using ssh to connect to remote computers</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/top.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="unix-top-command">
+<span id="topcommand"></span><h1>Unix <tt class="docutils literal"><span class="pre">top</span></tt> command<a class="headerlink" href="#unix-top-command" title="Permalink to this headline">¶</a></h1>
+<p>The Unix <tt class="docutils literal"><span class="pre">top</span></tt> command is a very useful way to see what programs are
+currently running on the system and how heavily they are using system
+resources.  (The command is named &#8220;top&#8221; because it shows the top users
+of the system.)  It is a good idea to run <tt class="docutils literal"><span class="pre">top</span></tt> to check for other
+users running large programs before running one yourself on a shared
+computer (such as the Applied Math servers), and you can also use it
+to monitor your own programs.</p>
+<div class="section" id="running-top">
+<h2>Running <tt class="docutils literal"><span class="pre">top</span></tt><a class="headerlink" href="#running-top" title="Permalink to this headline">¶</a></h2>
+<p>To run <tt class="docutils literal"><span class="pre">top</span></tt>, simply type:</p>
+<div class="highlight-python"><pre>$ top</pre>
+</div>
+<p>at the command line.  <tt class="docutils literal"><span class="pre">top</span></tt> will fill your terminal window with a
+real-time display of system status, with a summary area displaying
+general information about memory and processor usage in the first few
+lines, followed by a list of processes and information about them.  An
+example display is shown below, with the process list truncated for
+brevity:</p>
+<div class="highlight-python"><pre>top - 14:45:34 up  6:32,  2 users,  load average: 0.78, 0.61, 0.59
+Tasks: 110 total,   3 running, 106 sleeping,   0 stopped,   1 zombie
+Cpu(s): 75.0%us,  0.6%sy,  0.0%ni, 24.4%id,  0.0%wa,  0.0%hi,  0.0%si,
+0.0%st
+Mem:    507680k total,   491268k used,    16412k free,    24560k buffers
+Swap:        0k total,        0k used,        0k free,   316368k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+ 2342 uwhpsc    20   0  8380 1212  796 R  300  0.2   0:28.55 jacobi2d.exe
+  842 root      20   0  100m  24m 9780 R    2  5.0 178:27.50 Xorg
+ 1051 uwhpsc    20   0 40236  11m 8904 S    1  2.3   0:01.53 xfce4-terminal
+    1 root      20   0  3528 1864 1304 S    0  0.4   0:01.12 init
+    2 root      20   0     0    0    0 S    0  0.0   0:00.00 kthreadd</pre>
+</div>
+</div>
+<div class="section" id="summary-area">
+<h2>Summary area<a class="headerlink" href="#summary-area" title="Permalink to this headline">¶</a></h2>
+<p>The summary area shows a great deal of information about the general
+state of the system.  The main highlights are the third through fifth
+lines, which show CPU and memory usage.</p>
+<p>CPU is given as percentages spent doing various tasks.  The
+abbreviations have the following meanings:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">us</span></tt> &#8211; time spent running non-niced user processes (most of your
+programs will fall into this category)</li>
+<li><tt class="docutils literal"><span class="pre">sy</span></tt> &#8211; time spent running the Linux kernel and its processes</li>
+<li><tt class="docutils literal"><span class="pre">ni</span></tt> &#8211; time spent running niced use processes</li>
+<li><tt class="docutils literal"><span class="pre">id</span></tt> &#8211; time spent idle</li>
+<li><tt class="docutils literal"><span class="pre">wa</span></tt> &#8211; time spent waiting for I/O</li>
+</ul>
+<p>The fourth and fifth lines show the usage of physical (i.e. actual RAM
+chips) and virtual memory.  The first three fields are mostly
+self-explanatory, though on Linux the <tt class="docutils literal"><span class="pre">used</span></tt> memory includes disk
+cache.  (Linux uses RAM that&#8217;s not allocated by programs to cache data
+from the disk, which can improve the computer&#8217;s performance because
+RAM is much faster than disk.)  <tt class="docutils literal"><span class="pre">buffers</span></tt> gives the amount
+of memory used for I/O buffering, and <tt class="docutils literal"><span class="pre">cached</span></tt> is the amount used by
+the disk cache.  Programs&#8217; memory allocation takes priority over
+buffering and caching, so the total amount of memory available is the
+sum <tt class="docutils literal"><span class="pre">free</span> <span class="pre">+</span> <span class="pre">buffers</span> <span class="pre">+</span> <span class="pre">cached</span></tt>.</p>
+</div>
+<div class="section" id="task-area">
+<h2>Task area<a class="headerlink" href="#task-area" title="Permalink to this headline">¶</a></h2>
+<p>The task area gives a sorted list of the processes currently running
+on your system.  By default, the list is sorted in descending order of
+CPU usage; the example display above is sorted by memory usage
+instead.  Many different fields can be displayed in the task area; the
+default fields are:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">PID</span></tt>: Process ID number.  Useful for killing processes.</li>
+<li><tt class="docutils literal"><span class="pre">USER</span></tt>: Name of the user running the process.</li>
+<li><tt class="docutils literal"><span class="pre">PR</span></tt>: Relative priority of the process.</li>
+<li><tt class="docutils literal"><span class="pre">NI</span></tt>: Nice value of the process.  Negative nice values give a
+process higher priority, while positive ones give it lower
+priority.</li>
+<li><tt class="docutils literal"><span class="pre">VIRT</span></tt>: Total amount of memory used by the process.  This
+includes all code, data, and shared libraries being used.  The
+field name comes from the fact that this includes memory that has
+been swapped to disk, so it measures the total virtual memory used,
+not necessarily how much of it is currently present in RAM.</li>
+<li><tt class="docutils literal"><span class="pre">RES</span></tt>: Total amount of physical (&#8220;resident&#8221;) memory used by the
+process.</li>
+<li><tt class="docutils literal"><span class="pre">S</span></tt>: Process status.  The most common values are <tt class="docutils literal"><span class="pre">S</span></tt> for
+&#8220;Sleeping&#8221; or <tt class="docutils literal"><span class="pre">R</span></tt> for &#8220;Running&#8221;.</li>
+<li><tt class="docutils literal"><span class="pre">%CPU</span></tt>: Percent of CPU time being used by the process.  This is
+relative to a single CPU; in a multiprocessor system, it may be
+higher than 100%.</li>
+<li><tt class="docutils literal"><span class="pre">%MEM</span></tt>: Percent of available RAM being used by the process.  This
+does not include data that has been swapped to disk.</li>
+<li><tt class="docutils literal"><span class="pre">TIME+</span></tt>: Total CPU time used by the process since it started.
+This only counts the time the process has spent using the CPU, not
+time spent sleeping.</li>
+<li><tt class="docutils literal"><span class="pre">COMMAND</span></tt>: The name of the program.</li>
+</ul>
+</div>
+<div class="section" id="interactive-commands">
+<h2>Interactive commands<a class="headerlink" href="#interactive-commands" title="Permalink to this headline">¶</a></h2>
+<p>There are many useful commands you can issue to <tt class="docutils literal"><span class="pre">top</span></tt>; only a few of
+them are listed here.  For more information, see the <tt class="docutils literal"><span class="pre">top</span></tt> manual
+page.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">q</span></tt></td>
+<td>Quit</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">?</span></tt></td>
+<td>Help</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">u</span></tt></td>
+<td>Select processes belonging to a particular user.  Useful on shared systems.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">k</span></tt></td>
+<td>Kill a process</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">F</span></tt></td>
+<td>Select which field to sort by</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<p>For more information, see the quick reference guide at
+<a class="reference external" href="http://www.oreillynet.com/linux/cmd/cmd.csp?path=t/top">http://www.oreillynet.com/linux/cmd/cmd.csp?path=t/top</a>, or type
+<tt class="docutils literal"><span class="pre">man</span> <span class="pre">top</span></tt> in a Unix terminal window to read the manual page.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ssh.html" title="Using ssh to connect to remote computers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="unix.html" title="Unix, Linux, and OS X"
+             >previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Randall J. LeVeque.
+      Last updated on Mar 31, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

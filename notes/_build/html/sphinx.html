@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sphinx documentation &mdash; AMath 483/583, Spring 2013 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="AMath 483/583, Spring 2013 1.0 documentation" href="index.html" />
+    <link rel="next" title="Bibliography and further reading" href="biblio.html" />
+    <link rel="prev" title="Git" href="git.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: #F0D576; text-align: left; padding: 10px 10px 15px 15px">
+<table>
+<tr>
+<td>
+<a href="http://www.amath.washington.edu/"><img src="_static/uwamath.gif" border="0" alt="UW AMath"/></a>
+</td>
+<td>
+<font size=5> High Performance Scientific Computing</font>
+<br>&nbsp;<br>
+<font size=5> AMath 483/583 Class Notes</font>
+<br>&nbsp;<br>
+<font size=5> Spring Quarter, 2013 </font>
+</td>
+</tr>
+</table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="biblio.html" title="Bibliography and further reading"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="git.html" title="Git"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sphinx documentation</a><ul>
+<li><a class="reference internal" href="#using-sphinx-for-your-own-project">Using Sphinx for your own project</a></li>
+<li><a class="reference internal" href="#using-sphinx-to-create-these-webpages">Using Sphinx to create these webpages</a></li>
+<li><a class="reference internal" href="#making-a-pdf-version">Making a pdf version</a></li>
+<li><a class="reference internal" href="#further-reading">Further reading</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="git.html"
+                        title="previous chapter">Git</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="biblio.html"
+                        title="next chapter">Bibliography and further reading</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/sphinx.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sphinx-documentation">
+<span id="sphinx"></span><h1>Sphinx documentation<a class="headerlink" href="#sphinx-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Sphinx is a Python-based documentation system that allows writing
+documentation in a simple mark-up language called ReStructuredText, which
+can then be converted to html or to latex files (and then to pdf or
+postscript).  See <a class="reference internal" href="biblio.html#id4">[sphinx]</a> for general information,
+<a class="reference internal" href="biblio.html#sphinx-documentation">[sphinx-documentation]</a> for a
+complete manual, and <a class="reference internal" href="biblio.html#sphinx-rst">[sphinx-rst]</a> or <a class="reference internal" href="biblio.html#rst-documentation">[rst-documentation]</a>
+for a primer on ReStructuredText.
+See also <a class="reference internal" href="biblio.html#sphinx-cheatsheet">[sphinx-cheatsheet]</a>.</p>
+<p>Although originally designed for aiding in documentation of Python software,
+it is now being used for documentation of packages in other languages as
+well.  See <a class="reference internal" href="biblio.html#sphinx-examples">[sphinx-examples]</a> for a list of other projects that use Sphinx.</p>
+<p>It can also be used for things beyond software documentation.  In
+particular, it has been used to create the class note webpages that you are
+now reading.  It was chosen for two main reasons:</p>
+<ol class="arabic simple">
+<li>It is a convenient way to create a set of hyper-linked web pages on a variety
+of topics without having to write raw html or worry much about formatting.</li>
+<li>Writing good documentation is a crucial aspect of high performance
+scientific computing and students in this class should learn ways to
+simplify this task.  For this reason many homework assignments must be
+&#8220;submitted&#8221; in the form of Sphinx pages.</li>
+</ol>
+<p>The easiest way to learn how to create Sphinx pages is to read some of the
+documentation
+and then examine Sphinx pages such as the one you are now reading to see how
+it is written.  You can do this with these class notes or you might look at
+one of the other <a class="reference internal" href="biblio.html#sphinx-examples">[sphinx-examples]</a> to see other styles.</p>
+<p>Note that any time you are reading a page of these class notes (or other
+things created with Sphinx) there is generally a menu item <em>Show Source</em> (on
+this page it&#8217;s on the left, under the heading <em>This Page</em>) and clicking on
+this link shows the raw text file as originally written.  <em>Try this now</em>.</p>
+<p>It is possible to customize Sphinx so the pages look very different, as
+you&#8217;ll see if you visit some other projects listed at <a class="reference internal" href="biblio.html#sphinx-examples">[sphinx-examples]</a>.</p>
+<div class="section" id="using-sphinx-for-your-own-project">
+<h2>Using Sphinx for your own project<a class="headerlink" href="#using-sphinx-for-your-own-project" title="Permalink to this headline">¶</a></h2>
+<p>If you want to create your own set of Sphinx pages for some project, it is
+easy to get started following the instructions at <a class="reference internal" href="biblio.html#id4">[sphinx]</a>, or for a quick
+start with a different look and feel, see <a class="reference internal" href="biblio.html#sphinx-sampledoc">[sphinx-sampledoc]</a>.</p>
+</div>
+<div class="section" id="using-sphinx-to-create-these-webpages">
+<h2>Using Sphinx to create these webpages<a class="headerlink" href="#using-sphinx-to-create-these-webpages" title="Permalink to this headline">¶</a></h2>
+<p>If you clone the hg repository for this class (see <em class="xref std std-ref">hg</em>), you will find
+a subdirectory called <em>sphinx</em>, containing a number of files with the
+extension <em>.rst</em>, one for each webpage, containing the ReStructuredText
+input.  To create the html pages, first make sure you have Sphinx installed
+via:</p>
+<div class="highlight-python"><pre>$ which sphinx</pre>
+</div>
+<p>(see <a class="reference internal" href="software_installation.html#software-installation"><em>Downloading and installing software for this class</em></a>) and then type:</p>
+<div class="highlight-python"><pre>$ make html</pre>
+</div>
+<p>This should process all the files (see <em class="xref std std-ref">makefiles</em>) and create a
+subdirectory of <em>sphinx</em> called <em>_build/html</em>.  The file
+<em>_build/html/index.html</em> contains the main Table of Contents page.
+Navigate your browser to this page using <em>Open File</em> on the <em>File</em> menu of
+your browser.</p>
+<p>Or you may be able to direct Firefox directly to this page via:</p>
+<div class="highlight-python"><pre>$ firefox _build/html/index.html</pre>
+</div>
+</div>
+<div class="section" id="making-a-pdf-version">
+<h2>Making a pdf version<a class="headerlink" href="#making-a-pdf-version" title="Permalink to this headline">¶</a></h2>
+<p>If you type:</p>
+<div class="highlight-python"><pre>$ make latex</pre>
+</div>
+<p>then Sphinx will create a subdirectory <em>_build/latex</em> containing latex
+files.  If you have latex installed, you can then do:</p>
+<div class="highlight-python"><pre>$ cd _build/latex
+$ make all-pdf</pre>
+</div>
+<p>to run latex and create a pdf version of all the class notes.</p>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="biblio.html#id4">[sphinx]</a> for general information, <a class="reference internal" href="biblio.html#sphinx-documentation">[sphinx-documentation]</a> for a
+complete manual, and <a class="reference internal" href="biblio.html#sphinx-rst">[sphinx-rst]</a> or <a class="reference internal" href="biblio.html#rst-documentation">[rst-documentation]</a>.
+See also <a class="reference internal" href="biblio.html#sphinx-cheatsheet">[sphinx-cheatsheet]</a>.</p>
+<p>See <a class="reference internal" href="biblio.html#sphinx-sampledoc">[sphinx-sampledoc]</a> to get started on your own project.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="biblio.html" title="Bibliography and further reading"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="git.html" title="Git"
+             >previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Randall J. LeVeque.
+      Last updated on Mar 21, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

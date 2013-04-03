@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Version Control Software &mdash; AMath 483/583, Spring 2013 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="AMath 483/583, Spring 2013 1.0 documentation" href="index.html" />
+    <link rel="next" title="Git" href="git.html" />
+    <link rel="prev" title="Text editors" href="editors.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: #F0D576; text-align: left; padding: 10px 10px 15px 15px">
+<table>
+<tr>
+<td>
+<a href="http://www.amath.washington.edu/"><img src="_static/uwamath.gif" border="0" alt="UW AMath"/></a>
+</td>
+<td>
+<font size=5> High Performance Scientific Computing</font>
+<br>&nbsp;<br>
+<font size=5> AMath 483/583 Class Notes</font>
+<br>&nbsp;<br>
+<font size=5> Spring Quarter, 2013 </font>
+</td>
+</tr>
+</table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="git.html" title="Git"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="editors.html" title="Text editors"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Version Control Software</a><ul>
+<li><a class="reference internal" href="#client-server-systems">Client-server systems</a></li>
+<li><a class="reference internal" href="#distributed-systems">Distributed systems</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="editors.html"
+                        title="previous chapter">Text editors</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="git.html"
+                        title="next chapter">Git</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/versioncontrol.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="version-control-software">
+<span id="versioncontrol"></span><h1>Version Control Software<a class="headerlink" href="#version-control-software" title="Permalink to this headline">¶</a></h1>
+<p>In this class we will use <em>git</em>.  See the section <a class="reference internal" href="git.html#git"><em>Git</em></a>
+for more information on using <em>git</em> and the repositories required for this
+class.</p>
+<p>There are many other version control systems that are currently popular,
+such as cvs, Subversion, Mercurial, and Bazaar.
+See <a class="reference internal" href="biblio.html#wikipedia-revision-control-software">[wikipedia-revision-control-software]</a> for a much longer list with
+links.
+See <a class="reference internal" href="biblio.html#wikipedia-revision-control">[wikipedia-revision-control]</a> for a general discussion of such systems.</p>
+<p>Version control systems were originally developed to aid in the development
+of large software projects with many authors working on inter-related
+pieces.  The basic idea is that you want to work on a file (one piece of the
+code), you check it out of a repository, make changes, and then check it
+back in when you&#8217;re satisfied.  The repository keeps track of all changes
+(and who made them) and can restore any previous version of a single file or
+of the state of the whole project.  It does not keep a full copy of every
+file ever checked in, it keeps track of differences (<a href="#id3"><span class="problematic" id="id4">*</span></a>diff*s) between
+versions, so if you check in a version that only has one line changed from
+the previous version, only the characters that actually changed are kept
+track of.</p>
+<p>It sounds like a hassle to be checking files in and out, but there are a
+number of advantages to this system that make version control an
+extremely useful tool even for use with you own projects if you are the only
+one working on something.  Once you get comfortable with it you may wonder
+how you ever lived without it.</p>
+<p>Advantages include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>You can revert to a previous version of a file if you decide the changes
+you made are incorrect.  You can also easily compare different versions
+to see what changes you made, e.g. where a bug was introduced.</li>
+<li>If you use a computer program and some set of data to produce some
+results for a publication, you can check in exactly the code and data
+used.  If you later want to modify the code or data to produce new results,
+as generally happens with computer programs, you still have access to the
+first version without having to archive a full copy of all files for
+every experiment you do.  Working in this manner is crucial if you want
+to be able to later reproduce earlier results, as if often necessary if
+you need to tweak the plots for to some journal&#8217;s specifications or if a
+reader of your paper wants to know exactly what parameter choices you
+made to get a certain set of results.   This is an important aspect of
+doing <em>reproducible research</em>, as should be required in science.  (See
+Section <em class="xref std std-ref">repro_research</em>).  If nothing else you can save yourself
+hours of headaches down the road trying to figure out how you got your
+own results.</li>
+<li>If you work on more than one machine, e.g. a desktop and laptop, version
+control systems are one way to keep your projects synched up between
+machines.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="client-server-systems">
+<h2>Client-server systems<a class="headerlink" href="#client-server-systems" title="Permalink to this headline">¶</a></h2>
+<p>The original version control systems all used a client-server model, in
+which there is one computer that contains <strong>the repository</strong> and everyone
+else checks code into and out of that repository.</p>
+<p>Systems such as CVS and Subversion (svn) have this form.
+An important feature of these systems is that only the repository has the
+full history of all changes made.</p>
+<p>There is a <a class="reference external" href="http://software-carpentry.org/4_0/vc/">software-carpentry webpage on version control</a> that gives a brief overview
+of client-server systems.</p>
+</div>
+<div class="section" id="distributed-systems">
+<h2>Distributed systems<a class="headerlink" href="#distributed-systems" title="Permalink to this headline">¶</a></h2>
+<p>Git, and other systems such as Mercurial and Bazaar, use a distributed
+system in which there is not necessarily a &#8220;master repository&#8221;.  Any working
+copy contains the full history of changes made to this copy.</p>
+<p>The best way to get a feel for how <em>git</em> works is to use it, for example
+by following the instructions in Section <a class="reference internal" href="git.html#git"><em>Git</em></a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="git.html" title="Git"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="editors.html" title="Text editors"
+             >previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Randall J. LeVeque.
+      Last updated on Mar 21, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

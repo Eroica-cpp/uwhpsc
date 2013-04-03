@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Amazon Web Services EC2 AMI &mdash; AMath 483/583, Spring 2013 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="AMath 483/583, Spring 2013 1.0 documentation" href="index.html" />
+    <link rel="next" title="Bibliography and further reading" href="biblio.html" />
+    <link rel="prev" title="Virtual Machine for this class" href="vm.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: #F0D576; text-align: left; padding: 10px 10px 15px 15px">
+<table>
+<tr>
+<td>
+<a href="http://www.amath.washington.edu/"><img src="_static/uwamath.gif" border="0" alt="UW AMath"/></a>
+</td>
+<td>
+<font size=5> High Performance Scientific Computing</font>
+<br>&nbsp;<br>
+<font size=5> AMath 483/583 Class Notes</font>
+<br>&nbsp;<br>
+<font size=5> Spring Quarter, 2013 </font>
+</td>
+</tr>
+</table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="biblio.html" title="Bibliography and further reading"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="vm.html" title="Virtual Machine for this class"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Amazon Web Services EC2 AMI</a><ul>
+<li><a class="reference internal" href="#finding-the-amath-583-ami">Finding the AMath 583 AMI</a></li>
+<li><a class="reference internal" href="#lanching-an-instance">Lanching an instance</a></li>
+<li><a class="reference internal" href="#logging-on-to-your-instance">Logging on to your instance</a></li>
+<li><a class="reference internal" href="#transferring-files-to-from-your-instance">Transferring files to/from your instance</a></li>
+<li><a class="reference internal" href="#stopping-your-instance">Stopping your instance</a></li>
+<li><a class="reference internal" href="#creating-your-own-ami">Creating your own AMI</a></li>
+<li><a class="reference internal" href="#viewing-webpages-directly-from-your-instance">Viewing webpages directly from your instance</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="vm.html"
+                        title="previous chapter">Virtual Machine for this class</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="biblio.html"
+                        title="next chapter">Bibliography and further reading</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/aws.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="amazon-web-services-ec2-ami">
+<span id="aws"></span><h1>Amazon Web Services EC2 AMI<a class="headerlink" href="#amazon-web-services-ec2-ami" title="Permalink to this headline">¶</a></h1>
+<p>We are using a wide variety of software in this class, much of which is
+probably not found on your computer.  It is all open source software (see
+<em class="xref std std-ref">licences</em>) and links/instructions
+can be found in the section <a class="reference internal" href="software_installation.html#software-installation"><em>Downloading and installing software for this class</em></a>.
+You can also use the <a class="reference internal" href="vm.html#vm"><em>Virtual Machine for this class</em></a>.</p>
+<p>Another alternative is to write and run your programs &#8220;in the cloud&#8221;
+using Amazon Web Services (AWS) Elastic Cloud Computing (EC2).
+You can start up an &#8220;instance&#8221; (your own private computer, or so it appears)
+that is configured using an Amazon Machine Image (AMI) that has been
+configured with the Linux operating system and containing
+all the software needed for this class.</p>
+<p>You must first sign up for an account  on the <a class="reference external" href="http://aws.amazon.com/">AWS main page</a>.  For this you will need a credit
+card, but note that with an account you can get 750 hours per month of
+free &#8220;micro instance&#8221; usage in the
+<a class="reference external" href="http://aws.amazon.com/free/">free usage tier</a>.
+A micro instance is a single processor (that you will probably be sharing
+with others) so it&#8217;s not suitable for trying out parallel computing, but
+should be just fine for much of the programming work in this class.</p>
+<p>You can start up more powerful instances with 2 or more processors for a cost
+starting at about 14.5 cents per hour (the High CPU Medium on-demand
+instance).  See the <a class="reference external" href="http://aws.amazon.com/ec2/#pricing">pricing guide</a>.</p>
+<p>For general information and guides to getting started:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.amazonwebservices.com/AWSEC2/latest/GettingStartedGuide/">Getting started with EC2</a>,
+with tutorial to lead you through an example.</li>
+<li><a class="reference external" href="http://aws.amazon.com/ec2/faqs">EC2 FAQ</a>.</li>
+<li><a class="reference external" href="http://aws.amazon.com/ec2/#pricing">Pricing</a>.  Note: you are charged
+per hour for hours (or fraction thereof) that your instance is in
+<cite>running</cite> mode, regardless of whether the CPU is being used.</li>
+<li><a class="reference external" href="http://aws.amazon.com/hpc-applications/">High Performance Computing on AWS</a>
+with instructions on starting a cluster instance.</li>
+<li><a class="reference external" href="http://escience.washington.edu/get-help-now/get-started-amazon-web-services">UW eScience information on AWS</a>.</li>
+</ul>
+<div class="section" id="finding-the-amath-583-ami">
+<h2>Finding the AMath 583 AMI<a class="headerlink" href="#finding-the-amath-583-ami" title="Permalink to this headline">¶</a></h2>
+<p>Once you have an AWS account, sign in to the
+<a class="reference external" href="https://console.aws.amazon.com/ec2/">management console</a>
+and click on the
+EC2 tab, and then select Region US East (which has cheaper rates) and click
+on <cite>AMIs</cite> on the menu to the left.</p>
+<p>Change <cite>Viewing:</cite> to <cite>All Images</cite> and <cite>All Platforms</cite> and then <em>after</em> it
+has finished loading the database start typing
+<cite>uwhpsc</cite> in the search bar.</p>
+</div>
+<div class="section" id="lanching-an-instance">
+<h2>Lanching an instance<a class="headerlink" href="#lanching-an-instance" title="Permalink to this headline">¶</a></h2>
+<p>Select the <cite>uwhpsc</cite> image and then
+click on the <cite>Launch</cite> button on this page to start launching an instance
+based on this AMI.  This means a virtual machine will be started for you,
+initialized with this disk image (which is a Ubuntu linux distribution with
+all the software we need pre-loaded).</p>
+<p>Next you can select what sort of instance you wish to start (larger
+instances cost more per hour).</p>
+<p>Click <cite>Continue</cite> on the next few screens and eventually you get to one that
+asks for a key pair.  If you don&#8217;t already have one, create a new one and
+select it here.</p>
+<p>Click <cite>Continue</cite> and you will get a screen to set Security Groups.  Select
+the <cite>quick-start-1</cite> option.  On the next screen click <cite>Launch</cite>.</p>
+</div>
+<div class="section" id="logging-on-to-your-instance">
+<h2>Logging on to your instance<a class="headerlink" href="#logging-on-to-your-instance" title="Permalink to this headline">¶</a></h2>
+<p>Click <cite>Close</cite> on the next page to
+go back to the Management Console.  Click on <cite>Instances</cite> on the left menu
+and you should see a list of instance you
+have created, in your case only one.  If the status is not yet <cite>running</cite>
+then wait until it is (click on the <cite>Refresh</cite> button if necessary).</p>
+<p><em>Click on the instance</em> and information about it should appear at the bottom
+of the screen. Scroll down until you find the <cite>Public DNS</cite> information</p>
+<p>Go into the directory where your key pair is stored, in a file with a name
+like <cite>rjlkey.pem</cite> and you should be able to <cite>ssh</cite> into your instance using
+the name of the public DNS, with format like:</p>
+<div class="highlight-python"><pre>$ ssh -X -i KEYPAIR-FILE  ubuntu@DNS</pre>
+</div>
+<p>where KEYPAIR-FILE and DNS must be replaced by the appropriate
+things, e.g. for the above example:</p>
+<div class="highlight-python"><pre>$ ssh -X -i rjlkey.pem ubuntu@ec2-50-19-75-229.compute-1.amazonaws.com</pre>
+</div>
+<p>Note:</p>
+<ul class="simple">
+<li>You must include <cite>-i keypair-file</cite></li>
+<li>You must log in as user ubuntu.</li>
+<li>Including -X in the ssh command allows X window forwarding, so that if you
+give a command that opens a new window (e.g. plotting in Python) it will
+appear on your local screen.</li>
+</ul>
+<p>Once you have logged into your instance, you are on Ubuntu Linux that has
+software needed for this class pre-installed.</p>
+<p>Other software is easily installed using <cite>apt-get install</cite>, as described
+in <a class="reference internal" href="software_installation.html#software-installation"><em>Downloading and installing software for this class</em></a>.</p>
+</div>
+<div class="section" id="transferring-files-to-from-your-instance">
+<h2>Transferring files to/from your instance<a class="headerlink" href="#transferring-files-to-from-your-instance" title="Permalink to this headline">¶</a></h2>
+<p>You can use <cite>scp</cite> to transfer files between a running instance and
+the computer on which the ssh key is stored.</p>
+<p>From your computer (not from the instance):</p>
+<div class="highlight-python"><pre>$ scp -i KEYPAIR-FILE FILE-TO-SEND ubuntu@DNS:REMOTE-DIRECTORY</pre>
+</div>
+<p>where DNS is the public DNS of the instance and <cite>REMOTE-DIRECTORY</cite> is
+the path (relative to home directory)
+where you want the file to end up.  You can leave off
+<cite>:REMOTE-DIRECTORY</cite> if you want it to end up in your home directory.</p>
+<p>Going the other way, you can download a file from your instance to
+your own computer via:</p>
+<div class="highlight-python"><pre>$ scp -i KEYPAIR-FILE ubuntu@DNS:FILE-TO-GET .</pre>
+</div>
+<p>to retrieve the file named <cite>FILE-TO-GET</cite> (which might include a path
+relative to the home directory) into the current directory.</p>
+</div>
+<div class="section" id="stopping-your-instance">
+<h2>Stopping your instance<a class="headerlink" href="#stopping-your-instance" title="Permalink to this headline">¶</a></h2>
+<p>Once you are done computing for the day, you will probably want to stop your
+instance so you won&#8217;t be charged while it&#8217;s sitting idle.  You can do this
+by selecting the instance from the Management Console / Instances, and then
+select <cite>Stop</cite> from the <cite>Instance Actions</cite> menu.</p>
+<p>You can restart it later and it will be in the same state you left it in.
+But note that it will probably have a new Public DNS!</p>
+</div>
+<div class="section" id="creating-your-own-ami">
+<h2>Creating your own AMI<a class="headerlink" href="#creating-your-own-ami" title="Permalink to this headline">¶</a></h2>
+<p>If you add additional software and want to save a disk image of your
+improved virtual machine (e.g. in order to launch additional images in the
+future to run multiple jobs at once), simply click on <cite>Create Image (EBS
+AMI)</cite> from the <cite>Instance Actions</cite> menu.</p>
+</div>
+<div class="section" id="viewing-webpages-directly-from-your-instance">
+<h2>Viewing webpages directly from your instance<a class="headerlink" href="#viewing-webpages-directly-from-your-instance" title="Permalink to this headline">¶</a></h2>
+<p>An apache webserver should already be running in your instance,
+but to allow people (including yourself) to view
+webpages you will need to adjust the security settings.  Go back to the
+Management Console and click on <cite>Security Groups</cite> on the left menu.  Select
+<cite>quick-start-1</cite> and then click on <cite>Inbound</cite>.  You should see a list of ports
+that only lists 22 (SSH).  You want to add port 80 (HTTP).  Select HTTP from
+the drop-down menu that says <cite>Custom TCP Rule</cite> and type 80 for the <cite>Port
+range</cite>.  Then click <cite>Apply Rule Changes</cite>.</p>
+<p>Now you should be able to point your browser to <cite>http://DNS</cite> where <cite>DNS</cite> is
+replaced by the Public DNS name of your instance, the same as used for the
+<cite>ssh</cite> command.  So for the example above, this would be</p>
+<div class="highlight-python"><pre>http://ec2-50-19-75-229.compute-1.amazonaws.com</pre>
+</div>
+<p>The page being displayed can be found in <cite>/var/www/index.html</cite> on your
+instance.  Any files you want to be visible on the web should be in
+<cite>/var/www</cite>, or it is sufficient to have a link from this directory to where
+they are located (created with the <cite>ln -s</cite> command in linux).</p>
+<p>So, for example, if you do the following:</p>
+<div class="highlight-python"><pre>$ cd $HOME
+$ mkdir public      # create a directory for posting things
+$ chmod 755 public  # make it readable by others
+$ sudo ln -s $HOME/public /var/www/public</pre>
+</div>
+<p>then you can see the contents of your $HOME/public directory at:</p>
+<div class="highlight-python"><pre>http://ec2-50-19-75-229.compute-1.amazonaws.com/public</pre>
+</div>
+<p>Remember to change the DNS above to the right thing for your own instance!</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="biblio.html" title="Bibliography and further reading"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="vm.html" title="Virtual Machine for this class"
+             >previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Randall J. LeVeque.
+      Last updated on Mar 31, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

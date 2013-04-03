@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Git &mdash; AMath 483/583, Spring 2013 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="AMath 483/583, Spring 2013 1.0 documentation" href="index.html" />
+    <link rel="next" title="Sphinx documentation" href="sphinx.html" />
+    <link rel="prev" title="Version Control Software" href="versioncontrol.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: #F0D576; text-align: left; padding: 10px 10px 15px 15px">
+<table>
+<tr>
+<td>
+<a href="http://www.amath.washington.edu/"><img src="_static/uwamath.gif" border="0" alt="UW AMath"/></a>
+</td>
+<td>
+<font size=5> High Performance Scientific Computing</font>
+<br>&nbsp;<br>
+<font size=5> AMath 483/583 Class Notes</font>
+<br>&nbsp;<br>
+<font size=5> Spring Quarter, 2013 </font>
+</td>
+</tr>
+</table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="sphinx.html" title="Sphinx documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="versioncontrol.html" title="Version Control Software"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Git</a><ul>
+<li><a class="reference internal" href="#instructions-for-cloning-the-class-repository">Instructions for cloning the class repository</a></li>
+<li><a class="reference internal" href="#updating-your-clone">Updating your clone</a></li>
+<li><a class="reference internal" href="#creating-your-own-bitbucket-repository">Creating your own Bitbucket repository</a></li>
+<li><a class="reference internal" href="#further-reading">Further reading</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="versioncontrol.html"
+                        title="previous chapter">Version Control Software</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sphinx.html"
+                        title="next chapter">Sphinx documentation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/git.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="git">
+<span id="id1"></span><h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference internal" href="versioncontrol.html#versioncontrol"><em>Version Control Software</em></a> and the links there
+for a more general discussion of the concepts.</p>
+<div class="section" id="instructions-for-cloning-the-class-repository">
+<span id="classgit"></span><h2>Instructions for cloning the class repository<a class="headerlink" href="#instructions-for-cloning-the-class-repository" title="Permalink to this headline">¶</a></h2>
+<p>All of the materials for this class, including homeworks, sample programs,
+and the webpages you are now
+reading (or at least the <em>.rst</em> files used to create them, see
+<a class="reference internal" href="sphinx.html#sphinx"><em>Sphinx documentation</em></a>), are in a Git repository hosted at Bitbucket, located
+at
+<a class="reference external" href="http://bitbucket.org/rjleveque/uwhpsc/">http://bitbucket.org/rjleveque/uwhpsc/</a>.
+In addition to viewing the files via the link above, you can also view
+changesets, issues, etc. (see <a class="reference internal" href="bitbucket.html#bitbucket"><em>Bitbucket repositories: viewing changesets, issue tracking</em></a>).</p>
+<p>To obtain a copy, simply move to the directory where you want your copy to
+reside (assumed to be your home directory below)
+and then <em>clone</em> the repository:</p>
+<div class="highlight-python"><pre>$ cd
+$ git clone https://rjleveque@bitbucket.org/rjleveque/uwhpsc.git</pre>
+</div>
+<p>Note the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>It is assumed you have <em>git</em> installed, see
+<a class="reference internal" href="software_installation.html#software-installation"><em>Downloading and installing software for this class</em></a>.</li>
+<li>The clone statement will download the entire repository as a new
+subdirectory called <em>uwhpsc</em>, residing in your home directory.  If you
+want <em>uwhpsc</em> to reside elsewhere, you should first <em>cd</em> to that
+directory.</li>
+</ul>
+</div></blockquote>
+<p>It will be useful to set a Unix environment variable (see <a class="reference internal" href="unix.html#env"><em>Environment variables</em></a>) called
+<em>UWHPSC</em> to refer to the directory you have just created.  Assuming you are
+using the bash shell (see <a class="reference internal" href="unix.html#bash"><em>The bash shell</em></a>), and that you cloned uwhpsc
+into your home directory, you can do this via:</p>
+<div class="highlight-python"><pre>$ export UWHPSC=$HOME/uwhpsc</pre>
+</div>
+<p>This uses the standard environment variable <em>HOME</em>, which is the full path
+to your home directory.</p>
+<p>If you put it somewhere else, you can instead do:</p>
+<div class="highlight-python"><pre>$ cd uwhpsc
+$ export UWHPSC=`pwd`</pre>
+</div>
+<p>The syntax
+<em>`pwd`</em> means to run the <em>pwd</em> command (print working directory) and insert the
+output of this command into the export command.</p>
+<p>Type:</p>
+<div class="highlight-python"><pre>$ printenv UWHPSC</pre>
+</div>
+<p>to make sure <em>UWHPSC</em> is set properly. This should print the full path to the
+new directory.</p>
+<p>If you log out and log in again later, you will find that this environment
+variable is no longer set.  Or if you set it in one terminal window, it
+will not be set in others.  To have it set automatically every time a new
+bash shell is created (e.g. whenever a new terminal window is opened), add a
+line of the form:</p>
+<div class="highlight-python"><pre>export UWHPSC=$HOME/uwhpsc</pre>
+</div>
+<p>to your <em>.bashrc</em> file.  (See <a class="reference internal" href="unix.html#bashrc"><em>.bashrc file</em></a>).  This assumes it is in your
+home directory.  If not, you will have to add a line of the form:</p>
+<div class="highlight-python"><pre>export UWHPSC=full-path-to-uwhpsc</pre>
+</div>
+<p>where the full path is what was returned by the <em>printenv</em> statement above.</p>
+</div>
+<div class="section" id="updating-your-clone">
+<span id="uwhpsc-update"></span><h2>Updating your clone<a class="headerlink" href="#updating-your-clone" title="Permalink to this headline">¶</a></h2>
+<p>The files in the class repository will change as the quarter progresses &#8212;
+new notes, sample programs, and homeworks will be added.  In order
+to bring these changes over to your cloned copy, all you need to do is:</p>
+<div class="highlight-python"><pre>$ cd $UWHPSC
+$ git fetch
+$ git merge origin/master</pre>
+</div>
+<p>Of course this assumes that <em>UWHPSC</em> has been properly set, see above.</p>
+<p>The last two command can be combined as:</p>
+<div class="highlight-python"><pre>$ git pull</pre>
+</div>
+</div>
+<div class="section" id="creating-your-own-bitbucket-repository">
+<span id="mygit"></span><h2>Creating your own Bitbucket repository<a class="headerlink" href="#creating-your-own-bitbucket-repository" title="Permalink to this headline">¶</a></h2>
+<p>In addition to using the class repository, students in AMath 483/583 are
+also required to create their own repository on Bitbucket.  It is possible
+to use <em>git</em> for your own work without creating a repository on a hosted
+site such as Bitbucket (see <em class="xref std std-ref">newgit</em> below), but there are several
+reasons for this requirement:</p>
+<blockquote>
+<div><ul class="simple">
+<li>You should learn how to use Bitbucket for more than just pulling changes.</li>
+<li>You will use this repository to &#8220;submit&#8221; your solutions to homeworks.
+You will give the instructor and TA permission to clone your repository so
+that we can grade the homework (others will not be able to clone or view it
+unless you also give them permission).</li>
+<li>It is recommended that after the class ends you
+continue to use your repository as a way to back up your important work on
+another computer (with all the benefits of version control too!).
+At that point, of course, you can change the permissions so the
+instructor and TA no longer have access.</li>
+</ul>
+</div></blockquote>
+<p>Below are the instructions for creating your own repository.  Note that
+this should be a <em>private repository</em> so nobody can view or clone it unless
+you grant permission.</p>
+<p>Anyone can create a free private repository on Bitbucket.
+Note that you can also create an unlimited number of public repositories
+free at Bitbucket, which you might want to do for open source software
+projects, or for classes like this one.</p>
+<p>Follow these directions exactly.  Doing so is part of <a class="reference internal" href="homework1.html#homework1"><em>Homework 1</em></a>.
+We will clone your repository and check that <em>testfile.txt</em> has been created
+and modified as directed below.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Homework 1 is subject to change and these instructions may be
+modified, so you might want to wait until the quarter starts.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">On the machine you&#8217;re working on:</p>
+<div class="highlight-python"><pre>$ git config --global user.name "Your Name"
+$ git config --global user.email you@example.com</pre>
+</div>
+<p>These will be used when you commit changes.
+If you don&#8217;t do this, you might get a warning message
+the first time you try to commit.</p>
+</li>
+<li><p class="first">Go to <a class="reference external" href="http://bitbucket.org/">http://bitbucket.org/</a> and click on &#8220;Sign up now&#8221; if you don&#8217;t
+already have an account.</p>
+</li>
+<li><p class="first">Fill in the form, make sure you remember your username and password.</p>
+</li>
+<li><p class="first">You should then be taken to your account.  Click on &#8220;Create&#8221; next
+to &#8220;Repositories&#8221;.</p>
+</li>
+<li><p class="first">You should now see a form where you can specify the name of a repository
+and a description.  The repository name need not be the same as your user
+name (a single user might have several repositories).  For example, the class
+repository is named <em>uwhpsc</em>, owned by user <em>rjleveque</em>.
+To avoid confusion, you should probably not name your repository
+<em>uwhpsc</em>.</p>
+</li>
+<li><p class="first">Make sure you click on &#8220;Private&#8221; at the bottom.  Also turn &#8220;Issue
+tracking&#8221; and &#8220;Wiki&#8221; on if you wish to use these features.</p>
+</li>
+<li><p class="first">Click on &#8220;Create repository&#8221;.</p>
+</li>
+<li><p class="first">You should now see a page with instructions on how to <em>clone</em> your
+(currently empty) repository.  In a Unix window, <em>cd</em> to the directory where
+you want your cloned copy to reside, and perform the clone by typing in
+the clone command shown.  This will create a new directory with the same
+name as the repository.</p>
+</li>
+<li><p class="first">You should now be able to <em>cd</em> into the directory this created.</p>
+</li>
+<li><p class="first">To keep track of where this directory is and get to it easily in the
+future, create an environment variable <em>MYHPSC</em> from inside this directory
+by:</p>
+<div class="highlight-python"><pre>$ export MYHPSC=`pwd`</pre>
+</div>
+<p>See the discussion above in section <em class="xref std std-ref">classhg</em> for what this does.  You
+will also probably want to add a line to your <em>.bashrc</em> file to define
+<em>MYHPSC</em> similar to the line added for <em>UWHPSC</em>.</p>
+</li>
+<li><p class="first">The directory you are now in will appear empty if you simply do:</p>
+<div class="highlight-python"><pre>$ ls</pre>
+</div>
+<p>But try:</p>
+<div class="highlight-python"><pre>$ ls -a
+./  ../  .git/</pre>
+</div>
+<p>the <em>-a</em> option causes <em>ls</em> to list files starting with a dot, which are
+normally suppressed.  See <em class="xref std std-ref">ls</em> for a discussion of <em>./</em> and <em>../</em>.
+The directory <em>.git</em> is the directory that stores all the information
+about the contents of this directory and a complete history of every file
+and every change ever committed.  You shouldn&#8217;t touch or modify the files in
+this directory, they are used by <em>git</em>.</p>
+</li>
+<li><p class="first">Add a new file to your directory:</p>
+<div class="highlight-python"><pre>$ cat &gt; testfile.txt
+This is a new file
+with only two lines so far.
+^D</pre>
+</div>
+<p>The Unix <em>cat</em> command simply redirects everything you type on the
+following lines into a file called <em>testfile.txt</em>.  This goes on until
+you type a &lt;ctrl&gt;-d (the 4th line in the example
+above).  After typing &lt;ctrl&gt;-d you should get the Unix
+prompt back.  Alternatively, you could create the file testfile.txt using
+your favorite text editor (see <a class="reference internal" href="editors.html#editors"><em>Text editors</em></a>).</p>
+</li>
+<li><p class="first">Type:</p>
+<div class="highlight-python"><pre>$ git status -s</pre>
+</div>
+<p>The response should be:</p>
+<div class="highlight-python"><pre>?? testfile.txt</pre>
+</div>
+<p>The ?? means that this file is not under revision control.
+The <em>-s</em> flag results in this <em>short</em> status list.  Leave it off for more
+information.</p>
+<p>To put the file under revision control, type:</p>
+<div class="highlight-python"><pre>$ git add testfile.txt
+$ git status -s
+A  testfile.txt</pre>
+</div>
+<p>The A means it has been added.  However, at this point <em>git</em> is not
+we have not yet taken a <em>snapshot</em> of this version of the file.
+To do so, type:</p>
+<div class="highlight-python"><pre>$ git commit -m "My first commit of a test file."</pre>
+</div>
+<p>The string following the -m is a comment about this commit that may help
+you in general remember why you committed new or changed files.</p>
+<p>You should get a response like:</p>
+<div class="highlight-python"><pre>[master (root-commit) 28a4da5] My first commit of a test file.
+ 1 file changed, 2 insertions(+)
+ create mode 100644 testfile.txt</pre>
+</div>
+<p>We can now see the status of our directory via:</p>
+<div class="highlight-python"><pre>$ git status
+# On branch master
+nothing to commit (working directory clean)</pre>
+</div>
+<p>Alternatively, you can check the status of a single file with:</p>
+<div class="highlight-python"><pre>$ git status testfile.txt</pre>
+</div>
+<p>You can get a list of all the commits you have made (only one so far)
+using:</p>
+<div class="highlight-python"><pre>$ git log
+
+commit 28a4da5a0deb04b32a0f2fd08f78e43d6bd9e9dd
+Author: Randy LeVeque &lt;rjl@ned&gt;
+Date:   Tue Mar 5 17:44:22 2013 -0800
+
+    My first commit of a test file.</pre>
+</div>
+<p>The number 28a4da5a0deb04b32a0f2fd08f78e43d6bd9e9dd above is the &#8220;name&#8221;
+of this commit and you can always get back to the state of your files as
+of this commit by using this number.  You don&#8217;t have to remember it, you
+can use commands like <em>git log</em> to find it later.</p>
+<p>Yes, this is a number... it is a 40 digit hexadecimal number, meaning it
+is in base 16 so in addition to 0, 1, 2, ..., 9, there are 6 more digits
+a, b, c, d, e, f representing 10 through 15.  This number is almost
+certainly guaranteed to be unique among all commits you will ever
+do (or anyone has ever done, for that matter).  It is computed based
+on the state of all the files in this snapshot as a <a class="reference external" href="http://en.wikipedia.org/wiki/SHA-1">SHA-1
+Cryptographic hash function</a>,
+called a SHA-1 Hash for short.</p>
+<p>Now let&#8217;s modify this file:</p>
+<div class="highlight-python"><pre>$ cat &gt;&gt; testfile.txt
+Adding a third line
+^D</pre>
+</div>
+<p>Here the <em>&gt;&gt;</em> tells <em>cat</em> that we want to add on to the end of an
+existing file rather than creating a new one.  (Or you can edit the file
+with your favorite editor and add this third line.)</p>
+<p>Now try the following:</p>
+<div class="highlight-python"><pre>$ git status -s
+ M testfile.txt</pre>
+</div>
+<p>The M indicates this file has been modified relative to the most recent
+version that was committed.</p>
+<p>To see what changes have been made, try:</p>
+<div class="highlight-python"><pre>$ git diff testfile.txt</pre>
+</div>
+<p>This will produce something like:</p>
+<div class="highlight-python"><pre>diff --git a/testfile.txt b/testfile.txt
+index d80ef00..fe42584 100644
+--- a/testfile.txt
++++ b/testfile.txt
+@@ -1,2 +1,3 @@
+ This is a new file
+ with only two lines so far
++Adding a third line</pre>
+</div>
+<p>The + in front of the last line shows that it was added.
+The two lines before it are printed to show the context.  If the
+file were longer, <em>git diff</em>
+would only print a few lines around any change to indicate the context.</p>
+<p>Now let&#8217;s try to commit this changed file:</p>
+<div class="highlight-python"><pre>$ git commit -m "added a third line to the test file"</pre>
+</div>
+<p>This will fail!  You should get a response like this:</p>
+<div class="highlight-python"><pre># On branch master
+# Changes not staged for commit:
+#   (use "git add &lt;file&gt;..." to update what will be committed)
+#   (use "git checkout -- &lt;file&gt;..." to discard changes in working
+#   directory)
+#
+#   modified:   testfile.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")</pre>
+</div>
+<p><em>git</em> is saying that the file <em>testfile.txt</em> is modified but that no
+files have been <strong>staged</strong> for this commit.</p>
+<p>If you are used to Mercurial, <em>git</em> has an extra level of complexity (but
+also flexibility):  you can choose which modified files will be included
+in the next commit.  Since we only have one file, there will not be a
+commit unless we add this to the <strong>index</strong> of files staged for the next
+commit:</p>
+<div class="highlight-python"><pre>$ git add testfile.txt</pre>
+</div>
+<p>Note that the status is now:</p>
+<div class="highlight-python"><pre>$ git status -s
+M  testfile.txt</pre>
+</div>
+<p>This is different in a subtle way from what we saw before: The <em>M</em> is
+in the first column rather than the second, meaning it has been both
+modified and staged.</p>
+<p>We can get more information if we leave off the <em>-s</em> flag:</p>
+<div class="highlight-python"><pre>$ git status
+
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+#   modified:   testfile.txt
+#</pre>
+</div>
+<p>Now <em>testfile.txt</em> is on the index of files staged for the next commit.</p>
+<p>Now we can do the commit:</p>
+<div class="highlight-python"><pre>$ git commit -m "added a third line to the test file"
+
+[master 51918d7] added a third line to the test file
+ 1 file changed, 1 insertion(+)</pre>
+</div>
+<p>Try doing <em>git log</em> now and you should see something like:</p>
+<div class="highlight-python"><pre>commit 51918d7ea4a63da6ab42b3c03f661cbc1a560815
+Author: Randy LeVeque &lt;rjl@ned&gt;
+Date:   Tue Mar 5 18:11:34 2013 -0800
+
+    added a third line to the test file
+
+commit 28a4da5a0deb04b32a0f2fd08f78e43d6bd9e9dd
+Author: Randy LeVeque &lt;rjl@ned&gt;
+Date:   Tue Mar 5 17:44:22 2013 -0800
+
+    My first commit of a test file.</pre>
+</div>
+<p>If you want to revert your working directory back to the first snapshot
+you could do:</p>
+<div class="highlight-python"><pre>$ git checkout 28a4da5a0de
+Note: checking out '28a4da5a0de'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+HEAD is now at 28a4da5... My first commit of a test file.</pre>
+</div>
+<p>Take a look at the file, it should be back to the state with only two
+lines.</p>
+<p>Note that you don&#8217;t need the full SHA-1 hash code, the first few digits
+are enough to uniquely identify it.</p>
+<p>You can go back to the most recent version with:</p>
+<div class="highlight-python"><pre>$ git checkout master
+Switched to branch 'master'</pre>
+</div>
+<p>We won&#8217;t discuss branches, but unless you create a new branch, the
+default name for your main branch is <em>master</em> and this <em>checkout</em> command
+just goes back to the most recent commit.</p>
+</li>
+<li><p class="first">So far you have been using <em>git</em> to keep track of changes in your own
+directory, on your computer.  None of these changes have been seen by
+Bitbucket, so if someone else cloned your repository from there, they
+would not see <em>testfile.txt</em>.</p>
+<p>Now let&#8217;s <em>push</em> these changes back to the Bitbucket repository:</p>
+<p>First do:</p>
+<div class="highlight-python"><pre>$ git status</pre>
+</div>
+<p>to make sure there are no changes that have not been committed.  This
+should print nothing.</p>
+<p>Now do:</p>
+<div class="highlight-python"><pre>$ git push</pre>
+</div>
+<p>This will prompt for your Bitbucket password and should then print
+something indicating that it has uploaded these two commits to
+your bitbucket repository.</p>
+<p>Not only has it copied the 1 file over, it has added both changesets, so
+the entire history of your commits is now stored in the repository.  If
+someone else clones the repository, they get the entire commit history
+and could revert to any previous version, for example.</p>
+</li>
+<li><p class="first">Check that the file is in your Bitbucket repository:  Go back to that web
+page for your repository and click on the  &#8220;Source&#8221; tab at the top.  It
+should display the files in your repository and show <em>testfile.txt</em>.</p>
+<p>Now click on the &#8220;Commits&#8221; tab at the top.  It should show that you
+made two commits and display the comments you added with the <em>-m</em> flag
+with each commit.</p>
+<p>If you click on the hex-string for a commit, it will show the
+<em>change set</em> for this commit.  What you
+should see is the file in its final state, with three lines.  The third
+line should be highlighted in green, indicating that this line was added
+in this changeset.  A line highlighted in red would indicate a line deleted
+in this changeset.  (See also <a class="reference internal" href="bitbucket.html#bitbucket"><em>Bitbucket repositories: viewing changesets, issue tracking</em></a>.)</p>
+</li>
+</ol>
+<p>This is enough for now!</p>
+<p><a class="reference internal" href="homework1.html#homework1"><em>Homework 1</em></a> instructs you to add some additional files to the Bitbucket
+repository.</p>
+<p>Feel free to experiment further with your repository at this point.
+See <em class="xref std std-ref">git_more</em> for some more examples of how hg can be used.</p>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<p>Next see <a class="reference internal" href="bitbucket.html#bitbucket"><em>Bitbucket repositories: viewing changesets, issue tracking</em></a>.</p>
+<p>Remember that you can get help with <em>git</em> commands by typing, e.g.:</p>
+<div class="highlight-python"><pre>$ git help
+$ git help diff  # or any other specific command name</pre>
+</div>
+<p>Each command has lots of options!</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="sphinx.html" title="Sphinx documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="versioncontrol.html" title="Version Control Software"
+             >previous</a> |</li>
+        <li><a href="index.html"><font color="#39275b">Contents</font></a>|&nbsp;</li>
+        <li><a href="biblio.html"><font color="#39275b">Bibliography</font></a>|&nbsp;</li>
+        <li><a href="search.html"><font color="#39275b">Search</font></a>|&nbsp;</li>
+        <li><a href="http://faculty.washington.edu/rjl/uwamath583s13/index.html"><font color="#39275b">Class Webpage</font></a>|&nbsp;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Randall J. LeVeque.
+      Last updated on Mar 31, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
