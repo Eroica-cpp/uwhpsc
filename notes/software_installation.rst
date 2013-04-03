@@ -260,7 +260,7 @@ NumPy      numpy
 SciPy      scipy
 Matplotlib matplotlib
 Mayavi     mayavi
-Mercurial  mercurial
+Git        git
 Sphinx     sphinx
 ========== ========================
 
