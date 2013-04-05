@@ -163,179 +163,10 @@ reuse later).  Such a script can be run at the Unix command
 line simply by typing "python" followed by the file name.
 
 See :ref:`python_scripts_modules` for some examples.
-
-
-
-Importing modules
------------------
-
-When Python starts up there are a certain number of basic commands defined
-along with the general syntax of the language, but most useful things needed
-for specific purposes (such as working with webpages, or solving linear
-systems) are in *modules* that do not load by default.  Otherwise it would
-take forever to start up Python, loading lots of things you don't plan to
-use.  So when you start using Python, either interactively or at the top of
-a script, often the  first thing you do is *import* one or more modules.
-
-A Python module is often defined simply by grouping a set of parameters and
-functions together in a single .py file.  
-See :ref:`python_scripts_modules` for some examples.
-
-Two useful modules are *os* and *sys* that help you interact with the
-operating system and the Python system that is running.  These are standard
-modules that should be available with any Python implementation, so you
-should be able to import them at the Python prompt::
-
-    >>> import os, sys
-
-Each module contains many different functions and parameters which are the
-*methods* and *attributes* of the module.   Here we will only use a couple
-of these.  The
-*getcwd* method of the os module is called to return the "current working
-directory"  (the same thing *pwd* prints in Unix), e.g.::
-
-    >>> os.getcwd()
-    /home/uwhpsc/uwhpsc/codes/python
-
-Note that this function is called with no arguments, but you need the open
-and close parens.  If you type "os.getcwd" without these, Python will
-instead print what type of object this function is::
-
-    >>> os.getcwd
-    <built-in function getcwd>
-
-The *sys* module has an attribute *sys.path*, a variable that is set by
-default to the search path for modules.  Whenever you perform an *import*,
-this is the set of directories that Python searches through looking for a
-file by that name (with a .py extension).  If you print this, you will see a
-list of strings, each one of which is the full path to some directory.
-Sometimes the first thing in this list is the empty string, which means "the
-current directory", so it looks for a module in your working directory first
-and if it doesn't find it, searches through the other directories in order:
-
-    >>> print sys.path
-    ['', '/usr/lib/python2.7', ....]
-
-If you try to import a module and it doesn't find a file with this name on
-the path, then you will get an import error::
-
-    >>> import junkname
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    ImportError: No module named junkname
-
-When new Python software such as NumPy or SciPy is installed, the
-installation script should modify the path appropriately so it can be found.
-You can also add to the path if you have your own directory that you want
-Python to look in, e.g.::
-
-    >>> sys.path.append("/home/uwhpsc/mypython")
-
-will append the directory indicated to the path.  To avoid having to do this
-each time you start Python, you can set a Unix environment variable that
-is used to modify the path every time Python is started.  First print out
-the current value of this variable::
-
-    $ echo $PYTHONPATH
-
-It will probably be blank unless you've set this before or have installed
-software that sets this automatically.  
-To append the above example directory to this path::
-
-    $ export PYTHONPATH=$PYTHONPATH:/home/uwhpsc/mypython
-
-This appends another directory to the search path already specified (if any).
-You can repeat this multiple times to add more directories, or put something
-like::
-
-    export PYTHONPATH=$PYTHONPATH:dir1:dir2:dir3
-
-in your *.bashrc* file if there are the only 3 personal 
-directories you always want to search.
-
-
-Other forms of import
-----------------------------------------
-
-If all we want to use from the *os* module is *getcwd*, then another option
-is to do::
-
-    >>> from os import getcwd
-    >>> getcwd()
-    '/Users/rjl/uwamath583/codes/python'
-
-In this case we only imported one method from the module, not the whole
-thing.  Note that now *getcwd* is called by just giving the name of the
-method, not *module.method*.  The name *getcwd* is
-now in our *namespace*.  If we only imported *getcwd* and tried typing 
-"os.getcwd()" we'd get an error, since it wouldn't find *os* in our
-namespace.
-
-You can rename things when you import them, which is sometimes useful if
-different modules contain different objects with the same name.
-For example, to compare how the `sqrt` function in the standard Python math
-module compares to the numpy version::
-
-    >>> from math import sqrt as sqrtm
-    >>> from numpy import sqrt as sqrtn
-
-    >>> sqrtm(-1.)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    ValueError: math domain error
-
-    >>> sqrtn(-1.)
-    nan
-
-The standard function gives an error whereas the *numpy* version returns
-*nan*, a special *numpy* object representing "Not a Number".
-
-
-You can also import a module and give it a different name locally.  This is
-particularly useful if you import a module with a long name, but even for
-*numpy* many examples you'll find on the web abbreviate this as *np*
-(see :ref:`numerical_python`)::
-
-    >>> import numpy as np
-    >>> theta = np.linspace(0., 2*np.pi, 5)
-    >>> theta
-    array([ 0.        ,  1.57079633,  3.14159265,  4.71238898,  6.28318531])
-
-    >>> np.cos(theta)
-    array([  1.00000000e+00,   6.12323400e-17,  -1.00000000e+00, -1.83697020e-16,   1.00000000e+00])
-
-If you don't like having to type the module name repeatedly you can import
-just the things you need into your namespace::
-
-    >>> from numpy import pi, linspace, cos
-    >>> theta = linspace(0., 2*pi, 5)
-    >>> theta
-    array([ 0.        ,  1.57079633,  3.14159265,  4.71238898,  6.28318531])
-    >>> cos(theta)
-    array([  1.00000000e+00,   6.12323400e-17,  -1.00000000e+00, -1.83697020e-16,   1.00000000e+00])
-
-
-If you're going to be using lots of things form *numpy* you might want to
-import everything into your namespace::
-
-    >>> from numpy import *
-
-Then *linspace*, *pi*, *cos*, and several hundred other things will be available
-without the prefix.
-
-When writing code it is often best to not do this, however, since then it is
-not clear to the reader (or even to the programmer sometimes)
-what methods or attributes are coming from which module if several
-different modules are being used. (They may define methods with the same
-names but that do very different things, for example.)
-
-When using IPython, it is often convenient to start it with::
-
-    $ ipython --pylab
-
-This automatically imports everything from *numpy* into the namespace, and
-also all of the plotting tools from *matplotlib*.  
-
+The section :ref:`importing_modules`
+also contains important information on how to "import" modules,
+and how to set the path of directories that are searched for modules when
+you try to import a module.
 
 .. _python_objects:
 
@@ -432,14 +263,14 @@ different type (which has been specified as part of the definition of each
 class of objects).
 
 In Fortran if you declare *x* to be a real variable then it sets aside a
-particular 8 bytes of memory for *x*, enough to hold one real
+particular 8 bytes of memory for *x*, enough to hold one floating point
 number.  There's no way to store 6 characters or a list of 3 integers in
 these 8 bytes.
 
 In Python it is often better to think of *x* as simply being a pointer
 that points to some object.  When you type "x = 3.4" Python creates an
-object of type *real* holding one real number and points *x* to that.  When
-you type *x = 'string'* it creates a new object of type *str* and points *x*
+object of type *float* holding one real number and points *x* to that.  When
+you type *x = 'string'* it creates a new object of type *str* and now points *x*
 to that, and so on.
 
 .. _lists:
@@ -804,11 +635,12 @@ Further reading
 See the :ref:`biblio_python` section of the :ref:`biblio`.
 
 In particular, 
-see the [Python-2.5-tutorial]_  or [Python-2.6-tutorial]_ for good overviews
+see the [Python-2.5-tutorial]_  or [Python-2.7-tutorial]_ for good overviews
 (these two versions of Python are very similar).
 
 There are several introductory Python pages at the [software-carpentry]_
 site.
 
 For more on basic data structures: 
-`<http://docs.python.org/tutorial/datastructures.html>`_
+`<http://docs.python.org/2/tutorial/datastructures.html>`_
+

@@ -66,8 +66,9 @@ Python
    :maxdepth: 2
   
    python
+   python_scripts_modules
    python_functions
-   python_io
+   python_strings
    numerical_python
 
 .. _toc_biblio:

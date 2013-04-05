@@ -145,6 +145,8 @@ Python:
 
 .. [Python-2.7-tutorial] `<http://docs.python.org/tutorial/>`_
 
+.. [Python-documentation] `<http://docs.python.org/2/contents.html>`_
+
 .. [Python-3.0-tutorial] `<http://docs.python.org/3.0/tutorial/>`_ 
    (we are *not* using Python 3.0 in this class!)
 
