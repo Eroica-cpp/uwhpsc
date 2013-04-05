@@ -58,6 +58,8 @@ Technical Topics
    arithmetic
    python_and_fortran
 
+.. _contents_python:
+
 #################
 Python
 #################
