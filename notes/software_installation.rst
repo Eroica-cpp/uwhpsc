@@ -22,6 +22,10 @@ download and install [VirtualBox]_ for Windows and then
 run the :ref:`vm` to provide a Linux environment.  Alternatively you can use
 a linux machine in the cloud via :ref:`aws`.
 
+If you are using a Mac and want to install the necessary software, you also
+need to install `Xcode <https://developer.apple.com/xcode/>`_ developer
+tools, which includes necessary compilers and *make*, for example.
+
 Some of this software may already be available on your machine.  The *which*
 command in Unix will tell you if a command is found on your *search path*,
 e.g.::
@@ -233,6 +237,11 @@ Many of these packages depend on other packages; answer "yes" when
 as Python, are probably already installed on your system, in which
 case *apt-get* will tell you that they are already installed and do
 nothing.
+
+The script below was used to install software on the Ubuntu VM:
+
+       .. literalinclude:: install.sh
+
 
 .. _easy_install:
 

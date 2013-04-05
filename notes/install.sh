@@ -1,3 +1,5 @@
+# $UWHPSC/notes/install.sh
+# 
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install xfce4
@@ -15,3 +17,11 @@ sudo apt-get install openmpi-bin
 sudo apt-get install liblapack-dev
 sudo apt-get install thunar
 sudo apt-get install xfce4-terminal
+
+# some packages not installed on the VM 
+# that you might want to add:
+
+sudo apt-get install gitk
+sudo apt-get install xxdiff
+sudo apt-get install python-sympy  # symbolic python
+
