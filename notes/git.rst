@@ -513,7 +513,7 @@ Feel free to experiment further with your repository at this point.
 Further reading
 ---------------
 
-Next see :ref:`bitbucket`.
+Next see :ref:`bitbucket` and/or :ref:`git_more`.
 
 Remember that you can get help with *git* commands by typing, e.g.::
 

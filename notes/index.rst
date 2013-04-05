@@ -48,7 +48,8 @@ Technical Topics
    reproducibility
    versioncontrol
    git
-   github
+   bitbucket
+   git_more
    sphinx
    metrics
    computer_arch
@@ -57,6 +58,17 @@ Technical Topics
    arithmetic
    python_and_fortran
 
+#################
+Python
+#################
+
+.. toctree::
+   :maxdepth: 2
+  
+   python
+   python_functions
+   python_io
+   numerical_python
 
 .. _toc_biblio:
 
