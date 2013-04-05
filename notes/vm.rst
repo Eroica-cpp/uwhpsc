@@ -303,7 +303,7 @@ How This Virtual Machine was made
 
     10. Create the file uwhpscvm-shutdown.::
 
-        .. literalinclude:: uwhpscvm-shutdown
+       .. literalinclude:: uwhpscvm-shutdown
 
     11. Save it at.::
 
