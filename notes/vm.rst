@@ -303,7 +303,7 @@ How This Virtual Machine was made
 
     10. Create the file uwhpscvm-shutdown.::
 
-        .. literalinclude:: uwhpscvm-shutdown
+       .. literalinclude:: uwhpscvm-shutdown
 
     11. Save it at.::
 
@@ -344,7 +344,7 @@ How This Virtual Machine was made
 About the VM
 ------------
 
-The class virtual machine is running XUbuntu 10.10, a variant of Ubuntu
+The class virtual machine is running XUbuntu 12.04, a variant of Ubuntu
 Linux (`<http://www.ubuntu.com>`_), which itself is an offshoot of
 Debian GNU/Linux (`<http://www.debian.org>`_).  XUbuntu is a
 stripped-down, simplified version of Ubuntu suitable for running on

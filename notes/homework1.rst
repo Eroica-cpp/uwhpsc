@@ -41,8 +41,8 @@ for more tips on setting up bitbucket accounts and using git.
 
  #. First, if you have not already completed the survey on your background
     and computing needs, please do so now.  You can find it 
-    `here` eventually.
-    Due to technical difficulties with Canvas it is not yet available.
+    `here <https://canvas.uw.edu/courses/812916/quizzes/738064>`_.
+    [Available as of Friday, April 5]
 
  #. Make sure you have access to *git* on the computer you plan to use
     (see :ref:`software_installation`).  Read the section :ref:`git` and the
