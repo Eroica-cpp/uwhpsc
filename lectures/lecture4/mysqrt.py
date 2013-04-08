@@ -31,4 +31,15 @@ def sqrt2(x, debug=False):
         print "After %s iterations, s = %20.15f" % (k+1,s) 
     return s 
 
-  
+def test():
+     from numpy import sqrt
+     xvalues = [0., 2., 100., 10000., 1.e-4]
+     for x in xvalues:
+         print "Testing with x = %20.15e" % x
+         s = sqrt2(x)
+         s_numpy = sqrt(x)
+         print "  s = %20.15e,  numpy.sqrt = %20.15e" \
+                % (s, s_numpy)
+         assert abs(s - s_numpy) < 1e-14, \
+                "Disagree for x = %20.15e" % x
+                
