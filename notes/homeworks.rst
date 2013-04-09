@@ -16,8 +16,8 @@ tentative due dates listed below:
  * Homework 5: Wednesday of Week 8, May 22
  * Homework 6: Wednesday of Week 9, May 29
 
-There will be a "final project" due on Thursday June 6.  This will
-count twice as much as a homework (20 points) and will be similar in
+There will be a "final project" tentatively due on Wednesday, June 12.  
+This will count twice as much as a homework and will be similar in
 spirit but longer and tying together several things from the quarter
 into a more interesting computing assignment.
 
