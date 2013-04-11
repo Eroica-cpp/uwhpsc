@@ -190,6 +190,11 @@ links they point to.  In particular, the following sections are relevant:
     tests `test_poly1` in which :math:`n=4` and `test_poly2` in which
     :math:`n=5`.    
 
+
+    **Note:** The numpy functions `polyfit` and `polyval` do something similar to what's
+    required here, and might be useful for comparison purposes.  But note the coefficients
+    in the polynomial are returned in a different order!  `polyfit` also does least squares
+    fitting if the degree specified is less than `n-1`.
     
  #. Add and commit all required codes to your bitbucket repository.
 
