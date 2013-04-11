@@ -51,7 +51,7 @@ links they point to.  In particular, the following sections are relevant:
     To solve this system we can use the *solve* function from the
     *numpy.linalg* module, as illustrated in the Python script found in
     `$UWHPSC/codes/homework2/demo1.py`.  The solution is :math:`c =
-    [-1,0,2]` corresponding to the polynomial :math:`p(x) = x^2 - 1`, as is
+    [-1,0,2]` corresponding to the polynomial :math:`p(x) = 2x^2 - 1`, as is
     easily verified.
 
     This code also plots this polynomial along with the three data points that
