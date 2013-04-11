@@ -72,6 +72,8 @@ Python
    python_functions
    python_strings
    numerical_python
+   ipython_notebook
+   sage
 
 .. _toc_biblio:
 
