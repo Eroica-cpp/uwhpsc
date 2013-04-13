@@ -54,8 +54,8 @@ start with a different look and feel, see [sphinx-sampledoc]_.
 Using Sphinx to create these webpages
 -------------------------------------
 
-If you clone the hg repository for this class (see :ref:`hg`), you will find
-a subdirectory called *sphinx*, containing a number of files with the
+If you clone the git repository for this class (see :ref:`git`), you will find
+a subdirectory called *notes*, containing a number of files with the
 extension *.rst*, one for each webpage, containing the ReStructuredText
 input.  To create the html pages, first make sure you have Sphinx installed
 via::
@@ -67,7 +67,7 @@ via::
         $ make html
 
 This should process all the files (see :ref:`makefiles`) and create a
-subdirectory of *sphinx* called *_build/html*.  The file
+subdirectory of *notes* called *_build/html*.  The file
 *_build/html/index.html* contains the main Table of Contents page.
 Navigate your browser to this page using *Open File* on the *File* menu of
 your browser. 

@@ -21,7 +21,11 @@ sudo apt-get install xfce4-terminal
 # some packages not installed on the VM 
 # that you might want to add:
 
-sudo apt-get install gitk
-sudo apt-get install xxdiff
-sudo apt-get install python-sympy  # symbolic python
+sudo apt-get install gitk               # to view git history
+sudo apt-get install xxdiff             # to compare two files
+sudo apt-get install python-sympy       # symbolic python
+
+sudo apt-get install python-setuptools  # so easy_install is available
+sudo easy_install nose                  # unit testing framework
+sudo easy_install StarCluster           # to help manage clusters on AWS
 
