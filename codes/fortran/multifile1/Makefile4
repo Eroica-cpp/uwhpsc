@@ -1,0 +1,15 @@
+
+# $UWHPSC/codes/fortran/multifile1/Makefile4
+
+FC = gfortran    
+FFLAGS = -O3
+LFLAGS =
+OBJECTS = main.o sub1.o sub2.o
+
+fullcode.exe: $(OBJECTS)
+	$(FC) $(LFLAGS) $(OBJECTS) -o fullcode.exe
+
+%.o : %.f90
+	$(FC) $(FFLAGS) -c $< 
+
+

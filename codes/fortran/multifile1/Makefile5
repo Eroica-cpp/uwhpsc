@@ -1,0 +1,15 @@
+
+# $UWHPSC/codes/fortran/multifile1/Makefile5
+
+OBJECTS = main.o sub1.o sub2.o
+.PHONY: clean
+
+fullcode.exe: $(OBJECTS)
+	gfortran $(OBJECTS) -o fullcode.exe
+
+%.o : %.f90
+	gfortran -c $< 
+
+clean:
+	rm -f $(OBJECTS) fullcode.exe
+
