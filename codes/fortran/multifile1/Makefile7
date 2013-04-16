@@ -1,0 +1,12 @@
+
+# $UWHPSC/codes/fortran/multifile1/Makefile7
+
+SOURCES = $(wildcard *.f90)  
+OBJECTS = $(subst .f90,.o,$(SOURCES))
+
+.PHONY: test
+
+test:
+	@echo "Sources are: " $(SOURCES)
+	@echo "Objects are: " $(OBJECTS)
+

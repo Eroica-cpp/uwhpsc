@@ -1,0 +1,10 @@
+
+# $UWHPSC/codes/fortran/multifile1/Makefile2
+
+fullcode.exe: main.o sub1.o sub2.o
+	gfortran main.o sub1.o sub2.o -o fullcode.exe
+
+%.o : %.f90
+	gfortran -c $< 
+
+
