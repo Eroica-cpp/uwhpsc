@@ -93,6 +93,7 @@ Fortran
    fortran_arrays
    fortran_modules
    fortran_io
+   fortran_debugging
 
 .. _toc_biblio:
 
