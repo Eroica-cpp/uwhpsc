@@ -25,6 +25,9 @@ for many Unix commands by typing, e.g.::
     $ man gfortran
 
 
+.. warning::
+   Different fortran compilers use different names for similar flags!
+
 Output flags
 ------------
 
