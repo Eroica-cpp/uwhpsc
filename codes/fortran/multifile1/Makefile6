@@ -4,18 +4,21 @@
 OBJECTS = main.o sub1.o sub2.o
 .PHONY: clean help
 
-fullcode.exe: $(OBJECTS)
-	gfortran $(OBJECTS) -o fullcode.exe
+output.txt: main.exe
+	./main.exe > output.txt
+
+main.exe: $(OBJECTS)
+	gfortran $(OBJECTS) -o main.exe
 
 %.o : %.f90
 	gfortran -c $< 
 
 clean:
-	rm -f $(OBJECTS) fullcode.exe
+	rm -f $(OBJECTS) main.exe
 
 help:
 	@echo "Valid targets:"
-	@echo "  fullcode.exe"
+	@echo "  main.exe"
 	@echo "  main.o"
 	@echo "  sub1.o"
 	@echo "  sub2.o"

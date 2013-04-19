@@ -1,8 +1,11 @@
 
 # $UWHPSC/codes/fortran/multifile1/Makefile
 
-fullcode.exe: main.o sub1.o sub2.o
-	gfortran main.o sub1.o sub2.o -o fullcode.exe
+output.txt: main.exe
+	./main.exe > output.txt
+
+main.exe: main.o sub1.o sub2.o
+	gfortran main.o sub1.o sub2.o -o main.exe
 
 main.o: main.f90
 	gfortran -c main.f90
