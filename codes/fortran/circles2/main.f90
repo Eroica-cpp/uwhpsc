@@ -6,7 +6,9 @@ program main
     implicit none
     real(kind=8) :: a
 
-    ! print parameter pi defined in module:
+    call initialize()   ! sets pi
+
+    ! print module variable pi:
     print *, 'pi = ', pi
 
     ! test the area function from module:

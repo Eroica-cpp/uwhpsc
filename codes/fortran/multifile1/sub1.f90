@@ -1,4 +1,4 @@
-! $UWHPSC/codes/fortran/multifile1/fullcode.f90
+! $UWHPSC/codes/fortran/multifile1/sub1.f90
 
 subroutine sub1()
     print *, "In sub1"

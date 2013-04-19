@@ -3,10 +3,12 @@
 
 OBJECTS = main.o sub1.o sub2.o
 
-fullcode.exe: $(OBJECTS)
-	gfortran $(OBJECTS) -o fullcode.exe
+output.txt: main.exe
+	./main.exe > output.txt
+
+main.exe: $(OBJECTS)
+	gfortran $(OBJECTS) -o main.exe
 
 %.o : %.f90
 	gfortran -c $< 
-
 

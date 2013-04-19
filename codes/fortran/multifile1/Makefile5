@@ -4,12 +4,15 @@
 OBJECTS = main.o sub1.o sub2.o
 .PHONY: clean
 
-fullcode.exe: $(OBJECTS)
-	gfortran $(OBJECTS) -o fullcode.exe
+output.txt: main.exe
+	./main.exe > output.txt
+
+main.exe: $(OBJECTS)
+	gfortran $(OBJECTS) -o main.exe
 
 %.o : %.f90
 	gfortran -c $< 
 
 clean:
-	rm -f $(OBJECTS) fullcode.exe
+	rm -f $(OBJECTS) main.exe
 

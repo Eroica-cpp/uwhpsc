@@ -93,6 +93,18 @@ Fortran
    fortran_arrays
    fortran_modules
    fortran_io
+   fortran_debugging
+
+.. _toc_misc:
+
+#################
+Miscillaneous
+#################
+
+.. toctree::
+   :maxdepth: 2
+
+   makefiles
 
 .. _toc_biblio:
 

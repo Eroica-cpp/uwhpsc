@@ -1,9 +1,11 @@
 ! $UWHPSC/codes/fortran/circles/circle_mod.f90
+! Version where pi is a module variable.
 
 module circle_mod
 
     implicit none
-    real(kind=8), parameter :: pi = 3.141592653589793d0
+    real(kind=8) :: pi 
+    save  
 
 contains
 
