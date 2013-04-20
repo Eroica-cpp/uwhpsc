@@ -8,7 +8,7 @@ Homework 2
 .. comment :: Not yet assigned and may change.  
 
 
-Due Wednesday, April 17, 2011, by 11:00pm PDT.
+Due Wednesday, April 17, 2013, by 11:00pm PDT.
 
 The goals of this homework are to:
 

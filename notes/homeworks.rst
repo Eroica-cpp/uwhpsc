@@ -11,7 +11,7 @@ tentative due dates listed below:
 
  * :ref:`homework1`: Wednesday of Week 2, April 10
  * :ref:`homework2`: Wednesday of Week 3, April 17
- * Homework 3: Wednesday of Week 5, May 1 
+ * :ref:`homework3`: Wednesday of Week 5, May 1 
  * Homework 4: Wednesday of Week 6, May 8
  * Homework 5: Wednesday of Week 8, May 22
  * Homework 6: Wednesday of Week 9, May 29
