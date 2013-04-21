@@ -94,6 +94,7 @@ Fortran
    fortran_modules
    fortran_io
    fortran_debugging
+   fortran_newton
 
 .. _toc_misc:
 

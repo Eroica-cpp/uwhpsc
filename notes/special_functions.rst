@@ -42,7 +42,7 @@ Some other Taylor series that can be used to approximate functions:
 
     :math:`cos(x) = 1 - \frac 1 2 x^2 + \frac{1}{4!} x^4 - \frac{1}{6!} x^6 + \cdots`
 
-
+.. _special_newton:
 
 Newton's method for the square root
 -----------------------------------
