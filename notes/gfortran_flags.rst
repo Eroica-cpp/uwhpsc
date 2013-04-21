@@ -162,4 +162,7 @@ information on GCC command line options is available at
 some of this information is specific to compiling C programs rather
 than Fortran.
 
-See also `<http://linux.die.net/man/1/gfortran>`.
+See also `<http://linux.die.net/man/1/gfortran>`_.
+
+A list of debug flags can also be found at
+`<http://www.fortran-2000.com/ArnaudRecipes/CompilerTricks.html#CompTable_fortran>`_

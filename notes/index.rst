@@ -105,6 +105,7 @@ Miscillaneous
    :maxdepth: 2
 
    makefiles
+   special_functions
 
 .. _toc_biblio:
 
