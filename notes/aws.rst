@@ -49,46 +49,50 @@ For general information and guides to getting started:
 * `UW eScience information on AWS <http://escience.washington.edu/get-help-now/get-started-amazon-web-services>`_.
 
 
-Finding the *uwhpsc* AMI
--------------------------
+Launching an instance with the *uwhpsc* AMI
+-------------------------------------------
 
-.. warning::
-   This AMI is not yet available.
 
 Once you have an AWS account, sign in to the 
 `management console <https://console.aws.amazon.com/ec2/>`_
 and click on the
-EC2 tab, and then select Region US East (which has cheaper rates) and click
-on `AMIs` on the menu to the left.  
+EC2 tab, and then select Region US West (Oregon) from the menu
+at the top right of the page, next to your user name. 
 
-Change `Viewing:` to `All Images` and `All Platforms` and then *after* it
-has finished loading the database start typing 
-`uwhpsc` in the search bar.
+You should now be on the page
+`<https://console.aws.amazon.com/ec2/v2/home?region=us-west-2>`_.
 
-Lanching an instance
----------------------
+Click on the big "Launch Instance" button.
 
-Select the `uwhpsc` image and then
-click on the `Launch` button on this page to start launching an instance 
-based on this AMI.  This means a virtual machine will be started for you,
-initialized with this disk image (which is a Ubuntu linux distribution with
-all the software we need pre-loaded).
+Select the "Classic Wizard" and "Continue".
 
-Next you can select what sort of instance you wish to start (larger
-instances cost more per hour).
+On the next page you will see a list of Amazon Machine Images (AMIs) that
+you can select from if you want to start with a fresh VM.  For this class
+you don't want any of these.  Instead click on the "Community AMIs" tab and
+wait a while for a list to load.
+Make sure Viewing "All images" is selected from the drop-down menu.
 
-Click `Continue` on the next few screens and eventually you get to one that
+After the list of AMIs loads, type `uwhpsc` in the search bar.
+Select this image.
+
+
+On the next page you can select what sort of instance you wish to start (larger
+instances cost more per hour). T1-micro is the the size you can run free (as
+long as you only have one running).
+
+Click `Continue` on the next few screens through the "instance details"
+and eventually you get to one that
 asks for a key pair.  If you don't already have one, create a new one and
 select it here.
 
 Click `Continue` and you will get a screen to set Security Groups.  Select
-the `quick-start-1` option.  On the next screen click `Launch`.
+the `quicklaunch-1` option.  On the next screen click `Launch`.
 
 
 Logging on to your instance
 ---------------------------
 
-Click `Close` on the next page to
+Click `Close` on the  page that appears to
 go back to the Management Console.  Click on `Instances` on the left menu
 and you should see a list of instance you
 have created, in your case only one.  If the status is not yet `running`
@@ -181,7 +185,7 @@ Management Console and click on `Security Groups` on the left menu.  Select
 `quick-start-1` and then click on `Inbound`.  You should see a list of ports
 that only lists 22 (SSH).  You want to add port 80 (HTTP).  Select HTTP from
 the drop-down menu that says `Custom TCP Rule` and type 80 for the `Port
-range`.  Then click `Apply Rule Changes`.  
+range`.  Then click `Add Rule` and `Apply Rule Changes`.  
 
 
 Now you should be able to point your browser to `http://DNS` where `DNS` is
