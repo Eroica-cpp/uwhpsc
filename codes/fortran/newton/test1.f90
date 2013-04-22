@@ -9,10 +9,10 @@ program test1
     real(kind=8) :: x, x0, fx
     real(kind=8) :: x0vals(3)
     integer :: iters, itest
-	logical :: debug
+	logical :: debug         ! set to .true. or .false.
 
     print *, "Test routine for computing zero of f"
-    debug = .false.
+    debug = .true.
 
     ! values to test as x0:
     x0vals = (/1.d0, 2.d0, 100.d0 /)
@@ -23,15 +23,15 @@ program test1
         call solve(f_sqrt, fprime_sqrt, x0, x, iters, debug)
 
         print 11, x, iters
-11      format('solver returns x = ', d20.15, ' after', i3, ' iterations')
+11      format('solver returns x = ', e20.15, ' after', i3, ' iterations')
 
         fx = f_sqrt(x)
         print 12, fx
-12      format('the value of f(x) is ', d20.15)
+12      format('the value of f(x) is ', e20.15)
 
         if (abs(x-2.d0) > 1d-14) then
             print 13, x
-13          format('*** Unexpected result: x = ', d20.15)
+13          format('*** Unexpected result: x = ', e20.15)
             endif
         enddo
 
