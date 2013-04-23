@@ -38,8 +38,8 @@ subroutine solve(f, fp, x0, x, iters, debug)
 
     if (debug) then
         print 11, x
- 11     format('Initial guess: x = ', e20.15)
-	    endif
+ 11     format('Initial guess: x = ', e22.15)
+        endif
 
     ! Newton iteration to find a zero of f(x) 
 
@@ -61,8 +61,8 @@ subroutine solve(f, fp, x0, x, iters, debug)
 
         if (debug) then
             print 12, k,x
- 12         format('After', i3, ' iterations, x = ', e20.15)
-	        endif
+ 12         format('After', i3, ' iterations, x = ', e22.15)
+            endif
 
         enddo
 

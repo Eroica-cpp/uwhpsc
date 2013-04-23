@@ -17,7 +17,7 @@ test1.exe: $(MODULES) $(OBJECTS)
 	gfortran $(FFLAGS) -c  $< 
 
 %.mod: %.f90
-	gfortran -c $<
+	gfortran $(FFLAGS) -c $<
 
 clean:
 	rm -f *.o *.exe *.mod

@@ -23,15 +23,15 @@ program test1
         call solve(f_sqrt, fprime_sqrt, x0, x, iters, debug)
 
         print 11, x, iters
-11      format('solver returns x = ', e20.15, ' after', i3, ' iterations')
+11      format('solver returns x = ', e22.15, ' after', i3, ' iterations')
 
         fx = f_sqrt(x)
         print 12, fx
-12      format('the value of f(x) is ', e20.15)
+12      format('the value of f(x) is ', e22.15)
 
         if (abs(x-2.d0) > 1d-14) then
             print 13, x
-13          format('*** Unexpected result: x = ', e20.15)
+13          format('*** Unexpected result: x = ', e22.15)
             endif
         enddo
 
