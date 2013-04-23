@@ -52,6 +52,19 @@ For general information and guides to getting started:
 Launching an instance with the *uwhpsc* AMI
 -------------------------------------------
 
+Quick way 
+^^^^^^^^^
+
+Navigate your browser to 
+`<https://console.aws.amazon.com/ec2/home?region=us-west-2#launchAmi=ami-b47feb84>`_
+
+Then you can skip the next section and proceed to :ref:`aws_select_size`.
+
+Search for AMI
+^^^^^^^^^^^^^^
+
+Going through this part may be useful if you want to see how to search for
+other AMI's in the future.
 
 Once you have an AWS account, sign in to the 
 `management console <https://console.aws.amazon.com/ec2/>`_
@@ -75,6 +88,10 @@ Make sure Viewing "All images" is selected from the drop-down menu.
 After the list of AMIs loads, type `uwhpsc` in the search bar.
 Select this image.
 
+.. _aws_select_size:
+
+Select size and security group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 On the next page you can select what sort of instance you wish to start (larger
 instances cost more per hour). T1-micro is the the size you can run free (as
