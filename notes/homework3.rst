@@ -104,55 +104,57 @@ The goals of this homework are to:
     If your code is written properly, running this test should give the
     following output::
         
-        In [116]: newton.test1()
+        In [19]: import newton
+
+        In [20]: newton.test1()
          
-        solve returns x = 2.000000000000002e+00 after 5 iterations 
-        the value of f(x) is 8.881784197001252e-15
+        solve returns x =  2.000000000000002e+00 after 5 iterations 
+        the value of f(x) is  8.881784197001252e-15
          
-        solve returns x = 2.000000000000000e+00 after 0 iterations 
-        the value of f(x) is 0.000000000000000e+00
+        solve returns x =  2.000000000000000e+00 after 0 iterations 
+        the value of f(x) is  0.000000000000000e+00
          
-        solve returns x = 2.000000000000000e+00 after 10 iterations 
-        the value of f(x) is 0.000000000000000e+00
+        solve returns x =  2.000000000000000e+00 after 10 iterations 
+        the value of f(x) is  0.000000000000000e+00
 
 
     With the debug option turned on it should print::
  
-        In [117]: newton.test1(debug_solve=True)
+        In [21]: newton.test1(debug_solve=True)
          
-        Initial guess: x =    1.000000000000000
-        After 1 iterations, x =    2.500000000000000
-        After 2 iterations, x =    2.050000000000000
-        After 3 iterations, x =    2.000609756097561
-        After 4 iterations, x =    2.000000092922295
-        After 5 iterations, x =    2.000000000000002
-        solve returns x = 2.000000000000002e+00 after 5 iterations 
-        the value of f(x) is 8.881784197001252e-15
+        Initial guess: x =  1.000000000000000e+00
+        After 1 iterations, x =  2.500000000000000e+00
+        After 2 iterations, x =  2.050000000000000e+00
+        After 3 iterations, x =  2.000609756097561e+00
+        After 4 iterations, x =  2.000000092922295e+00
+        After 5 iterations, x =  2.000000000000002e+00
+        solve returns x =  2.000000000000002e+00 after 5 iterations 
+        the value of f(x) is  8.881784197001252e-15
          
-        Initial guess: x =    2.000000000000000
-        solve returns x = 2.000000000000000e+00 after 0 iterations 
-        the value of f(x) is 0.000000000000000e+00
+        Initial guess: x =  2.000000000000000e+00
+        solve returns x =  2.000000000000000e+00 after 0 iterations 
+        the value of f(x) is  0.000000000000000e+00
          
-        Initial guess: x =  100.000000000000000
-        After 1 iterations, x =   50.020000000000003
-        After 2 iterations, x =   25.049984006397441
-        After 3 iterations, x =   12.604832373535455
-        After 4 iterations, x =    6.461085492374608
-        After 5 iterations, x =    3.540088255585130
-        After 6 iterations, x =    2.335001794270128
-        After 7 iterations, x =    2.024031288207058
-        After 8 iterations, x =    2.000142661533015
-        After 9 iterations, x =    2.000000005087716
-        After 10 iterations, x =    2.000000000000000
-        solve returns x = 2.000000000000000e+00 after 10 iterations 
-        the value of f(x) is 0.000000000000000e+00
+        Initial guess: x =  1.000000000000000e+02
+        After 1 iterations, x =  5.002000000000000e+01
+        After 2 iterations, x =  2.504998400639744e+01
+        After 3 iterations, x =  1.260483237353546e+01
+        After 4 iterations, x =  6.461085492374608e+00
+        After 5 iterations, x =  3.540088255585130e+00
+        After 6 iterations, x =  2.335001794270128e+00
+        After 7 iterations, x =  2.024031288207058e+00
+        After 8 iterations, x =  2.000142661533015e+00
+        After 9 iterations, x =  2.000000005087716e+00
+        After 10 iterations, x =  2.000000000000000e+00
+        solve returns x =  2.000000000000000e+00 after 10 iterations 
+        the value of f(x) is  0.000000000000000e+00
 
 
     Note that the statements printed are somewhat different than in the
     example `mysqrt.py` and printed at different points so you will need to
     think about how to implement this properly.
 
-    The formatting used for the floats is `%20.15e`.
+    The formatting used for the floats is `%22.15e`.
 
 
 
@@ -176,8 +178,8 @@ The goals of this homework are to:
         With initial guess x0 = -5.000000000000000e-01,
               solve returns x = -1.409624004002596e+00 after 9 iterations 
 
-        With initial guess x0 = 5.000000000000000e-01,
-              solve returns x = 6.367326508052821e-01 after 4 iterations 
+        With initial guess x0 =  5.000000000000000e-01,
+              solve returns x =  6.367326508052821e-01 after 4 iterations 
 
     The goal of this problem is to produce such a program in Python and
     to produce similar output and plot for a different set of functions:
@@ -197,7 +199,7 @@ The goals of this homework are to:
 
     The output of your script
     should have the same form as the example shown above, with the `x0` and
-    `x` values formatted as `%20.15e`.  Of course there should be 4 sets of
+    `x` values formatted as `%22.15e`.  Of course there should be 4 sets of
     output instead of two, finding the 4 distinct intersections.
 
     The script should also produce a plot of the two functions over the
