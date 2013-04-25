@@ -10,7 +10,7 @@ Once upon a time (through the 1970s) many computer programs were written on
 punch cards of the type shown here [`image source
 <http://en.wikipedia.org/wiki/File:FortranCardPROJ039.agr.jpg>`_]:
 
-.. image:: images/FortranCardPROJ039.agr.jpg
+.. image:: images/FortranCardPROJ039-agr.jpg
    :width: 20cm
 
 
@@ -38,7 +38,7 @@ A program would require a *punch card deck* as shown in this photo
 [`image source
 <http://en.wikipedia.org/wiki/File:PunchCardDecks.agr.jpg>`_]:
 
-.. image:: images/PunchCardDecks.agr.jpg
+.. image:: images/PunchCardDecks-agr.jpg
    :width: 15cm
 
 

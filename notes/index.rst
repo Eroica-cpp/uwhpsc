@@ -94,6 +94,7 @@ Fortran
    fortran_modules
    fortran_io
    fortran_debugging
+   fortran_newton
 
 .. _toc_misc:
 
@@ -105,6 +106,7 @@ Miscillaneous
    :maxdepth: 2
 
    makefiles
+   special_functions
 
 .. _toc_biblio:
 
