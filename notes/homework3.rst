@@ -204,7 +204,9 @@ The goals of this homework are to:
 
     The script should also produce a plot of the two functions over the
     interval :math:`-5 \leq x \leq 5` with the 4 intersections marked with
-    black dots.  
+    black dots, and save this plot as `intersections.png`.
+    **You do not need to commit `intersections.png` to your git repository, 
+    but the code should create it when run.**
 
     Plotting hints: 
 
@@ -240,10 +242,81 @@ The goals of this homework are to:
     a new macro such as `OBJECTS2` that is the list of object files needed
     to create `intersections.exe`
 
-#.  **583 students only --- to appear***
+#.  **583 students only need to turn this in.**  Others might want to at read this and try to 
+    understand the point being made even if you don't write the code...
     
-.. warning :: Incomplete, more will be added to the assignment for 583
-   students.
+    Create subdirectory `homework3/am583` with modified files for this part of the assignment.
+
+    In the original version of `newton.f90`, the module parameter   `maxiter` was set to 20.
+    Change it to 40 in this version since convergence will be slower for the problem below.
+
+    In the original version of `newton.f90`, the module parameter   `tol` is used for the
+    convergence test.  Turn this into a module **variable** that can be set in the calling program.
+    You will want the lines::
+    
+        real(kind=8) :: tol
+        save
+
+    in the `newton.f90` module and then experiment with one of your test 
+    programs to make sure you can adjust it in a main program.
+
+    Add a new function `f_quartic` and derivative `fprime_quartic` to the
+    `functions.f90` file that can be used to solve for a zero of the quartic 
+    polynomial :math:`f(x) = (x-1)^4 - \epsilon`.  This has two real zeros
+    :math:`1 \pm \epsilon^{1/4}`.  
+
+    Make `epsilon` a module variable that can
+    be set in the calling program  to store the desired value of
+    :math:`epsilon`.  
+
+    Write a test program `test_quartic.f90` that uses these modules and
+    tests the converge for different values of `epsilon` and `tol` by use of a double loop.
+    For each value of `epsilon` test three different convergence tolerances, in order to
+    produce a table that looks like this::
+
+        Starting with initial guess  0.400000000000000D+01
+
+             epsilon        tol    iters          x                 f(x)        x-xstar
+            0.100D-03    0.100D-04  13   0.110149887252771D+01    0.613D-05    0.150D-02
+            0.100D-03    0.100D-09  15   0.110000001620356D+01    0.648D-10    0.162D-07
+            0.100D-03    0.100D-13  16   0.110000000000000D+01    0.154D-16    0.377D-14
+          
+            0.100D-07    0.100D-04  14   0.105346394423359D+01    0.816D-05    0.435D-01
+            0.100D-07    0.100D-09  22   0.101000335631520D+01    0.134D-10    0.336D-05
+            0.100D-07    0.100D-13  23   0.101000000168878D+01    0.676D-14    0.169D-08
+          
+            0.100D-11    0.100D-04  14   0.105345384505079D+01    0.816D-05    0.525D-01
+            0.100D-11    0.100D-09  24   0.100301582272124D+01    0.817D-10    0.202D-02
+            0.100D-11    0.100D-13  30   0.100100034262656D+01    0.137D-14    0.343D-06
+
+    Note that in addition to printing out `x` and `f(x)` it prints out the error `x-xstar` 
+    where `xstar` is the true solution it is converging towards.  You can use the print statements
+    below to get the same output format::
+
+            print *, '    epsilon        tol    iters          x                 f(x)        x-xstar'
+
+    for the header before your loops and then for each `epsilon, tol` combination::
+
+    
+            print 11, epsilon, tol, iters, x, fx, x-xstar
+         11 format(2d13.3, i4, d24.15, 2d13.3)
+
+
+    Note that `f(x)` being small does not necessarily guarantee that the error is equally small!
+    As a result in most lines in this table the error is larger than `tol`.
+
+    This function has very small slope near the zero, especially when `epsilon` is small.  
+    In this case using a convergence criterion that is based on the size of the Newton step 
+    taken would be a better test for the degree of convergence.  You may want to experiment with
+    this if you wish, but this is not required.  You might also want to plot this function near the
+    root if you are having a hard time visualizing this.
+
+    Make a modified version of the `Makefile` in this directory so that::
+
+        $ make test_quartic
+
+    will compile and run this code to produce a table like the one above.
+
 
 To submit
 ---------
@@ -260,8 +333,15 @@ Your homework3 directory should contain:
     * `test1.f90`  (unchanged, but "make test1" should still work)
     * `Makefile`  (modified to add "make intersections" option)
 
+For 583 students, you should also have a subdirectory `homework3/am583` that contains:
+
+    * `newton.f90`  
+    * `functions.f90`
+    * `test_quartic.f90`
+    * `Makefile`  (modified to add a "make test_quartic" option that produces the desired output)
+
 As usual, commit your results, push to bitbucket, and see the Canvas
 course page for the link to submit the SHA-1 hash code.  These should be 
-submitted by the due date to receive full credit.
+submitted by the due date/time to receive full credit.
 
     
