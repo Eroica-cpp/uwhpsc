@@ -308,19 +308,29 @@ Languages and compilers
 OpenMP references
 -----------------------------------
 
+.. [Chandra-etal-openmp] R. Chandra, L. Dagum, et. al., *Parallel Programming
+   in OpenMP*, Academic Press, 2001.
+
+.. [Chapman-Jost] B. Chapman, G. Jost, R. van der Pas, *Using OpenMP: 
+   Portable Shared Memory Parallel Programming*, MIT Press, 2007
+
 .. [openmp-RR]  Section 6.3 and beyond of [Rauber-Ruenger]_
 
-.. [openmp.org] `<http://openmp.org/wp/>`_
+.. [openmp.org] `<http://openmp.org/wp/resources>`_ contains pointers to
+   many books and tutorials.
 
+.. [openmp-specs] `<http://openmp.org/wp/openmp-specifications/>`_
+   has the latest official specifications
+
+.. [openmp-llnl] `<https://computing.llnl.gov/tutorials/openMP/>`_ Livermore
+   tutorials
 .. [openmp-gfortran] `<http://gcc.gnu.org/onlinedocs/gfortran/OpenMP.html>`_
 
 .. [openmp-gfortran2] `<http://sites.google.com/site/gfortransite/>`_
 
-.. [openmp-api3.0] `<http://www.openmp.org/mp-documents/spec30.pdf>`_
-
 .. [openmp-refcard] `OpenMP in Fortran Reference card <http://openmp.org/mp-documents/OpenMP3.0-FortranCard.pdf>`_
 
-.. [openmp-fort90-examples] `<http://people.sc.fsu.edu/~burkardt/f_src/open_mp/open_mp.html>`_
+.. _biblio_mpi:
 
 MPI references
 -----------------------------------
