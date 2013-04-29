@@ -103,7 +103,7 @@ Now we get the prompt for the `pdb` shell when we hit the breakpoint::
 
     >>> execfile("debugdemo1b.py")
 
-    > /Users/rjl/uwamath583/codes/python/debugdemo1b.py(11)f()
+    > /Users/rjl/uwhpsc/codes/python/debugdemo1b.py(11)f()
     -> return x
 
     (Pdb) p x
@@ -126,11 +126,11 @@ For example, lets execute the next two statements and then print `x` and `y`::
 
     (Pdb) n
     --Return--
-    > /Users/rjl/uwamath583/codes/python/debugdemo1b.py(11)f()->13.0
+    > /Users/rjl/uwhpsc/codes/python/debugdemo1b.py(11)f()->13.0
     -> return x
 
     (Pdb) n
-    > /Users/rjl/uwamath583/codes/python/debugdemo1b.py(15)<module>()
+    > /Users/rjl/uwhpsc/codes/python/debugdemo1b.py(15)<module>()
     -> print "x = ",x
 
     (Pdb) p x,y
@@ -147,7 +147,7 @@ You can also run the code as a script from the Unix prompt and again you
 will be put into the pdb shell when the breakpoint is reached::
 
     $ python debugdemo1b.py
-    > /Users/rjl/uwamath583/codes/python/debugdemo1b.py(11)f()
+    > /Users/rjl/uwhpsc/codes/python/debugdemo1b.py(11)f()
     -> return x
     (Pdb) p z
     3.0
@@ -185,7 +185,7 @@ even more easily using a *post-mortem* analysis after it dies, using
 
     >>> import pdb
     >>> pdb.pm()
-    > /Users/rjl/uwamath583/codes/python/debugdemo2.py(14)<module>()->None
+    > /Users/rjl/uwhpsc/codes/python/debugdemo2.py(14)<module>()->None
     -> w[i] = 1/eps2
     (Pdb) p i
     34
@@ -214,7 +214,7 @@ and then `pdb` will be automatically invoked if an exception occurs::
     ---------------------------------------------------------------------------
 
     ZeroDivisionError: float division
-    > /Users/rjl/uwamath583/codes/python/debugdemo2.py(14)<module>()
+    > /Users/rjl/uwhpsc/codes/python/debugdemo2.py(14)<module>()
          13     eps2 = z - 1.         # expect eps2 == epsilon?
     ---> 14     w[i] = 1/eps2
          15 
