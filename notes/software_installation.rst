@@ -74,6 +74,8 @@ flag, e.g.::
 Individual packages
 -------------------
 
+.. _installing_python:
+
 Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -83,11 +85,15 @@ you should upgrade.
 See `<http://www.python.org/download/>`_ or consider the Enthought Python
 Distribution (EPD) or Anaconda CE described below.
 
+.. _installing_superpack:
+
 SciPy Superpack
 ^^^^^^^^^^^^^^^^
 
 On Mac OSX, you can often install gfortran and all the Python packages we'll
 need using the `SciPy Superpack <http://fonnesbeck.github.com/ScipySuperpack/>`_.
+
+.. _installing_epd:
 
 Enthought Python Distribution (EPD)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,6 +106,8 @@ Python packages listed below (IPython, NumPy, SciPy, matplotlib, mayavi).
 
 EPD works well on Windows machines too.
 
+.. _installing_anaconda:
+
 Anaconda CE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -110,6 +118,8 @@ The "community edition" Anaconda CE is free and contains most of the tools
 we'll be using, including IPython, NumPy, SciPy, matplotlib, mayavi,
 and many others.  The full Anaconda is also free for academic users.
 
+.. _installing_ipython:
+
 
 IPython
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -119,6 +129,8 @@ The IPython shell is much nicer to use than the standard Python shell (see
 (Included in EPD, Anaconda, and the SciPy Superpack.)
 
 See `<http://ipython.scipy.org/moin/>`_
+
+.. _installing_numpy:
 
 
 NumPy and SciPy
@@ -137,12 +149,16 @@ Matlab-like plotting package for 1d and 2d plots in Python.
 
 See `<http://matplotlib.sourceforge.net/>`_
 
+.. _installing_git:
+
 Git
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Version control system (see :ref:`git`).
 
 See `downloads <http://git-scm.com/downloads>`_.
+
+.. _installing_sphinx:
 
 Sphinx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -151,6 +167,8 @@ Documentation system used to create these class notes pages (see
 :ref:`sphinx`).
 
 See `<http://sphinx.pocoo.org/>`_
+
+.. _installing_gfortran:
 
 
 gfortran
@@ -165,11 +183,15 @@ You may already have this installed, try::
 
 See `<http://gcc.gnu.org/wiki/GFortran>`_
 
+.. _installing_openmp:
+
 OpenMP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Included with gfortran (see :ref:`openmp`).
 
+
+.. _installing_mpi:
 
 Open MPI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -178,6 +200,8 @@ Message Passing Interface software for parallel computing (see :ref:`mpi`).
 
 See `<http://www.open-mpi.org/>`_
 
+
+.. _installing_lapack:
 
 LAPack
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
