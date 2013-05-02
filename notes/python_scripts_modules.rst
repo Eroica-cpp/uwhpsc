@@ -326,7 +326,7 @@ is to do::
 
     >>> from os import getcwd
     >>> getcwd()
-    '/Users/rjl/uwamath583/codes/python'
+    '/Users/rjl/uwhpsc/codes/python'
 
 In this case we only imported one method from the module, not the whole
 thing.  Note that now *getcwd* is called by just giving the name of the

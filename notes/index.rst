@@ -99,7 +99,7 @@ Fortran
 .. _toc_misc:
 
 #################
-Miscillaneous
+Miscellaneous
 #################
 
 .. toctree::
@@ -107,6 +107,7 @@ Miscillaneous
 
    makefiles
    special_functions
+   timing
 
 .. _toc_biblio:
 
