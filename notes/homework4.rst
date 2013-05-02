@@ -25,7 +25,7 @@ The goals of this homework are to:
    This notebook is best viewed live so that you can experiment with
    changing things in order to explore these examples.  If you have a
    sufficiently recent version of the notebok installed (see
-   :ref:ipython_notebook`) then you should be able to do::
+   :ref:`ipython_notebook`) then you should be able to do::
 
         $ cd $UWHPSC/codes/homework4
         $ ipython notebook --pylab inline 
