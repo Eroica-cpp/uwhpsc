@@ -24,6 +24,8 @@ sudo apt-get install xfce4-terminal
 sudo apt-get install gitk               # to view git history
 sudo apt-get install xxdiff             # to compare two files
 sudo apt-get install python-sympy       # symbolic python
+sudo apt-get install imagemagick        # so you can "display plot.png"
+
 
 sudo apt-get install python-setuptools  # so easy_install is available
 sudo easy_install nose                  # unit testing framework

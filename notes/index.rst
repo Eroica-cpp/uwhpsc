@@ -31,7 +31,7 @@ Course materials
    aws
    software_carpentry
 
-.. _technical_topics:
+.. _toc_technical_topics:
 
 #################
 Technical Topics
@@ -58,7 +58,7 @@ Technical Topics
    arithmetic
    python_and_fortran
 
-.. _contents_python:
+.. _toc_python:
 
 #################
 Python
@@ -77,7 +77,7 @@ Python
    python_plotting
    python_debugging
 
-.. _fortran:
+.. _toc_fortran:
 
 #################
 Fortran
@@ -95,6 +95,17 @@ Fortran
    fortran_io
    fortran_debugging
    fortran_newton
+
+.. _toc_parallel:
+
+##################
+Parallel computing
+##################
+
+.. toctree::
+   :maxdepth: 2
+
+   openmp
 
 .. _toc_misc:
 
