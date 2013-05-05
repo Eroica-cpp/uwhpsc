@@ -139,6 +139,11 @@ Note:
   give a command that opens a new window (e.g. plotting in Python) it will
   appear on your local screen.
 
+* See the section :ref:`ssh` for tips if you are using a Mac or Windows
+  machine.
+  If you use Windows, see also the Amazon notes on using *putty* found at
+  `<http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html>`_.
+
 
 Once you have logged into your instance, you are on Ubuntu Linux that has
 software needed for this class pre-installed.

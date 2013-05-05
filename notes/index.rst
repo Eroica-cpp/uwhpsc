@@ -7,7 +7,7 @@ Contents of class notes for AMath 483/583
 =========================================
 
 See the `Class Webpage
-<http://faculty.washington.edu/rjl/uwamath583s13/index.html>`_
+<http://faculty.washington.edu/rjl/classes/am583s2013/index.html>`_
 for information on instructor, TA, office hours, etc.
 
 Skip to... :ref:`technical_topics` ... :ref:`applications`
@@ -31,7 +31,7 @@ Course materials
    aws
    software_carpentry
 
-.. _technical_topics:
+.. _toc_technical_topics:
 
 #################
 Technical Topics
@@ -58,7 +58,7 @@ Technical Topics
    arithmetic
    python_and_fortran
 
-.. _contents_python:
+.. _toc_python:
 
 #################
 Python
@@ -77,7 +77,7 @@ Python
    python_plotting
    python_debugging
 
-.. _fortran:
+.. _toc_fortran:
 
 #################
 Fortran
@@ -95,6 +95,17 @@ Fortran
    fortran_io
    fortran_debugging
    fortran_newton
+
+.. _toc_parallel:
+
+##################
+Parallel computing
+##################
+
+.. toctree::
+   :maxdepth: 2
+
+   openmp
 
 .. _toc_misc:
 
