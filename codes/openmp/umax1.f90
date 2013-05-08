@@ -19,7 +19,7 @@ program umax1
 
     ! Specify number of threads to use:
     nthreads = 1       ! need this value in serial mode
-    !$ nthreads = 8    
+    !$ nthreads = 4    
     !$ call omp_set_num_threads(nthreads)
     !$ print "('Using OpenMP with ',i3,' threads')", nthreads
 
@@ -58,7 +58,10 @@ program umax1
 201 format("Thread ",i2," will take i = ",i6," through i = ",i6)
 
     do m=1,nsteps
-        if (debug) print *, '+++ m = ',m, '  umax = ',umax
+        if (debug) then
+            print 301, thread_num, m, umax
+301         format("+++ begin loop      thread ",i3," m = ",i4,"  umax = ",f8.3)
+            endif
         umax_thread = 0.d0
         !$omp single
           umax = 0.d0
@@ -79,11 +82,18 @@ program umax1
 		! will sometimes hang --- quit out with ctrl-c
 
         if (umax > 100) then
-            if (debug) print *, '+++ umax>100, exiting: ',thread_num,umax
+            if (debug) then
+               print 302, thread_num, m, umax, umax_thread
+302            format("+++ umax>100: exit  thread ",i3," m = ",i4,"  umax = ",f8.3,"  umax_thread = ",f8.3)
+               endif
             exit
             endif
-        if (debug) print *, '+++ umax<100 in thread ',thread_num, &
-                   '  umax = ',umax
+
+        if (debug) then
+           print 303, thread_num, m, umax, umax_thread
+303        format("+++ umax<100        thread ",i3," m = ",i4,"  umax = ",f8.3,"  umax_thread = ",f8.3)
+           endif
+
         ! make sure all threads are done testing umax before going
         ! on to next iteration (where umax is re-initialized to 0).
         !$omp barrier
