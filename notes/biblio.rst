@@ -157,6 +157,11 @@ Python:
 
 .. [Python-pdb] `Python debugger documentation <http://docs.python.org/2/library/pdb.html>`_
 
+.. [IPython-book] Cyrille Rossant,
+   *Learning IPython for Interactive Computing and Data Visualization*,
+   Packt Publishing, 2013. `<http://ipython.rossant.net/>`_.
+
+
 .. _biblio_numpy:
 
 Numerical Python references
@@ -334,6 +339,8 @@ OpenMP references
 
 MPI references
 -----------------------------------
+
+See also [Gropp-Lusk-Skjellum-MPI] and  :ref:`mpi` for more references.
 
 .. [openmp-RR]  Chapter 5 of [Rauber-Ruenger]_
 
