@@ -19,11 +19,11 @@ The goals of this homework are to:
    Some colleagues at other universities have told me it's required
    reading for their students, so of course I have to assign it too!  
    It's pretty light reading.   
-   A short quiz will be available on the Canvas page.
 
      * `<http://www.siam.org/news/news.php?id=2064>`_
      * `some related links  <http://faculty.washington.edu/rjl/pubs/topten/index.html>`_
 
+   After reading it, take the Homework 5 quiz avaiable from the Canvas page.
 
 #. The IPython notebook `$UWHPSC/codes/homework5/notebook/quadrature2.ipynb`
    is an improved version of the notebook from the last homework.  Some of
@@ -350,4 +350,5 @@ As usual, commit your results, push to bitbucket, and see the Canvas
 course page for the link to submit the SHA-1 hash code.  These should be 
 submitted by the due date/time to receive full credit.
 
+Don't forget to also take the quiz on the reading.
     
