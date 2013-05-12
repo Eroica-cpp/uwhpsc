@@ -40,13 +40,11 @@ The goals of this homework are to:
 
    and then click on the `quadrature2` notebook.
 
-   I will also try to post it on wakari, but that seems to be down
-   currently.
 
-   .. comment ::
-       You can also view it at `wakari <?>`_ 
-       and if you have created a Wakari account, download it to your account to
-       try it out.
+   You can also view it at
+   `<https://www.wakari.io/sharing/bundle/rjleveque/quadrature2>`_ .
+   If you have created a Wakari account, you should be able to 
+   download it to your account to try it out.
 
    You can also view a static version of the notebook, which is in 
    `$UWHPSC/codes/homework5/notebook/quadrature2.pdf`.
@@ -230,6 +228,7 @@ The goals of this homework are to:
         fevals by thread  3:         28550
         Total number of fevals:     204750
 
+
     (Can you guess from this which thread got which values of `n`?)
     Notice that the table is very much out of order in this case, since lines
     were printed as threads finished their work.
@@ -239,21 +238,113 @@ The goals of this homework are to:
     the proper order, along with the correct ratios.  But you don't need
     to do this for the assignment.
 
-.. warning :: An additional problem for 583 students is still to appear.
+**Additional problem required only for 583 students**
+
+#.  Suppose we want to compute an integral in two space dimensions of the
+    form
+
+    :math:`\int_a^b \int_c^d g(x,y) \, dy \, dx`
+
+    This can be rewritten as :math:`\int_a^b f(x) \, dx` where the function
+    :math:`f(x) = \int_c^d g(x,y) \, dy`.
+    As usual, we could approximate the integral of :math:`f(x)` by the 
+    trapezoid rule in `x`.  
+    But now for each `x`, in order to approximate :math:`f(x)`
+    we must approximate :math:`f(x)` by a trapezoid rule
+    approximation to the integral of :math:`g(x,y)` in :math:`y`.
+
+    Create a new directory `homework5/quad2d` that contains new versions of
+    the codes `functions.f90`, `quadrature.f90`, and `test.f90` that can be
+    used to approximate 
+
+    :math:`\int_0^3 \int_1^4 \sin(x+y)~dy~dx`
+
+    for which the true value can be easily calculated for comparison.
+
+    In this case the function `f(x)` defined in `functions.f90` should
+    contain an implementation of the trapezoid rule (in `y`) that estimates
+    :math:`\int_1^4 g(x,y) \, dy`  for any value `x`.
+
+    The `functions` module should also contain a function `g(x,y)` that will
+    be called by `f`.
+
+    For the trapezoid rule in `y`, always use `ny = 1000` points.  
+    (Not a great idea, see below, but let's keep it simple.)
+
+    Modify the test program so that it produces an error table for ten
+    values of `n` as shown in the sample output below.  (These are the
+    values used in the trapezoid rule approximation in `x`).
+
+    Also modify your code so that it keeps track of how many evaluations of
+    the function `g(x,y)` each thread does, by introducing a new module 
+    variable `gevals` that is initialized and incremented appropriately.  
+
+    Start with the modules provided in `$UWHPSC/codes/homework5` and you can
+    leave `quadrature.f90` alone.  In this module, OpenMP is used for the loop 
+    in the `trapezoid` routine.  You do not need to add it to your new 
+    trapezoid loop in the definition of `f(x)`.  (You would not want to
+    since they you would have nested parallel loops.)
+
+    Sample output might look like this::
+        
+        Using  4 threads
+        true integral:  -1.17773797385703E+00
+          
+               n         approximation        error       ratio
+               5 -1.15309805294824E+00    2.464E-02    0.000E+00
+              10 -1.17288644038560E+00    4.852E-03    5.079E+00
+              20 -1.17664941136820E+00    1.089E-03    4.457E+00
+              40 -1.17747897159959E+00    2.590E-04    4.203E+00
+              80 -1.17767418488683E+00    6.379E-05    4.060E+00
+             160 -1.17772156012371E+00    1.641E-05    3.886E+00
+             320 -1.17773323092813E+00    4.743E-06    3.461E+00
+             640 -1.17773612733693E+00    1.847E-06    2.569E+00
+            1280 -1.17773684879809E+00    1.125E-06    1.641E+00
+            2560 -1.17773702883453E+00    9.450E-07    1.191E+00
+          
+        Elapsed time =   0.10095600 seconds
+        CPU time =   0.36504200 seconds
+        fevals by thread  0:          1298
+        fevals by thread  1:          1278
+        fevals by thread  2:          1278
+        fevals by thread  3:          1261
+        Total number of fevals:       5115
+        gevals by thread  0:       1298000
+        gevals by thread  1:       1278000
+        gevals by thread  2:       1278000
+        gevals by thread  3:       1261000
+        Total number of gevals:    5115000
+
+    Note that the error decreases at the expected rate initially but for
+    larger values of `n` we do not get the factor of 4 improvement we might
+    hope for.  This is because the inner integral in `y` is always approximated
+    with 1000 points so there is an error in the values of `f(x)` produced
+    that does not
+    decrease as we increase the number of points used for the outer integral.  
+    (A better idea of course would be to decrease `ny` along with `n`.)
+
+    Note that you expect the total number of `g` evaluations to be 1000
+    times larger than the total number of `f` evaluations.
+
 
 To submit
 ---------
 
 Your homework5 directory should contain:
 
-* functions.f90   (unchanged)
+* functions.f90   (unchanged from `$UWHPSC/codes/homework5`)
 * quadrature2.f90
 * test2.f90
 * quadrature3.f90
 * test3.f90
 * Makefile (optional if you find it useful to enhance what's provided)
 
-* Some files for 583...
+**For 583 students:**
+
+* quad2d/quadrature.f90  (original from `$UWHPSC/codes/homework5` should work here)
+* quad2d/functions.f90   (with f modified and g added)
+* quad2d/test.f90    (modified for this problem)
+* Makefile (optional)
 
 As usual, commit your results, push to bitbucket, and see the Canvas
 course page for the link to submit the SHA-1 hash code.  These should be 
