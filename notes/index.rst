@@ -106,6 +106,7 @@ Parallel computing
    :maxdepth: 2
 
    openmp
+   mpi
 
 .. _toc_misc:
 
