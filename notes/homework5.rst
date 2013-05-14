@@ -243,6 +243,8 @@ The goals of this homework are to:
     So what you turn in
     for `quadrature3.f90` will have the parallel loop in `error_table`,
     will use dynamic scheduling, and have the loop on `j` reordered.
+    The `test3.f90` program should call `error_table` with `method =
+    trapezoid`.
 
 
 **Additional problem required only for 583 students**
