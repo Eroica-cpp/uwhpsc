@@ -172,6 +172,10 @@ The goals of this homework are to:
      threads in the default manner.  Think about why this is so and make
      sure you understand what's going on.  
 
+
+   Make the changes for the next two parts also in your `quadrature3.f90` version.  
+
+
 #.  Because of the load-balancing issue just mentioned, it is useful to
     include another clause in the `omp parallel do` loop directive in error
     table::
@@ -196,9 +200,6 @@ The goals of this homework are to:
 
             do j=size(nvals),1,-1
 
-    Put this in a new version of the `quadrature2` module named `quadrature3`.
-    and provide a main program `test3.f90` to test it.
-    (The same as `test2.f90` but using the new module.)
     Think about why this is better.
 
     In this case you might get results like this::
@@ -238,6 +239,12 @@ The goals of this homework are to:
     the proper order, along with the correct ratios.  But you don't need
     to do this for the assignment.
 
+    The changes for Problems 6,7,8 should all be made in the same version.
+    So what you turn in
+    for `quadrature3.f90` will have the parallel loop in `error_table`,
+    will use dynamic scheduling, and have the loop on `j` reordered.
+
+
 **Additional problem required only for 583 students**
 
 #.  Suppose we want to compute an integral in two space dimensions of the
@@ -257,7 +264,7 @@ The goals of this homework are to:
     the codes `functions.f90`, `quadrature.f90`, and `test.f90` that can be
     used to approximate 
 
-    :math:`\int_0^3 \int_1^4 \sin(x+y)~dy~dx`
+    :math:`\int_0^2 \int_1^4 \sin(x+y)~dy~dx`
 
     for which the true value can be easily calculated for comparison.
 
