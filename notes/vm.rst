@@ -187,6 +187,35 @@ see.  Note that some older multi-core processors do not support the
 necessary extensions for this, and on these machines you will only be
 able to run the VM on a single core.
 
+Problems enabling multiple processors...
+------------------------
+
+When first attempting to use your virtual machine after enabling multiple processors
+you may encounter an error such as::
+
+    VD: error VERR_NOT_SUPPORTED
+
+This error indicates that virtualization has not been enabled on your processors. 
+
+Fortunately this has an easy fix. You just have to enable virtualization in your BIOS
+settings. 
+
+1. To  access the BIOS settings you must restart your computer and press a certain
+button on startup. This button will depend on the company that manufactures your computer 
+(for example for Lenovo's it appears to be the f1 key).
+
+2. Next you must locate a setting that will refer to either virtualization, VT, or VT-x. 
+Again the exact specifications will depend on the computer's manufacturer, however
+it should be found in the Security section (or the Performance section if you are using a Dell). 
+
+3. Enable this setting,
+then save and exit the bios settings.After your computer reboots you should be able to start the VM using multiple processors now. 
+
+4. If your BIOS does not have any settings like this it is possible that your BIOS is set up to hide this option from you, and you
+may need to follow the advice here: http://mathy.vanvoorden.be/blog/2010/01/enable-vt-x-on-dell-laptop/
+
+Note: Unfortunately some older hardware does not support virtualization, and so if these solutions don't work for you it may
+be that this is the case for your processors. There also may be other possible problems...so don't be afraid to ask the TAs for help! 
 
 Changing guest resolution/VM window size
 ----------------------------------------
