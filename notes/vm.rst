@@ -191,8 +191,7 @@ Problems enabling multiple processors...
 ------------------------
 
 Users may encounter several problems with enabling mutliple processors. Some users may not
-be able to change this setting (it will be greyed out). Other users when may find no improved performance
- after enabling multiple processors. Still others may encounter an error such as::
+be able to change this setting (it will be greyed out). Other users when may find no improved performance after enabling multiple processors. Still others may encounter an error such as::
 
     VD: error VERR_NOT_SUPPORTED
 
