@@ -190,12 +190,13 @@ able to run the VM on a single core.
 Problems enabling multiple processors...
 ------------------------
 
-When first attempting to use your virtual machine after enabling multiple processors
-you may encounter an error such as::
+Users may encounter several problems with enabling mutliple processors. Some users may not
+be able to change this setting (it will be greyed out). Other users when may find no improved performance
+ after enabling multiple processors. Still others may encounter an error such as::
 
     VD: error VERR_NOT_SUPPORTED
 
-This error indicates that virtualization has not been enabled on your processors. 
+All of these problems indicate that virtualization has not been enabled on your processors. 
 
 Fortunately this has an easy fix. You just have to enable virtualization in your BIOS
 settings. 
