@@ -246,7 +246,7 @@ error_table(f2,a2,b2,nvals,int_true2,trapezoid)
 
 # <markdowncell>
 
-# There are much better methods than the Trapezoidal rule that are not much harder to implement but get much smaller errors with the same number of function evaluations. One such method is Simpson’s rule, which approximates the integral over a single interval from $x_i$ to $x_{i+1}$ by
+# There are much better methods than the Trapezoidal rule that are not much harder to implement but get much smaller errors with the same number of function evaluations. One such method is Simpsons rule, which approximates the integral over a single interval from $x_i$ to $x_{i+1}$ by
 # $$\int_{x_i}^{x_{i+1}} f(x)\, dx \approx \frac h 6 (f(x_i) + 4f(x_{i+1/2}) + f(x_{i+1})),$$
 # where $x_{i+1/2} = \frac 1 2 (x_i + x_{i+1}) = x_i + h/2.$
 # 
