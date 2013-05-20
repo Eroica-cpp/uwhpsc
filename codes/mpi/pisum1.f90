@@ -37,8 +37,8 @@ program pisum1
     iend = min((proc_num + 1)*points_per_proc, n)
 
     ! Diagnostic: tell the user which points will be handled by which proc
-    print 201, proc_num, istart, iend
-201 format("Process ",i2," will take i = ",i6," through i = ",i6)
+    print '("Process ",i2," will take i = ",i6," through i = ",i6)', &
+          proc_num, istart, iend
 
     pisum_proc = 0.d0
     do i=istart,iend
