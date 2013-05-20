@@ -200,6 +200,10 @@ Message Passing Interface software for parallel computing (see :ref:`mpi`).
 
 See `<http://www.open-mpi.org/>`_
 
+Some instructions for installing from source on a Mac can be found at
+`here
+<https://sites.google.com/site/dwhipp/tutorials/installing-open-mpi-on-mac-os-x>`_.
+
 
 .. _installing_lapack:
 

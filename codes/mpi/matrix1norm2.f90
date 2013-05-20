@@ -19,6 +19,10 @@ program matrix1norm2
     real(kind=8), allocatable, dimension(:,:) :: a
     real(kind=8), allocatable, dimension(:) :: anorm, colvect
 
+    logical :: debug
+
+    debug = .true.
+
     call MPI_INIT(ierr)
     call MPI_COMM_SIZE(MPI_COMM_WORLD, num_procs, ierr)
     call MPI_COMM_RANK(MPI_COMM_WORLD, proc_num, ierr)
@@ -103,9 +107,12 @@ program matrix1norm2
                           MPI_COMM_WORLD, status, ierr)
 
             j = status(MPI_TAG)   ! this is the column number
+                                  ! may not be proc_num in general
 
-            print 12, proc_num, j       ! for debugging
-12          format("+++ Process ",i4,"  received message with tag ",i6)
+            if (debug) then
+                print '("+++ Process ",i4,"  received message with tag ",i6)', &
+                    proc_num, j       
+                endif
 
             if (j==0) go to 99    ! received "done" message
 

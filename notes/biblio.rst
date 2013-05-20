@@ -37,6 +37,10 @@ Books
    `Google books
    <http://books.google.com/books?id=xpBZ0RyRb-oC&printsec=frontcover&dq=Gropp+lusk+skjellum+mpi&source=bl&ots=u9fzi2MK9Z&sig=GvK20XXrv9xMgYSyJ3JXKt45fhY&hl=en&ei=zpOlS-6HIIOeswPPwu3YAw&sa=X&oi=book_result&ct=result&resnum=1&ved=0CAYQ6AEwAA#v=onepage&q=&f=false>`_
 
+.. [Snir-Dongarra-etal-MPI] M. Snir, J. Dongarra, J. S. Kowalik, S.
+   Huss-Lederman, S. W. Otto, D. W. Walker,
+   *MPI: The Complete Reference (2-volume set)* , MIT Press, 2000.
+
 .. [Dive-into-Python] M. Pilgram, *Dive Into Python*,
    `<http://www.diveintopython.org/>`_.
 
@@ -340,9 +344,11 @@ OpenMP references
 MPI references
 -----------------------------------
 
-See also [Gropp-Lusk-Skjellum-MPI] and  :ref:`mpi` for more references.
-
 .. [openmp-RR]  Chapter 5 of [Rauber-Ruenger]_
+
+See also [Gropp-Lusk-Skjellum-MPI] and  [Snir-Dongarra-etal-MPI]
+
+See :ref:`mpi` for more references.
 
 
 Exa-scale computing
