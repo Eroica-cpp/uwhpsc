@@ -72,9 +72,9 @@ program jacobi2
     iend = min((thread_num+1) * points_per_thread, n)
 
     !$omp critical
-    print 201, thread_num, istart, iend
+    print '("Thread ",i2," will take i = ",i6," through i = ",i6)', &
+          thread_num, istart, iend
     !$omp end critical
-201 format("Thread ",i2," will take i = ",i6," through i = ",i6)
 
     ! Initialize:
     ! -----------
@@ -131,8 +131,7 @@ program jacobi2
         !$omp single
         ! only one thread will do this print statement:
         if (mod(iter,nprint)==0) then
-            print 203, iter, dumax
-203         format("After ",i8," iterations, dumax = ",d16.6,/)
+            print '("After ",i8," iterations, dumax = ",d16.6,/)', iter, dumax
             endif
         !$omp end single
 
@@ -148,23 +147,21 @@ program jacobi2
 
         enddo
 
-    print 212, thread_num,iter,dumax
-212 format("Thread number ",i2," finished after ",i9," iterations, dumax = ",&
-            e16.6)
+    print '("Thread number ",i2," finished after ",i9, &
+            " iterations, dumax = ", e16.6)', &
+          thread_num,iter,dumax
 
     !$omp end parallel
 
     call cpu_time(t2)
-    print 10, t2-t1
- 10 format("CPU time = ",f12.8, " seconds")
+    print '("CPU time = ",f12.8, " seconds")', t2-t1
 
 
     ! Write solution to heatsoln.txt:
     write(20,*) "          x                  u"
     do i=0,n+1
-        write(20,222), x(i), u(i)
+        write(20,'(2e20.10)'), x(i), u(i)
         enddo
-222 format(2e20.10)
 
     print *, "Solution is in heatsoln.txt"
 

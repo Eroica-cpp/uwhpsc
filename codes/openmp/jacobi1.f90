@@ -77,16 +77,14 @@ program jacobi1
         enddo
 
         call cpu_time(t2)
-        print 10, t2-t1
-     10 format("CPU time = ",f12.8, " seconds")
+        print '("CPU time = ",f12.8, " seconds")', t2-t1
 
         print *, "Total number of iterations: ",iter
 
     write(20,*) "          x                  u"
     do i=0,n+1
-        write(20,222), x(i), u(i)
+        write(20,'(2e20.10)'), x(i), u(i)
         enddo
-222 format(2e20.10)
 
     print *, "Solution is in heatsoln.txt"
 
