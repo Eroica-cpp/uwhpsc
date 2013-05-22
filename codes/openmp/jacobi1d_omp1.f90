@@ -1,11 +1,11 @@
-! $UWHPSC/codes/openmp/jacobi1.f90
+! $UWHPSC/codes/openmp/jacobi1d_omp1.f90
 !
 ! Jacobi iteration illustrating fine grain parallelism with OpenMP.
 !
 ! Several omp parallel do loops are used.  Each time threads will be
 ! forked and the compiler will decide how to split up the loop.
 
-program jacobi1
+program jacobi1d_omp1
     use omp_lib
     implicit none
     integer :: n, nthreads
@@ -91,4 +91,4 @@ program jacobi1
 
     close(20)
 
-end program jacobi1
+end program jacobi1d_omp1

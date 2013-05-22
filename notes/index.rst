@@ -121,6 +121,20 @@ Miscellaneous
    special_functions
    timing
 
+
+.. _toc_apps:
+
+#################
+Applications
+#################
+
+.. toctree::
+   :maxdepth: 2
+
+   jacobi1d_omp1
+   jacobi1d_omp2
+
+
 .. _toc_biblio:
 
 #################

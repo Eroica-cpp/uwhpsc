@@ -1,4 +1,4 @@
-! $UWHPSC/codes/openmp/jacobi2.f90
+! $UWHPSC/codes/openmp/jacobi1d_omp2.f90
 !
 ! Domain decomposition version of Jacobi iteration illustrating
 ! coarse grain parallelism with OpenMP.
@@ -6,7 +6,7 @@
 ! The grid points are split up into nthreads disjoint sets and each thread
 ! is assigned one set that it updates for all iterations.
 
-program jacobi2
+program jacobi1d_omp2
     use omp_lib
     implicit none
     real(kind=8), dimension(:), allocatable :: x,u,uold,f
@@ -167,4 +167,4 @@ program jacobi2
 
     close(20)
 
-end program jacobi2
+end program jacobi1d_omp2
