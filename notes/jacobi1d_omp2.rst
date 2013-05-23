@@ -14,7 +14,7 @@ Compare to:
 
  * :ref:`jacobi1d_omp1`  
 
- * :ref:`jacobi2_mpi`  
+ * :ref:`jacobi1d_mpi`  
 
 The code:
 

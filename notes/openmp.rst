@@ -139,8 +139,8 @@ Note the following:
 For comparison of fine-grain and
 coarse-grain parallelism on Jacobi iteration, see
 
-* :ref:`jacobi1` 
-* :ref:`jacobi2_omp` 
+* :ref:`jacobi1d_omp1` 
+* :ref:`jacobi1d_omp2` 
 
 Further reading
 ---------------

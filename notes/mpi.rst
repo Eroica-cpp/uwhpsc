@@ -110,7 +110,9 @@ already been handled and farm out work as worker processes become free.
 Sample codes
 ------------
 
-Some sample codes can be found in the `$UWHPSC/codes/mpi` directory.
+Some other sample codes can also be found in the `$UWHPSC/codes/mpi` directory.
+
+* :ref:`jacobi1d_mpi` 
 
 See also the samples in the list below.
 
