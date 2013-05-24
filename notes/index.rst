@@ -120,6 +120,7 @@ Miscellaneous
    makefiles
    special_functions
    timing
+   linalg
 
 
 .. _toc_apps:
