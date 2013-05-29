@@ -17,6 +17,13 @@ program copyvalue
     call MPI_COMM_SIZE(MPI_COMM_WORLD, num_procs, ierr)
     call MPI_COMM_RANK(MPI_COMM_WORLD, proc_num, ierr)
 
+    if (num_procs==1) then
+        print *, "Only one process, cannot do anything"
+        call MPI_FINALIZE(ierr)
+        stop
+        endif
+
+
     if (proc_num==0) then
         i = 55
         print '("Process ",i3," setting      i = ",i3)', proc_num, i
