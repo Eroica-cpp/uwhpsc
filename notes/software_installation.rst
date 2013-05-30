@@ -115,7 +115,7 @@ Anaconda CE
 is a new collection of Python tools distributed by 
 `Continuum Analytics <http://www.continuum.io/index.html>`_
 The "community edition" Anaconda CE is free and contains most of the tools
-we'll be using, including IPython, NumPy, SciPy, matplotlib, mayavi,
+we'll be using, including IPython, NumPy, SciPy, matplotlib, 
 and many others.  The full Anaconda is also free for academic users.
 
 .. _installing_ipython:
