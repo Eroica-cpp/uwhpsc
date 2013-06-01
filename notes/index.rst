@@ -121,6 +121,7 @@ Miscellaneous
    special_functions
    timing
    linalg
+   random
 
 
 .. _toc_apps:
@@ -132,9 +133,11 @@ Applications
 .. toctree::
    :maxdepth: 2
 
+   poisson
    jacobi1d_omp1
    jacobi1d_omp2
    jacobi1d_mpi
+   
 
 
 .. _toc_biblio:
