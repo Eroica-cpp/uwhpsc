@@ -34,7 +34,7 @@ Create a subdirectory `project/part1` for this part.
     `num_procs - 1`.  In this case the master process should send out
     subintervals to the worker processes until all the work is done.  This
     will require doing something similar to what is done in the sample code
-    `$UWHPSC/codes/mpi/matrix1norm1.f90` to keep track of which subintervals
+    `$UWHPSC/codes/mpi/matrix1norm2.f90` to keep track of which subintervals
     have been handled.  
 
     Have Process 0 read in the number of subintervals with the lines::
