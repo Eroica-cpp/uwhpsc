@@ -2,7 +2,7 @@
 OBJECTS = random_util.o functions.o quadrature_mc.o test_quad_mc.o
 FFLAGS = 
 
-.PHONY: test plot clean 
+.PHONY: test plot clean clobber
 
 test: test.exe
 	./test.exe

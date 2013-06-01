@@ -177,10 +177,16 @@ Create a subdirectory `project/part2` for this part.
          Total g evaluations:      1310720
          python plot_mc_quad_error.py
 
-    A plot like this should also be created as `mc_quad_error.png`.
+    A file `mc_quad_error.txt` should be created with the estimate of the
+    integral computed with varying number of random points and the error
+    in each.  
+
+    A plot of these results should also be created as `mc_quad_error.png`,
+    that looks like this:
 
     .. image:: images/mc_quad_error.png
        :width: 10cm
+
 
     The test problem is set up to estimate a 20-dimensional integral.
     Note that the relative error is plotted, which gives an indication
