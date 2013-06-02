@@ -12,10 +12,12 @@ The goals of this project are to:
 
 * Get some more experience with MPI and the master-worker paradigm.
 * Learn about Monte Carlo methods and random number generators.
+* Get experience computing in Fortran and plotting results in Python.
 
 See also:
 
 * :ref:`random`
+* :ref:`poisson`
 
 Create a new subdirectory `project` in your repository for the codes you
 create.
@@ -24,7 +26,7 @@ create.
 
 Create a subdirectory `project/part1` for this part.
 
-#.  In the last part of :ref:`homework6`, you wrote an MPI code to compute
+    In the last part of :ref:`homework6`, you wrote an MPI code to compute
     a Trapezoid approximation to an integral by splitting the original
     interval up into `nsub = num_procs - 1` subintervals. The master Process
     0 farmed these out to the remaining processes and collected the results.
@@ -102,7 +104,7 @@ Create a subdirectory `project/part1` for this part.
 
 Create a subdirectory `project/part2` for this part.
 
-#.  Monte Carlo methods are often used to estimate the values of definite
+    Monte Carlo methods are often used to estimate the values of definite
     integrals in high dimensional spaces since traditional quadrature
     methods based on regular grids may require too many points.  
 
@@ -193,5 +195,274 @@ Create a subdirectory `project/part2` for this part.
     of the number of correct digits.  (Note that the absolute error is about 
     2e8 times larger for this problem!)
 
-.. warning:: Incomplete... more will be added soon.
+    *Note:* This problem should be quite easy; the code needed for
+    `quad_mc` should be short.  The main purpose of this problem is to
+    illustrate the basic structure of such a code, which you can follow
+    in the next problem.
+
+
+**PART 3**
+
+
+    The sample program `$UWHPSC/codes/project/part3/laplace_mc.py` 
+    can be run from
+    IPython to illustrate how a random walk on a lattice can be used to 
+    generate an approximate solution to the steady-state heat equation
+    at a single point.  This is described in more detail in the section
+    :ref:`poisson_mc`.
+    
+    Note that there is a parameter `plot_walk` that is set to `True` for
+    this demo.  If you set it to `False` and execute the code, then it will
+    take many more walks and print out the approximations as it repeatedly
+    doubles the number of walks taken.
+    
+    Using this as a model, write a Fortran code to approximate 
+    the solution to Laplace's equation at a single point :math:`(x_0,y_0)`
+    using the random walk approach.  
+
+    The module `$UWHPSC/codes/project/part3/problem_description.f90`
+    is a starting point. 
+
+    Supplement this with the following:
+
+    * A module `mc_walks.f90` containing two subroutines 
+
+      * `subroutine random_walk(i0, j0, max_steps, ub, iabort)`
+        based on the Python function `random_walk`.  
+        In the Fortran case `ub` should be an output variable with the
+        value of u at the boundary point reached, in the case when the walk
+        successfully reached the boundary.  In this case the subroutine
+        should return `iabort = 0`. If the walk did not reach the
+        boundary after `max_steps`, then `ub` can be anything, but 
+        return `iabort = 1` in this case.
+
+      * `subroutine many_walks(i0, j0, max_steps, n_mc, u_mc, n_success)`
+        based on the Python equivalent.  In this case `u_mc` should be an
+        output variable with the average value of `u` on the boundary
+        computed based on the successful walks, and `n_success` is an output
+        variable telling how many were successful.  
+
+      * Add a module variable `nwalks` to this module that is initialized to
+        0 in the main program and incremented by one each time `random_walk`
+        is called.
+
+
+    * A main program named `laplace_mc.f90` that does something similar to
+      the main program in the Python code.  In particular it should:
+
+      * Set `x0, y0, i0, j0, max_steps` as in the Python.
+        You should `use` what's needed from the module
+        `problem_description.f90`.
+
+      * Initialize the random number generator.  You can use the 
+        `random_util.f90` module from Part 2 for this.
+        Set `seed1 = 12345`.
+
+      * Intialize `nwalks = 0` and print out at the end the value, which
+        should be the total number of times `random_walk` was called.
+
+      * Call `many_walks` first with `u_mc = 10` and then have a loop to
+        repeatedly double the number of samples and print out the
+        estimate of `u` and the relative error after each doubling.
+
+      * In addition, it should write the total number of walks, the estimate of
+        `u` and the relative error each doubling to a file named
+        `mc_laplace_error.txt` with the same format as the file
+        `mc_quad_error.txt` in Part 2.
+
+    * A python script `plot_mc_laplace_error.py` based on the plotting
+      script from Part 2 to produce a log-log plot of the results.
+
+    * A Makefile so that `make plot` will produce the `png` file.
+
+    The Fortran code does not need to include an option for plotting the
+    walks, that was just for demo purposes.
+
+    Note that the main program and each subroutine will have to `use`
+    various variables or subroutines from other modules.
+
+    **Sample output** ::
+
+        $ make plot
+        gfortran  -c  random_util.f90 
+        gfortran  -c  problem_description.f90 
+        gfortran  -c  mc_walk.f90 
+        gfortran  -c  laplace_mc.f90 
+        gfortran  random_util.o problem_description.o mc_walk.o laplace_mc.o -o
+        test.exe
+        ./test.exe
+         seed1 for random number generator:       12345
+                10  0.377000000000000E+00   0.162222E+00
+                20  0.408125000000000E+00   0.930556E-01
+                40  0.452875000000000E+00   0.638889E-02
+                80  0.436125000000000E+00   0.308333E-01
+               160  0.440656250000000E+00   0.207639E-01
+               320  0.468687500000000E+00   0.415278E-01
+               640  0.460773437500000E+00   0.239410E-01
+              1280  0.455091796874999E+00   0.113151E-01
+              2560  0.455277343749997E+00   0.117274E-01
+              5120  0.455505371093748E+00   0.122342E-01
+             10240  0.456198974609378E+00   0.137755E-01
+             20480  0.454078369140635E+00   0.906304E-02
+             40960  0.450970458984394E+00   0.215658E-02
+        Final approximation to u(x0,y0):   4.50970458984394E-01
+        Total number of random walks:      40960
+        python plot_mc_laplace_error.py
+
+    Note that with `max_steps = 100*max(nx,ny)` all of the walks
+    successfully reached the boundary.  You might try with a smaller
+    value such as `max_steps = 10` in which case many walks will fail.
+    In this case you might see results like::
+
+                 9  0.665555555555556E+00   0.479012E+00
+                18  0.560000000000000E+00   0.244444E+00
+                38  0.529868421052632E+00   0.177485E+00
+                76  0.536019736842105E+00   0.191155E+00
+               152  0.563190789473684E+00   0.251535E+00
+               305  0.558008196721312E+00   0.240018E+00
+               614  0.572345276872964E+00   0.271878E+00
+              1230  0.580835365853656E+00   0.290745E+00
+              2476  0.596055129240706E+00   0.324567E+00
+              4960  0.599227318548388E+00   0.331616E+00
+              9928  0.603065320306211E+00   0.340145E+00
+             19877  0.602496478341837E+00   0.338881E+00
+             39707  0.601489346966549E+00   0.336643E+00
+        Final approximation to u(x0,y0):   6.01489346966549E-01
+        Total number of random walks:      40960
+
+    The total number of walks `nwalks` is the same, but fewer were used
+    in each estimate of the solution.  
+
+**PART 4**
+
+**Required only of 583 students**
+
+    Parallelize the code from Part 3 using MPI.  
+    Do this as follows:
+
+    * Modify the main program to call `MPI_INIT` and `MPI_FINALIZE`.
+
+    * In the main program, use::
+
+        seed1 = 12345   
+        seed1 = seed1 + 97*proc_num  ! unique for each process
+        call init_random_seed(seed1)
+
+      so that each process will generate a unique set of random numbers.
+
+    * Modify subroutine `many_walks` so that Process 0 is the master
+      whose job is to farm out all of the `n_mc` walks requested
+      to each of the other processes.  Follow the master-worker paradigm for
+      this.  This is a sensible way to try to do load balancing since some
+      walks will take many more steps than others.  (It would be better to
+      ask each worker to do some number of walks greater than 1 each time so
+      that there is less communication, but let's keep it simple.)
+
+      Note that the master does not have to send any data to a worker,
+      just an empty message requesting another walk, so it could send 
+      `MPI_BOTTOM` and use `tag = 1` to indicate this is a request for
+      another walk.  Use `tag = 0` to indicate to a worker that it is done.
+
+      The worker will have to receive from the master with `MPI_ANY_TAG` and
+      then check `status(MPI_TAG)` to see what it needs to do.
+
+      If another walk is requested, the worker should call `random_walk` and
+      then send back to the Master the result as a single data value of type
+      `MPI_DOUBLE_PRECISION`.   For this message set the `tag` to the value
+      of `iabort` that was returned from the call to `random_walk` so that
+      the Master knows whether to include this walk in the accumulated 
+      Monte Carlo result.
+
+    * Recall that with MPI every process is executing the same code but that
+      all data is local to a process.   So the basic structure of the main
+      program can remain the same.  Every process will execute the loop that
+      repeatedly increases the size of `n_mc` and every process will call
+      `many_walks`.  But only the master process will return values of 
+      `u_mc` and `n_success` that are sensible, and so this process should 
+      update `u_mc_total` and print out the values to the screen and the file
+      `mc_laplace_error.txt`.
+
+    * The module variable
+      `nwalks` that is incremented in `random_walk` will be local to each
+      process. In the main program, at the end have each process print out how
+      many walks it took and use `MPI_REDUCE` to compute the total number of
+      walks taken by all processes and have Process 0 print this value.
+
+    * Create a `Makefile` that works for this by combining aspects of those
+      from Part 1 (for MPI) and Part 3 (for the targets needed).
+      
+    **Sample output** ::
+
+        $ make plot
+        mpif90  -c  random_util.f90 
+        mpif90  -c  problem_description.f90 
+        mpif90  -c  mc_walk.f90 
+        mpif90  -c  laplace_mc.f90 
+        mpif90   random_util.o problem_description.o mc_walk.o laplace_mc.o -o
+        test.exe
+        mpiexec -n 4    test.exe
+         seed1 for random number generator:       12442
+         seed1 for random number generator:       12539
+         seed1 for random number generator:       12636
+         seed1 for random number generator:       12345
+                10  0.516750000000000E+00   0.148333E+00
+                20  0.478500000000000E+00   0.633333E-01
+                40  0.425437500000000E+00   0.545833E-01
+                80  0.431562500000000E+00   0.409722E-01
+               160  0.431593750000000E+00   0.409028E-01
+               320  0.425703125000000E+00   0.539931E-01
+               640  0.426492187500000E+00   0.522396E-01
+              1280  0.427759765624999E+00   0.494227E-01
+              2560  0.430487304687498E+00   0.433615E-01
+              5120  0.443433105468749E+00   0.145931E-01
+             10240  0.449190429687505E+00   0.179905E-02
+             20480  0.449556518554698E+00   0.985514E-03
+             40960  0.451413696289083E+00   0.314155E-02
+        Final approximation to u(x0,y0):   4.51413696289083E-01
+        Total walks performed by all processes:      40960
+        Walks performed by Process  0:          0
+        Walks performed by Process  1:      12928
+        Walks performed by Process  2:      13414
+        Walks performed by Process  3:      14618
+        python plot_mc_laplace_error.py
+
+
+To submit
+---------
+
+Your project directory should contain:
+
+* part1/functions.f90
+* part1/quadrature.f90
+* part1/test3.f90
+* part1/Makefile
+
+* part2/functions.f90
+* part2/quadrature_mc.f90
+* part2/random_util.f90
+* part2/test_quad_mc.f90
+* part2/Makefile
+
+* part3/problem_description.f90
+* part3/laplace_mc.f90
+* part3/mc_walk.f90
+* part3/random_util.f90
+* part3/plot_mc_laplace_error.py
+* part3/Makefile
+
+**For 583 students:**
+
+* part4/problem_description.f90
+* part4/laplace_mc.f90
+* part4/mc_walk.f90
+* part4/random_util.f90
+* part4/plot_mc_laplace_error.py
+* part4/Makefile
+
+
+As usual, commit your results, push to bitbucket, and see the Canvas
+course page for the link to submit the SHA-1 hash code.  These should be 
+submitted by the due date/time to receive full credit.
+
+Then have a good summer!
 
