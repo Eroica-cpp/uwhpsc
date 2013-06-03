@@ -441,6 +441,7 @@ Your project directory should contain:
 * part2/quadrature_mc.f90
 * part2/random_util.f90
 * part2/test_quad_mc.f90
+* part2/plot_mc_quad_error.py
 * part2/Makefile
 
 * part3/problem_description.f90
