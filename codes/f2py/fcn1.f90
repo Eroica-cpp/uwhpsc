@@ -1,4 +1,4 @@
-! $CLASSHG/codes/f2py/fcn1.f90
+! $UWHPSC/codes/f2py/fcn1.f90
 
 ! A test function for trying out f2py:
 !   $ f2py -m fcn1 -c fcn1.f90

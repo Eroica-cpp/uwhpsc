@@ -1,5 +1,5 @@
 
-! $CLASSHG/codes/f2py/sub1.f90
+! $UWHPSC/codes/f2py/sub1.f90
 
 ! A test subroutine for trying out f2py:
 !   $ f2py -m sub1 -c sub1.f90

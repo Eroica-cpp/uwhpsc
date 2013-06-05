@@ -1,5 +1,5 @@
 
-! $CLASSHG/codes/f2py/jacobi1
+! $UWHPSC/codes/f2py/jacobi1
 
 ! For use with f2py:
 !   $ f2py -m jacobi1 -c jacobi1.f90
