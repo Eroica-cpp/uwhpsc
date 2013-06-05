@@ -341,6 +341,11 @@ Create a subdirectory `project/part2` for this part.
     Do this as follows:
 
     * Modify the main program to call `MPI_INIT` and `MPI_FINALIZE`.
+      Note that with MPI, we must call `MPI_INIT` as the first statement in
+      the main program, so every process is running the same code, and 
+      every process will call the subroutine `many_walks`.  
+      See `$UWHPSC/codes/mpi/quadrature` for an example of how Simpson's
+      method might be implemented in MPI.
 
     * In the main program, use::
 
