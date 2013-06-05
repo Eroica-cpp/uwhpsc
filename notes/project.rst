@@ -225,7 +225,7 @@ Create a subdirectory `project/part2` for this part.
 
     Supplement this with the following:
 
-    * A module `mc_walks.f90` containing two subroutines 
+    * A module `mc_walk.f90` containing two subroutines 
 
       * `subroutine random_walk(i0, j0, max_steps, ub, iabort)`
         based on the Python function `random_walk`.  
