@@ -312,23 +312,26 @@ Create a subdirectory `project/part2` for this part.
     Note that with `max_steps = 100*max(nx,ny)` all of the walks
     successfully reached the boundary.  You might try with a smaller
     value such as `max_steps = 10` in which case many walks will fail.
-    In this case you might see results like::
+    In this case you might see results like the following
+    (*Note that the original results shown here were incorrect!*) ::
 
-                 9  0.665555555555556E+00   0.479012E+00
-                18  0.560000000000000E+00   0.244444E+00
-                38  0.529868421052632E+00   0.177485E+00
-                76  0.536019736842105E+00   0.191155E+00
-               152  0.563190789473684E+00   0.251535E+00
-               305  0.558008196721312E+00   0.240018E+00
-               614  0.572345276872964E+00   0.271878E+00
-              1230  0.580835365853656E+00   0.290745E+00
-              2476  0.596055129240706E+00   0.324567E+00
-              4960  0.599227318548388E+00   0.331616E+00
-              9928  0.603065320306211E+00   0.340145E+00
-             19877  0.602496478341837E+00   0.338881E+00
-             39707  0.601489346966549E+00   0.336643E+00
-        Final approximation to u(x0,y0):   6.01489346966549E-01
+         seed1 for random number generator:       12345
+                 4  0.697500000000000E+00   0.550000E+00
+                 8  0.632500000000000E+00   0.405556E+00
+                17  0.608529411764706E+00   0.352288E+00
+                31  0.623548387096774E+00   0.385663E+00
+                71  0.622042253521127E+00   0.382316E+00
+               134  0.616623134328358E+00   0.370274E+00
+               268  0.623619402985075E+00   0.385821E+00
+               553  0.620099457504520E+00   0.377999E+00
+              1092  0.623298992673990E+00   0.385109E+00
+              2184  0.622995650183145E+00   0.384435E+00
+              4416  0.624125339673914E+00   0.386945E+00
+              8765  0.625060182544217E+00   0.389023E+00
+             17623  0.624690319468906E+00   0.388201E+00
+        Final approximation to u(x0,y0):   6.24690319468906E-01
         Total number of random walks:      40960
+
 
     The total number of walks `nwalks` is the same, but fewer were used
     in each estimate of the solution.  
