@@ -1,4 +1,4 @@
-! $UWHPSC/codes/mpi/matrix1norm1.f90
+! $UWHPSC/codes/mpi/matrix1norm2.f90
 !
 ! Compute 1-norm of a matrix using mpi.
 ! Process 0 is the master that sets things up and then sends a column
