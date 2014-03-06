@@ -20,6 +20,19 @@ Skip to... :ref:`technical_topics` ... :ref:`applications`
 Course materials
 #################
 
+############
+2014 Edition
+############
+
+.. toctree::
+   :maxdepth: 2
+
+   2014/index
+
+############
+2013 Edition
+############
+
 .. toctree::
    :maxdepth: 2
 

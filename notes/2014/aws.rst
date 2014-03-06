@@ -1,11 +1,9 @@
 
 .. _aws:
 
-====================================
-Amazon Web Services EC2 AMI 
-====================================
-
-This is the 2013 version.  See :ref:`2014/aws` for updated instructions.
+===========================================
+Amazon Web Services EC2 AMI [2014 version]
+===========================================
 
 We are using a wide variety of software in this class, much of which is
 probably not found on your computer.  It is all open source software (see
@@ -30,8 +28,8 @@ with others) so it's not suitable for trying out parallel computing, but
 should be just fine for much of the programming work in this class.
 
 You can start up more powerful instances with 2 or more processors for a cost
-starting at about 14.5 cents per hour (the High CPU Medium on-demand
-instance).  See the `pricing guide <http://aws.amazon.com/ec2/#pricing>`_.  
+starting at less than 3 cents per hour (the m3.large on-demand
+instance).  See the `pricing guide <http://aws.amazon.com/ec2/pricing/>`_.  
 
 
 For general information and guides to getting started:
@@ -41,7 +39,7 @@ For general information and guides to getting started:
 
 * `EC2 FAQ <http://aws.amazon.com/ec2/faqs>`_.
 
-* `Pricing <http://aws.amazon.com/ec2/#pricing>`_.  Note: you are charged
+* `Pricing <http://aws.amazon.com/ec2/pricing>`_.  Note: you are charged
   per hour for hours (or fraction thereof) that your instance is in
   `running` mode, regardless of whether the CPU is being used.
 
@@ -60,7 +58,8 @@ Quick way
 Navigate your browser to 
 `<https://console.aws.amazon.com/ec2/home?region=us-west-2#launchAmi=ami-b47feb84>`_
 
-Then you can skip the next section and proceed to :ref:`aws_select_size`.
+You should then be on a page where you see you are on Step 2 of 7 at the top
+of the page, "Choose instance type".
 
 Search for AMI
 ^^^^^^^^^^^^^^
@@ -79,24 +78,21 @@ You should now be on the page
 
 Click on the big "Launch Instance" button.
 
-Select the "Classic Wizard" and "Continue".
-
-On the next page you will see a list of Amazon Machine Images (AMIs) that
+On the next page, you will see a list of "Quick start" 
+Amazon Machine Images (AMIs) that
 you can select from if you want to start with a fresh VM.  For this class
 you don't want any of these.  Instead click on the "Community AMIs" tab and
-wait a while for a list to load.
-Make sure Viewing "All images" is selected from the drop-down menu.
+then type `uwhpsc` in the search bar.  Select this image.
 
-After the list of AMIs loads, type `uwhpsc` in the search bar.
-Select this image.
+You will then be taken to Step 2, "Choose instance type".
 
-.. _aws_select_size:
+.. _aws_instance_type:
 
-Select size and security group
+Choose instance type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 On the next page you can select what sort of instance you wish to start (larger
-instances cost more per hour). T1-micro is the the size you can run free (as
+instances cost more per hour). t1-micro is the the size you can run free (as
 long as you only have one running).
 
 Click `Continue` on the next few screens through the "instance details"
@@ -104,14 +100,33 @@ and eventually you get to one that
 asks for a key pair.  If you don't already have one, create a new one and
 select it here.
 
-Click `Continue` and you will get a screen to set Security Groups.  Select
-the `quicklaunch-1` option.  On the next screen click `Launch`.
+You can now skip over steps 3-6 and jump directly to Step 7, "Review and
+Launch".
 
+Launch instance / create key pair
+-----------------------------------
+
+When you click on "Launch", you will get a page that asks you to "Select and
+existing key pair or create a new one".  If you don't already have a key
+pair, select "Create a new pair" from the menu and follow instructions.  If
+you give the name `mykey`, for example, then this will download a file
+`mykey.pem`.   Store this file in a directory where you can find it again,
+since you will need this key in order to log in to your instance once it is
+running.
+
+You also need to change the permissions on this file so that is readable only
+by the account user.  In the directory where this file lives, give the
+command::
+
+    chmod 400 mykey.pem
+
+If the file is more widely readable then you will not be able to use this
+key to log into your instance.
 
 Logging on to your instance
 ---------------------------
 
-Click `Close` on the  page that appears to
+Click `View Instances` on the  page that appears to
 go back to the Management Console.  Click on `Instances` on the left menu
 and you should see a list of instance you
 have created, in your case only one.  If the status is not yet `running`
@@ -121,15 +136,15 @@ then wait until it is (click on the `Refresh` button if necessary).
 of the screen. Scroll down until you find the `Public DNS` information
 
 Go into the directory where your key pair is stored, in a file with a name
-like `rjlkey.pem` and you should be able to `ssh` into your instance using
+like `mykey.pem` and you should be able to `ssh` into your instance using
 the name of the public DNS, with format like::
 
-    $ ssh -X -i KEYPAIR-FILE  ubuntu@DNS
+    $ ssh -Y -i KEYPAIR-FILE  ubuntu@DNS
 
 where KEYPAIR-FILE and DNS must be replaced by the appropriate
 things, e.g. for the above example::
 
-    $ ssh -X -i rjlkey.pem ubuntu@ec2-50-19-75-229.compute-1.amazonaws.com
+    $ ssh -Y -i mykey.pem ubuntu@ec2-50-19-75-229.compute-1.amazonaws.com
 
 Note:
 
@@ -137,7 +152,7 @@ Note:
 
 * You must log in as user ubuntu.
 
-* Including -X in the ssh command allows X window forwarding, so that if you
+* Including -Y in the ssh command allows X window forwarding, so that if you
   give a command that opens a new window (e.g. plotting in Python) it will
   appear on your local screen.
 
@@ -148,7 +163,8 @@ Note:
 
 
 Once you have logged into your instance, you are on Ubuntu Linux that has
-software needed for this class pre-installed.
+software needed for this class pre-installed.  See the file `install.sh` in
+the running instance to see the commands that were used to install software.
 
 Other software is easily installed using `apt-get install`, as described
 in :ref:`software_installation`.
@@ -206,10 +222,11 @@ An apache webserver should already be running in your instance,
 but to allow people (including yourself) to view
 webpages you will need to adjust the security settings.  Go back to the
 Management Console and click on `Security Groups` on the left menu.  Select
-`quick-start-1` and then click on `Inbound`.  You should see a list of ports
+`launch-wizard-1` and then click on `Inbound`.  Click on `+Add rule`.
+You should see a list of ports
 that only lists 22 (SSH).  You want to add port 80 (HTTP).  Select HTTP from
-the drop-down menu that says `Custom TCP Rule` and type 80 for the `Port
-range`.  Then click `Add Rule` and `Apply Rule Changes`.  
+the drop-down menu that says `Custom TCP Rule` and then click on `+Add rule`
+and `Apply Rule Change`.
 
 
 Now you should be able to point your browser to `http://DNS` where `DNS` is
