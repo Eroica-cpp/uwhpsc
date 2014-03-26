@@ -28,6 +28,7 @@ Course materials
    :maxdepth: 2
 
    2014/index
+   2014/homeworks
 
 ############
 2013 Edition
@@ -38,7 +39,7 @@ Course materials
 
    about
    outline
-   homeworks
+   2013_homeworks
    software_installation
    vm
    aws
