@@ -15,6 +15,8 @@ the lectures filmed in 2013.
 .. toctree::
    :maxdepth: 2
 
+   computing_options
+   smc
    vm
    aws
 

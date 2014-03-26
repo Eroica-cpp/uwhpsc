@@ -27,8 +27,8 @@ Course materials
 .. toctree::
    :maxdepth: 2
 
-   2014/index
    2014/homeworks
+   2014/index
 
 ############
 2013 Edition
