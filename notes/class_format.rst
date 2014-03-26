@@ -1,5 +1,5 @@
 
-.. _2014_class_format:
+.. _class_format:
 
 =======================
 Class Format
@@ -10,10 +10,18 @@ This class is being taught differently than in past years.
 * Students will be required to watch 3 hours of lectures a week that will be
   available on the web (videos recorded in Spring, 2013). These follow the
   slides and lecture notes from last year, but some new material will also be
-  developed.  Enrolled students can find the videos on the 
+  developed.  
+
+  Enrolled students can find the videos on the 
   `Canvas Lecture Videos <https://canvas.uw.edu/courses/893991/wiki/lecture-videos>`_ page.
+
+  Slides to accompany the lectures along with a summary of the topics
+  covered in each lecture can be found at
+  `http://faculty.washington.edu/rjl/classes/am583s2013/slides/`_
   
 * There will be a short quiz associated with each lecture.  
+  These will be available on the 
+  `Canvas Quiz Page <https://canvas.uw.edu/courses/893991/wiki/lecture-videos>`_ page.
   
 * For on-campus students, the class meets for a lab session
   T-Th, 2:30 - 3:20 in OUG 136. This

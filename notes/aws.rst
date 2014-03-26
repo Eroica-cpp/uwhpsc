@@ -1,5 +1,5 @@
 
-.. _2014_aws:
+.. _aws:
 
 ===========================================
 Amazon Web Services EC2 AMI [2014 version]

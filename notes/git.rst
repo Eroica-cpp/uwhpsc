@@ -1,18 +1,14 @@
 
-.. _2013_git:
+.. _git:
 
 =============================================================
-Git [2013 version]
+Git
 =============================================================
-
-.. warning :: This page is from 2013. 
-   See :ref:`git` for this year's version.
-
 
 See :ref:`versioncontrol` and the links there
 for a more general discussion of the concepts.
 
-.. _2013_classgit:
+.. _classgit:
 
 Instructions for cloning the class repository
 ---------------------------------------------
@@ -26,6 +22,14 @@ at
 In addition to viewing the files via the link above, you can also view
 changesets, issues, etc. (see :ref:`bitbucket`).
 
+**Note:** This repository contains all of the files used during the 2013
+version of this course, some of which are referred to in the Lecture Videos.
+The repository also contains some new material for 2014 and will continue to
+be added to during this quarter. See the overview at the top of the page
+`<http://bitbucket.org/rjleveque/uwhpsc/>`_
+for an outline of the directory structure.  (This overview is showing the
+file README.md that is in the top level directory of the repository.)
+
 To obtain a copy, simply move to the directory where you want your copy to
 reside (assumed to be your home directory below)
 and then *clone* the repository::
@@ -35,13 +39,13 @@ and then *clone* the repository::
 
 Note the following:
 
- * It is assumed you have *git* installed, see
-   :ref:`software_installation`.
+* It is assumed you have *git* installed, see
+  :ref:`software_installation`.
 
- * The clone statement will download the entire repository as a new
-   subdirectory called *uwhpsc*, residing in your home directory.  If you
-   want *uwhpsc* to reside elsewhere, you should first *cd* to that
-   directory.
+* The clone statement will download the entire repository as a new
+  subdirectory called *uwhpsc*, residing in your home directory.  If you
+  want *uwhpsc* to reside elsewhere, you should first *cd* to that
+  directory.
 
 It will be useful to set a Unix environment variable (see :ref:`env`) called
 *UWHPSC* to refer to the directory you have just created.  Assuming you are
@@ -86,7 +90,7 @@ home directory.  If not, you will have to add a line of the form::
 where the full path is what was returned by the *printenv* statement above.
 
 
-.. _2013_uwhpsc_update:
+.. _uwhpsc_update:
 
 Updating your clone
 -------------------
@@ -120,7 +124,7 @@ or simply::
 since `origin` and `master` are the defaults.
 
 
-.. _2013_mygit:
+.. _mygit:
 
 Creating your own Bitbucket repository
 --------------------------------------
@@ -153,7 +157,17 @@ Note that you can also create an unlimited number of public repositories
 free at Bitbucket, which you might want to do for open source software
 projects, or for classes like this one.
 
-Follow these directions exactly.  Doing so is part of :ref:`homework1`.
+(To make free open access repositories that can be viewed by anyone, 
+`GitHub <https://github.com/>`_
+is recommended, which allows an unlimited number of 
+open repositories and is widely used for open source projects.)
+
+
+To get started, follow the directions below exactly.  
+We will work through this as part of Lab 2 (Thursday, April 3), but feel
+free to start earlier.
+
+Doing this will be part of :ref:`homework1`.
 We will clone your repository and check that *testfile.txt* has been created
 and modified as directed below.
 

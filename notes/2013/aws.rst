@@ -1,9 +1,9 @@
 
-.. _aws:
+.. _2013_aws:
 
-====================================
-Amazon Web Services EC2 AMI 
-====================================
+===========================================
+Amazon Web Services EC2 AMI [2013 version]
+===========================================
 
 .. warning:: This is the 2013 version.  See :ref:`2014_aws` for updated instructions.
 
@@ -90,7 +90,7 @@ Make sure Viewing "All images" is selected from the drop-down menu.
 After the list of AMIs loads, type `uwhpsc` in the search bar.
 Select this image.
 
-.. _aws_select_size:
+.. _2013_aws_select_size:
 
 Select size and security group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

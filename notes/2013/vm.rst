@@ -1,8 +1,8 @@
 
-.. _vm:
+.. _2013_vm:
 
 =============================================================
-Virtual Machine for this class
+Virtual Machine for this class [2013 version]
 =============================================================
 
 We are using a wide variety of software in this class, much of which is
@@ -254,7 +254,7 @@ the VM's window; in fact, the VM doesn't need to be running to do
 this), go to the *File* menu, then click *Settings*.  Under *Input*,
 click the box marked "Host Key", then press the key you want to use.
 
-.. _vm_additions:
+.. _2013_vm_additions:
 
 Guest Additions
 ---------------

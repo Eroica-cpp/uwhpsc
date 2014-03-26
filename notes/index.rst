@@ -7,39 +7,38 @@ Contents of class notes for AMath 483/583
 =========================================
 
 See the `Class Webpage
-<http://faculty.washington.edu/rjl/classes/am583s2013/index.html>`_
+<http://faculty.washington.edu/rjl/classes/am583s2014/index.html>`_
 for information on instructor, TA, office hours, etc.
 
 Skip to... :ref:`technical_topics` ... :ref:`applications`
 
 :ref:`toc_condensed`
 
-.. _course_materials:
+##################################
+2013 Versions of some files
+##################################
 
-#################
-Course materials
-#################
-
-############
-2014 Edition
-############
+These pages may be referred to in Lecture Videos filmed in 2013, 
+particularly the homeworks and project.
 
 .. toctree::
    :maxdepth: 2
 
-   2014/homeworks
-   2014/index
+   2013/index
 
-############
-2013 Edition
-############
+.. _course_materials:
+
+##################################
+Course materials -- 2014 Edition
+##################################
+
 
 .. toctree::
    :maxdepth: 2
 
    about
    outline
-   2013_homeworks
+   homeworks
    software_installation
    vm
    aws
@@ -166,3 +165,4 @@ References
 
    biblio
    software_carpentry
+

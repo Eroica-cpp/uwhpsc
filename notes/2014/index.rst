@@ -19,4 +19,5 @@ the lectures filmed in 2013.
    smc
    vm
    aws
+   git
 
