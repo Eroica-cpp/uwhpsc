@@ -1,5 +1,5 @@
 
-.. _aws:
+.. _2014_aws:
 
 ===========================================
 Amazon Web Services EC2 AMI [2014 version]
@@ -61,8 +61,12 @@ Navigate your browser to
 You should then be on a page where you see you are on Step 2 of 7 at the top
 of the page, "Choose instance type".
 
+Then you can skip the next section and proceed to :ref:`aws_instance_type`.
+
 Search for AMI
 ^^^^^^^^^^^^^^
+
+Skip this section if you followed the "quick way" instructions above.
 
 Going through this part may be useful if you want to see how to search for
 other AMI's in the future.

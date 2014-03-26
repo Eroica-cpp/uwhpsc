@@ -5,7 +5,7 @@
 Amazon Web Services EC2 AMI 
 ====================================
 
-This is the 2013 version.  See :ref:`2014/aws` for updated instructions.
+.. warning:: This is the 2013 version.  See :ref:`2014_aws` for updated instructions.
 
 We are using a wide variety of software in this class, much of which is
 probably not found on your computer.  It is all open source software (see
