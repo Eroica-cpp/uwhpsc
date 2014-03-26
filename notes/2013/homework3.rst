@@ -1,9 +1,11 @@
 
-.. _homework3:
+.. _2013_homework3:
 
 ==========================================
-Homework 3 
+2013 Homework 3 
 ==========================================
+
+.. warning :: This is a 2013 homework assignment.  
 
 
 Due Wednesday, May 1, 2013, by 11:00pm PDT.

@@ -1,9 +1,11 @@
 
-.. _homework2:
+.. _2013_homework2:
 
 ==========================================
-Homework 2 
+2013 Homework 2 
 ==========================================
+
+.. warning :: This is a 2013 homework assignment.  
 
 .. comment :: Not yet assigned and may change.  
 
