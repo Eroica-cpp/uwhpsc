@@ -5,10 +5,18 @@
 Downloading and installing software for this class
 =============================================================
 
-Rather than downloading and installing this software, you might want to
-consider using the :ref:`vm`, which already contains everything you need.
-Or, you can do your computing on the cloud by following the instructions in
+In 2014 we will use 
+`SageMathCloud <https://cloud.sagemath.com/>`_
+for much of the computing in this class (see :ref:`smc`), but
+if you want to install software on your own computer, this page gives some
+hints.
+
+Another option for computing in the cloud is to follow the instructions in
 the section :ref:`aws`.
+
+Rather than downloading and installing all of this software individually, 
+you might want to
+consider using the :ref:`vm`, which already contains everything you need.
 
 It is assumed that you are on a Unix-like machine (e.g Linux or Mac OS
 X).  For some flavors of Unix it is easy to download and install some
@@ -19,8 +27,9 @@ manager.  Many Python packages can also be installed using
 
 If you must use a Windows PC, then you should 
 download and install [VirtualBox]_ for Windows and then 
-run the :ref:`vm` to provide a Linux environment.  Alternatively you can use
-a linux machine in the cloud via :ref:`aws`.
+run the :ref:`vm` to provide a Linux environment.  Some of the software
+we'll use is available on Windows, but we will assume you are using a
+Unix-like environment and learning to do so is part of the goal of this class.
 
 If you are using a Mac and want to install the necessary software, you also
 need to install `Xcode <https://developer.apple.com/xcode/>`_ developer

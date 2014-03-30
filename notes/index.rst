@@ -37,8 +37,10 @@ Course materials -- 2014 Edition
    :maxdepth: 2
 
    about
+   class_format
    outline
    homeworks
+   computing_options
    software_installation
    vm
    aws

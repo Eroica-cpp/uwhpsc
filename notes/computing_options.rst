@@ -6,8 +6,8 @@ Computing Options [2014 version]
 ================================
 
 All of the software we will use this year is open source, so in principle
-you can install it all on your own computer.  See `software_installation` for
-some tips on doing so.
+you can install it all on your own computer.  See :ref:`software_installation` 
+for some tips on doing so.
 
 However, there are several reasons you might want to use a different
 computing environment for this class:
@@ -49,7 +49,7 @@ Virtual Machine
 If you want to be able to compute on your own computer but don't want to
 try installing all the necessary software packages 
 individually, another option is to
-run a *virtual machine* using the VirtualBox software.  See :ref:`2014_vm`
+run a *virtual machine* using the VirtualBox software.  See :ref:`vm`
 for more information.
 
 Amazon Web Services
@@ -58,4 +58,4 @@ Amazon Web Services
 Another possibility for cloud computing is to use Amazon Web Services.  
 An Amazon Machine Image (a virtual machine) has been created that has all
 the software needed for this class.  For more detail on how to launch an
-instance running this AMI, see :ref:`2014_aws`.
+instance running this AMI, see :ref:`aws`.

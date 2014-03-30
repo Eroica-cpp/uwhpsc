@@ -5,7 +5,7 @@
 Virtual Machine for this class [2014 Edition]
 =============================================================
 
-.. warning::  Need to update!
+.. warning::  Need to update! VM not yet available
 
 
 We are using a wide variety of software in this class, much of which is
@@ -20,7 +20,7 @@ machine, which will emulate a specific version of Linux that already has
 installed all of the software packages that will be used in this course.
 
 You can find the VM on the `class 
-webpage <http://faculty.washington.edu/rjl/classes/am583s2013/>`_.
+webpage <http://faculty.washington.edu/rjl/classes/am583s2014/>`_.
 Note that the file is quite
 large (approximately 750 MB compressed), and if possible you should
 download it from on-campus to shorten the download time.  The TA's will also

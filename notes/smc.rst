@@ -1,9 +1,9 @@
 
 .. _smc:
 
-==================
-SageMathCloud
-==================
+===================
+Using SageMathCloud
+===================
 
 First create an account at `SageMathCloud <https://cloud.sagemath.com/>`_.
 You should create an account using your UW email address `netid@uw.edu`.

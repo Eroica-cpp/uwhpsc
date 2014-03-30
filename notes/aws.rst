@@ -56,7 +56,7 @@ Quick way
 ^^^^^^^^^
 
 Navigate your browser to 
-`<https://console.aws.amazon.com/ec2/home?region=us-west-2#launchAmi=ami-b47feb84>`_
+`<https://console.aws.amazon.com/ec2/home?region=us-west-2#launchAmi=ami-501a7260>`_
 
 You should then be on a page where you see you are on Step 2 of 7 at the top
 of the page, "Choose instance type".
@@ -66,7 +66,7 @@ Then you can skip the next section and proceed to :ref:`aws_instance_type`.
 Search for AMI
 ^^^^^^^^^^^^^^
 
-Skip this section if you followed the "quick way" instructions above.
+**Skip this section** if you followed the "quick way" instructions above.
 
 Going through this part may be useful if you want to see how to search for
 other AMI's in the future.
@@ -86,7 +86,7 @@ On the next page, you will see a list of "Quick start"
 Amazon Machine Images (AMIs) that
 you can select from if you want to start with a fresh VM.  For this class
 you don't want any of these.  Instead click on the "Community AMIs" tab and
-then type `uwhpsc` in the search bar.  Select this image.
+then type `uwhpsc2014` in the search bar.  Select this image.
 
 You will then be taken to Step 2, "Choose instance type".
 
@@ -146,7 +146,7 @@ the name of the public DNS, with format like::
     $ ssh -Y -i KEYPAIR-FILE  ubuntu@DNS
 
 where KEYPAIR-FILE and DNS must be replaced by the appropriate
-things, e.g. for the above example::
+things, e.g. something like this::
 
     $ ssh -Y -i mykey.pem ubuntu@ec2-50-19-75-229.compute-1.amazonaws.com
 
@@ -245,7 +245,8 @@ instance.  Any files you want to be visible on the web should be in
 `/var/www`, or it is sufficient to have a link from this directory to where
 they are located (created with the `ln -s` command in linux). 
 
-So, for example, if you do the following::
+So, for example, you could do the following (this has already been done if
+you start with the uwhpsc2104 AMI)::
 
     $ cd $HOME
     $ mkdir public      # create a directory for posting things

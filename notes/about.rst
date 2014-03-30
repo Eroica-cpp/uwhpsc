@@ -7,9 +7,9 @@ About these notes -- important disclaimers
 
 These note on high performance scientific computing are being developed for
 the course `Applied Mathematics <http://www.amath.washington.edu/>`_ `483/583
-<http://www.amath.washington.edu/courses/583-spring-2013/index.html>`_ 
+<http://www.amath.washington.edu/courses/583-spring-2014/index.html>`_ 
 at the `University of Washington
-<http://www.washington.edu>`_, Spring Quarter, 2013.  
+<http://www.washington.edu>`_, Spring Quarter, 2014.  
 
 
 They are very much a work in progress.  Many pages are not yet here and the

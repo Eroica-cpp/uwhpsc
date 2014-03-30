@@ -15,7 +15,7 @@ solutions to these homeworks are in the directory `$UWHPSC/solutions2013`.
 There will be 4 homeworks during the quarter with
 tentative due dates listed below:
 
- * Homework 1: Wednesday of Week 2, April 9
+ * Homework 1: Wednesday of Week 2, April 9  [assignment will be posted soon]
  * Homework 2: Wednesday of Week 4, April 23
  * Homework 3: Wednesday of Week 6, May 7 
  * Homework 4: Wednesday of Week 8, May 21
